@@ -1,0 +1,36 @@
+[
+  {
+    "id": "comp-a",
+    "name": "竞对A·惠丰优选",
+    "coverageMode": "sales",
+    "cities": [
+      "北京",
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "note": "数据完备：有 30 天销量数据，走策略一（T2 销量榜单）"
+  },
+  {
+    "id": "comp-b",
+    "name": "竞对B·餐链直采",
+    "coverageMode": "inventory",
+    "cities": [
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "note": "仅有库存快照，走策略二（T3 库存推算）"
+  },
+  {
+    "id": "comp-c",
+    "name": "竞对C·食达汇",
+    "coverageMode": "none",
+    "cities": [
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "note": "销量库存均无，走策略三（T4 多因子评分）"
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "rg-v0.9",
+    "promptVersionId": "pv-v0.9",
+    "caseCount": 500,
+    "mode": "seed",
+    "createdAt": "2026-07-06T10:30:00+08:00",
+    "metrics": {
+      "passRate": 0.81,
+      "formatRate": 0.92,
+      "alignmentAcc": 0.85,
+      "reasonConsistency": 0.89,
+      "goldPrecision": 0.34,
+      "goldRecall": 0.62
+    },
+    "byErrorType": {
+      "E1": 30,
+      "E2": 5,
+      "E3": 12,
+      "E4": 40,
+      "E5": 8
+    },
+    "durationMs": 840000,
+    "narrative": "首版回归：格式违规 8% 是最大问题（Validator 尚无重试机制）；类目对齐 85%，边界类目错位集中"
+  },
+  {
+    "id": "rg-v1.0",
+    "promptVersionId": "pv-v1.0",
+    "baselineVersionId": "pv-v0.9",
+    "caseCount": 500,
+    "mode": "seed",
+    "createdAt": "2026-07-20T10:30:00+08:00",
+    "metrics": {
+      "passRate": 0.87,
+      "formatRate": 0.96,
+      "alignmentAcc": 0.91,
+      "reasonConsistency": 0.93,
+      "goldPrecision": 0.38,
+      "goldRecall": 0.66
+    },
+    "byErrorType": {
+      "E1": 17,
+      "E2": 8,
+      "E3": 10,
+      "E4": 20,
+      "E5": 10
+    },
+    "deltaVsBaseline": {
+      "passRate": 0.06,
+      "formatRate": 0.04,
+      "alignmentAcc": 0.06,
+      "reasonConsistency": 0.04,
+      "goldPrecision": 0.04,
+      "goldRecall": 0.04
+    },
+    "durationMs": 720000,
+    "narrative": "R2 迭代验证：工具描述重写（类目边界说明）+ Validator 重试机制；确认未引入新错误类型"
+  },
+  {
+    "id": "rg-v1.1",
+    "promptVersionId": "pv-v1.1",
+    "baselineVersionId": "pv-v1.0",
+    "caseCount": 500,
+    "mode": "seed",
+    "createdAt": "2026-08-03T10:30:00+08:00",
+    "metrics": {
+      "passRate": 0.93,
+      "formatRate": 0.99,
+      "alignmentAcc": 0.94,
+      "reasonConsistency": 0.96,
+      "goldPrecision": 0.42,
+      "goldRecall": 0.7
+    },
+    "byErrorType": {
+      "E1": 12,
+      "E2": 8,
+      "E3": 6,
+      "E4": 5,
+      "E5": 4
+    },
+    "deltaVsBaseline": {
+      "passRate": 0.06,
+      "formatRate": 0.03,
+      "alignmentAcc": 0.03,
+      "reasonConsistency": 0.03,
+      "goldPrecision": 0.04,
+      "goldRecall": 0.04
+    },
+    "durationMs": 660000,
+    "narrative": "R5 迭代验证：理由模板化（数字占位符）后理由幻觉基本消除；few-shot 扩充补齐长尾类目"
+  }
+]

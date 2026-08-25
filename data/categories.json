@@ -1,0 +1,222 @@
+[
+  {
+    "id": "cat-bs",
+    "name": "半熟调理",
+    "path": "半熟调理",
+    "parentId": "root"
+  },
+  {
+    "id": "cat-sx",
+    "name": "生鲜肉类",
+    "path": "生鲜肉类",
+    "parentId": "root"
+  },
+  {
+    "id": "cat-mm",
+    "name": "米面粮油",
+    "path": "米面粮油",
+    "parentId": "root"
+  },
+  {
+    "id": "cat-tw",
+    "name": "调味酱料",
+    "path": "调味酱料",
+    "parentId": "root"
+  },
+  {
+    "id": "cat-dp",
+    "name": "冻品水产",
+    "path": "冻品水产",
+    "parentId": "root"
+  },
+  {
+    "id": "cat-js",
+    "name": "酒水饮料",
+    "path": "酒水饮料",
+    "parentId": "root"
+  },
+  {
+    "id": "cat-xl",
+    "name": "休闲零食",
+    "path": "休闲零食",
+    "parentId": "root"
+  },
+  {
+    "id": "cat-bh",
+    "name": "日用百货",
+    "path": "日用百货",
+    "parentId": "root"
+  },
+  {
+    "id": "bs-yw",
+    "name": "腌制烤肉类",
+    "parentId": "cat-bs",
+    "path": "半熟调理/腌制烤肉类",
+    "ambiguityGroup": "meat-boundary"
+  },
+  {
+    "id": "bs-cc",
+    "name": "烧烤串类",
+    "parentId": "cat-bs",
+    "path": "半熟调理/烧烤串类",
+    "ambiguityGroup": "meat-boundary"
+  },
+  {
+    "id": "bs-wj",
+    "name": "火锅丸饺类",
+    "parentId": "cat-bs",
+    "path": "半熟调理/火锅丸饺类"
+  },
+  {
+    "id": "bs-yc",
+    "name": "预制菜肴类",
+    "parentId": "cat-bs",
+    "path": "半熟调理/预制菜肴类"
+  },
+  {
+    "id": "sx-xr",
+    "name": "鲜分割肉类",
+    "parentId": "cat-sx",
+    "path": "生鲜肉类/鲜分割肉类",
+    "ambiguityGroup": "meat-boundary"
+  },
+  {
+    "id": "sx-lr",
+    "name": "冷冻肉类",
+    "parentId": "cat-sx",
+    "path": "生鲜肉类/冷冻肉类",
+    "ambiguityGroup": "meat-boundary"
+  },
+  {
+    "id": "sx-nz",
+    "name": "内脏副产品类",
+    "parentId": "cat-sx",
+    "path": "生鲜肉类/内脏副产品类"
+  },
+  {
+    "id": "mm-dm",
+    "name": "大米类",
+    "parentId": "cat-mm",
+    "path": "米面粮油/大米类"
+  },
+  {
+    "id": "mm-mf",
+    "name": "面粉类",
+    "parentId": "cat-mm",
+    "path": "米面粮油/面粉类"
+  },
+  {
+    "id": "mm-sy",
+    "name": "食用油类",
+    "parentId": "cat-mm",
+    "path": "米面粮油/食用油类"
+  },
+  {
+    "id": "mm-zl",
+    "name": "杂粮类",
+    "parentId": "cat-mm",
+    "path": "米面粮油/杂粮类"
+  },
+  {
+    "id": "tw-jy",
+    "name": "酱油醋类",
+    "parentId": "cat-tw",
+    "path": "调味酱料/酱油醋类"
+  },
+  {
+    "id": "tw-fh",
+    "name": "复合调味料类",
+    "parentId": "cat-tw",
+    "path": "调味酱料/复合调味料类"
+  },
+  {
+    "id": "tw-xx",
+    "name": "香辛料类",
+    "parentId": "cat-tw",
+    "path": "调味酱料/香辛料类"
+  },
+  {
+    "id": "tw-hd",
+    "name": "火锅底料类",
+    "parentId": "cat-tw",
+    "path": "调味酱料/火锅底料类"
+  },
+  {
+    "id": "dp-yl",
+    "name": "冷冻鱼类",
+    "parentId": "cat-dp",
+    "path": "冻品水产/冷冻鱼类"
+  },
+  {
+    "id": "dp-xl",
+    "name": "冷冻虾类",
+    "parentId": "cat-dp",
+    "path": "冻品水产/冷冻虾类"
+  },
+  {
+    "id": "dp-bl",
+    "name": "贝类",
+    "parentId": "cat-dp",
+    "path": "冻品水产/贝类"
+  },
+  {
+    "id": "js-bj",
+    "name": "白酒类",
+    "parentId": "cat-js",
+    "path": "酒水饮料/白酒类"
+  },
+  {
+    "id": "js-pj",
+    "name": "啤酒类",
+    "parentId": "cat-js",
+    "path": "酒水饮料/啤酒类"
+  },
+  {
+    "id": "js-yl",
+    "name": "饮料类",
+    "parentId": "cat-js",
+    "path": "酒水饮料/饮料类"
+  },
+  {
+    "id": "js-rp",
+    "name": "乳品类",
+    "parentId": "cat-js",
+    "path": "酒水饮料/乳品类"
+  },
+  {
+    "id": "xl-ph",
+    "name": "膨化食品类",
+    "parentId": "cat-xl",
+    "path": "休闲零食/膨化食品类"
+  },
+  {
+    "id": "xl-gd",
+    "name": "糕点类",
+    "parentId": "cat-xl",
+    "path": "休闲零食/糕点类"
+  },
+  {
+    "id": "xl-jg",
+    "name": "坚果炒货类",
+    "parentId": "cat-xl",
+    "path": "休闲零食/坚果炒货类"
+  },
+  {
+    "id": "bh-cj",
+    "name": "餐具类",
+    "parentId": "cat-bh",
+    "path": "日用百货/餐具类"
+  },
+  {
+    "id": "bh-qj",
+    "name": "清洁用品类",
+    "parentId": "cat-bh",
+    "path": "日用百货/清洁用品类"
+  },
+  {
+    "id": "bh-yc",
+    "name": "一次性用品类",
+    "parentId": "cat-bh",
+    "path": "日用百货/一次性用品类"
+  }
+]

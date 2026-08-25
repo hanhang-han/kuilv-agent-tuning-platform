@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 选品 Agent 调优平台
 
-## Getting Started
-
-First, run the development server:
+选品 Agent 的评估、评审与回归调优基础设施。基于模拟数据构建：3 个竞对平台（不同数据覆盖档位）、8 个品类、600 条 agent 运行记录，完整演示 AI Agent 从「跑起来」到「跑得对」的评估迭代闭环。
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run generate        # 重新生成种子数据（固定随机种子，可重复）
+npm run dev             # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**真跑模式（推荐）**：复制 `.env.local.example` 为 `.env.local`，填入 DeepSeek API Key（[platform.deepseek.com](https://platform.deepseek.com)，一轮全量回归约几毛钱）。不填则自动降级为回放模式：所有界面可用，内置版本展示预置回归结果。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**测试**：`npx tsx scripts/smoke-test.ts`（无需 API Key，验证工具链/评测/错误检测逻辑）
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 业务场景
 
-## Learn More
+餐饮供应链 B2B 平台需要覆盖数十个竞对平台，识别「用户有需求但平台没在卖」的商品机会。核心困难是**竞对数据异构**：有的平台有销量、有的只有库存、有的均无，商品标题还是营销词混杂的脏数据。选品 Agent 用六工具 + 动态路由处理这种异构性。
 
-To learn more about Next.js, take a look at the following resources:
+## 六个页面
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| 页面 | 路由 | 功能 | 对标业界 |
+|------|------|------|---------|
+| 仪表盘 | `/` | E1-E5 错误分布、8 周准召率/通过率趋势、按竞对切片、最新回归大数字 | LangSmith 看板 |
+| Case 池 | `/cases` | Agent 运行记录全量，按口径/状态/错误类型/来源筛选 | LangSmith trace 列表 |
+| 评审工作台 | `/review` | 单 case 三栏评审：自动评测 → 决策链路 → 输出清单；通过/打回+E1-E5 | LangSmith 标注队列 |
+| Prompt 实验室 | `/prompts` | 版本管理（fork/编辑）、可优化资产编辑、回归测试与版本对比 | Promptfoo 回归测试 |
+| 抽样队列 | `/sampling` | 竞对×品类分层抽样，低置信度优先，生成当日评审任务 | —（自研逻辑） |
+| 运行台 | `/run` | 选口径实时运行 Agent，SSE 流式展示 ReAct 决策链路 | — |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Agent 架构
 
-## Deploy on Vercel
+```
+输入：口径（竞对 × 城市 × 品类）
+  ↓
+T1 数据覆盖探测 → sales / inventory / none
+  ↓ 动态路由（三策略瀑布的 agent 化）
+有销量 → T2 销量榜单（top20% 且 ≥200 件）
+仅库存 → T3 库存推算（3 天差值：剔除补货、保守累加）
+均无   → T4 多因子评分（促销/在售/长期在售/渠道标签加权）
+  ↓
+T5 商品语义对齐（LLM：脏标题 → 标准类目封闭枚举）
+  ↓
+T6 推荐理由生成（模板化：数字占位符填充）
+  ↓
+Validator（Schema + 类目枚举 + 数值一致性，失败重试≤3）
+  ↓
+输出：结构化选品清单 → 人工审核
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**核心设计原则（ADR-1）**：数值计算全部留在确定性工具里，LLM 只做语义对齐、策略路由和理由组织——幻觉的破坏面被锁死在可评审的语义层。
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 模块对照
+
+| 代码位置 | 职责 |
+|----------|------|
+| `src/lib/agent/runner.ts` | ReAct 循环（步数上限 8，temperature=0 保证可复现） |
+| `src/lib/agent/tools/t1~t6.ts` | 六工具实现，T1-T4 确定性计算，T5/T6 内部 LLM 子调用 |
+| `src/lib/agent/validator.ts` | 结构化输出校验闸门 |
+| `src/lib/eval/auto-eval.ts` | 自动评测四指标：格式合规 / 类目对齐 / 理由数值一致 / 准召率（vs 真值金标） |
+| `src/lib/eval/regression.ts` | 回归引擎：全量去重口径回放，分错误类型对比 |
+| `src/lib/storage/index.ts` | 种子静态打包 + 运行时状态持久化 |
+| `scripts/generate-data.ts` | 数据生成（基准数字的单一事实源） |
+
+## 错误分类体系（E1-E5）
+
+评 case 的价值不在打分，在归因——责任方不同，处理路径完全不同：
+
+| 类型 | 描述 | 责任方 | 处理方向 |
+|------|------|--------|---------|
+| E1 | 类目映射错误 | LLM 语义（T5） | 工具描述加边界规则、few-shot 样例 |
+| E2 | 误判高销 | 策略/数据 | 阈值调整 |
+| E3 | 理由幻觉（数字与工具返回不符） | LLM 生成（T6） | 理由模板化（占位符填充） |
+| E4 | 格式违规 | 工程 | Validator 重试 |
+| E5 | 漏检 | 召回/策略覆盖 | 策略迭代 |
+
+## 三类可优化资产
+
+调优的三个杠杆，全部在 Prompt 实验室编辑、全部版本化：
+
+1. **System Prompt + 六个工具描述**——工具描述是 agent 时代的「产品文案」。基线版 T5 描述含糊，边界商品（腌制烤肉/烧烤串/生鲜肉标题交叉）会真实判错；加上边界规则后回归可见类目对齐提升
+2. **类目知识数据集**（kv-v0/v1/v2）——边界规则 + few-shot 样例，T5 的唯一知识来源
+3. **策略参数**——T4 四因子权重 + T6 理由模式（自由生成 → 模板化）
+
+调优闭环：**fork baseline → 改资产 → 跑回归（对比基线）→ 看分错误类型变化 → 再迭代**。详见 [docs/练习指南.md](docs/练习指南.md)。
+
+## 双模式与口径说明
+
+- **真跑**：DeepSeek function calling 真实运行，决策链路、回归指标全部真实
+- **回放**：预置数据（回归通过率 81%→87%→93%，对齐 85%→94%，理由一致 89%→96%）
+- **双层质检**：快评层（case 级通过/打回，保吞吐）与深检层（品级逐字段核对，保深度）是两个独立口径——评审工作台开「深检模式」体验
+- live 运行产生的 case 带 `live` 标记入池，与预置历史数据区分
+
+## 模拟数据
+
+- 3 个竞对：A 有销量（策略一）/ B 仅库存（策略二差值推算）/ C 均无（策略三多因子）——对应三条策略路径
+- 428 个商品（脏标题：营销词/规格/emoji 混杂），映射到 8 品类 29 个叶子类目；36 个类目边界难点商品
+- 600 条 seed case：错误分布 通过 81% / E1 6% / E2 4% / E3 3% / E4 1% / E5 5%，8 周趋势对应 v0.9→v1.1 三个版本阶段
+- 金标 = 真值销量 top20% 且 ≥200 件（策略一结果）；准召率按策略三口径计算
+
+## 部署
+
+- **本地**（推荐）：`npm run dev`，运行时数据持久化在 `data/runtime/`（gitignore）
+- **Vercel**：直接导入仓库即可部署（API Key 配置在 Vercel 环境变量）。注意 Vercel 文件系统只读，live 数据仅存内存、重启后回到种子状态
+
+## 项目结构
+
+```
+data/                    种子数据（generate-data.ts 产出，可重跑）
+scripts/generate-data.ts 数据生成脚本
+scripts/smoke-test.ts    无 LLM 冒烟测试
+src/lib/types.ts         领域类型
+src/lib/agent/           Agent 运行时（runner / tools / validator）
+src/lib/eval/            自动评测 + 回归引擎
+src/lib/llm/client.ts    DeepSeek 客户端（OpenAI 兼容，temperature=0）
+src/lib/storage/         存储层
+src/app/                 六个页面 + API 路由
+docs/练习指南.md          三个练习任务（跑口径 → 评审 → 调优回归）
+```

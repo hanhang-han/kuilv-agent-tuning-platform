@@ -1,0 +1,9319 @@
+[
+  {
+    "competitorId": "comp-a",
+    "title": "藤椒腌鸡腿肉 500g×20",
+    "trueCategoryId": "bs-yw",
+    "parentId": "cat-bs",
+    "cities": [
+      "成都",
+      "北京"
+    ],
+    "price": 46.7,
+    "trueSales30d": 160,
+    "sales30d": 160,
+    "goldCities": [],
+    "id": "p-0001"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "奥尔良腌鸡腿 2.5kg",
+    "trueCategoryId": "bs-yw",
+    "parentId": "cat-bs",
+    "cities": [
+      "北京",
+      "广州"
+    ],
+    "price": 418.2,
+    "trueSales30d": 102,
+    "sales30d": 102,
+    "goldCities": [],
+    "id": "p-0002"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "【门店专供】蒜香腌制排骨 1kg",
+    "trueCategoryId": "bs-yw",
+    "parentId": "cat-bs",
+    "cities": [
+      "成都",
+      "北京",
+      "广州",
+      "上海"
+    ],
+    "price": 389.8,
+    "trueSales30d": 382,
+    "sales30d": 382,
+    "goldCities": [],
+    "id": "p-0003"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "黑椒腌制牛肉粒",
+    "trueCategoryId": "bs-yw",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海",
+      "成都",
+      "广州",
+      "北京"
+    ],
+    "price": 404.7,
+    "trueSales30d": 101,
+    "sales30d": 101,
+    "goldCities": [],
+    "id": "p-0004"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "孜然腌羊肉片 餐饮装",
+    "trueCategoryId": "bs-yw",
+    "parentId": "cat-bs",
+    "cities": [
+      "成都",
+      "上海",
+      "北京",
+      "广州"
+    ],
+    "price": 160.7,
+    "trueSales30d": 61,
+    "sales30d": 61,
+    "goldCities": [],
+    "id": "p-0005"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "原切【餐饮专供】黑椒腌制牛肉粒",
+    "trueCategoryId": "bs-yw",
+    "parentId": "cat-bs",
+    "cities": [
+      "成都"
+    ],
+    "price": 181.5,
+    "trueSales30d": 40,
+    "inventorySeries": [
+      4,
+      3,
+      6,
+      5,
+      4,
+      4,
+      2,
+      1,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0006"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "蒜香腌制排骨 500g 大包装",
+    "trueCategoryId": "bs-yw",
+    "parentId": "cat-bs",
+    "cities": [
+      "北京"
+    ],
+    "price": 124.7,
+    "trueSales30d": 1476,
+    "inventorySeries": [
+      148,
+      109,
+      207,
+      148,
+      98,
+      50,
+      50,
+      0,
+      0
+    ],
+    "goldCities": [
+      "北京"
+    ],
+    "id": "p-0007"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【爆款】腌制五花肉片 25kg",
+    "trueCategoryId": "bs-yw",
+    "parentId": "cat-bs",
+    "cities": [
+      "成都",
+      "北京"
+    ],
+    "price": 277.2,
+    "trueSales30d": 1703,
+    "inventorySeries": [
+      197,
+      167,
+      125,
+      60,
+      133,
+      242,
+      177,
+      177,
+      275
+    ],
+    "goldCities": [
+      "北京",
+      "成都"
+    ],
+    "id": "p-0008"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "酱香腌制猪颈肉 2.5kg 大包装",
+    "trueCategoryId": "bs-yw",
+    "parentId": "cat-bs",
+    "cities": [
+      "北京"
+    ],
+    "price": 324.1,
+    "trueSales30d": 197,
+    "inventorySeries": [
+      25,
+      32,
+      27,
+      24,
+      18,
+      11,
+      6,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0009"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "精品藤椒腌鸡腿肉 1kg🥩",
+    "trueCategoryId": "bs-yw",
+    "parentId": "cat-bs",
+    "cities": [
+      "北京"
+    ],
+    "price": 231.1,
+    "trueSales30d": 796,
+    "inventorySeries": [
+      100,
+      156,
+      204,
+      204,
+      177,
+      147,
+      130,
+      97,
+      65
+    ],
+    "goldCities": [],
+    "id": "p-0010"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "蒜香腌制排骨 2.5kg👍",
+    "trueCategoryId": "bs-yw",
+    "parentId": "cat-bs",
+    "cities": [
+      "成都",
+      "上海",
+      "广州"
+    ],
+    "price": 158.4,
+    "trueSales30d": 36,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 5,
+      "onSale180d": 1,
+      "channelTags": [
+        "新品尝鲜"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0011"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "大厨推荐【特惠】蒜香腌制排骨 500g×20🥩",
+    "trueCategoryId": "bs-yw",
+    "parentId": "cat-bs",
+    "cities": [
+      "广州",
+      "上海"
+    ],
+    "price": 229,
+    "trueSales30d": 24,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 19,
+      "onSale180d": 3,
+      "channelTags": [
+        "热销",
+        "爆款"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0012"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "黑椒腌制牛肉粒 20袋/箱",
+    "trueCategoryId": "bs-yw",
+    "parentId": "cat-bs",
+    "cities": [
+      "成都",
+      "广州"
+    ],
+    "price": 256.7,
+    "trueSales30d": 40,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 3,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0013"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "大厨推荐【爆款】黑椒腌制牛肉粒 20袋/箱 酒店专供",
+    "trueCategoryId": "bs-yw",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "price": 358.8,
+    "trueSales30d": 986,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 3,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [
+      "上海",
+      "成都"
+    ],
+    "id": "p-0014"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "鸡脆骨串 20袋/箱🔥",
+    "trueCategoryId": "bs-cc",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海",
+      "成都",
+      "北京"
+    ],
+    "price": 17.7,
+    "trueSales30d": 150,
+    "sales30d": 150,
+    "goldCities": [],
+    "id": "p-0015"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "掌中宝串🔥",
+    "trueCategoryId": "bs-cc",
+    "parentId": "cat-bs",
+    "cities": [
+      "北京",
+      "上海",
+      "广州"
+    ],
+    "price": 167.8,
+    "trueSales30d": 1724,
+    "sales30d": 1724,
+    "goldCities": [
+      "北京",
+      "上海",
+      "广州"
+    ],
+    "id": "p-0016"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "【爆款】鸡心串 500g×20",
+    "trueCategoryId": "bs-cc",
+    "parentId": "cat-bs",
+    "cities": [
+      "成都",
+      "上海",
+      "北京",
+      "广州"
+    ],
+    "price": 37.9,
+    "trueSales30d": 1062,
+    "sales30d": 1062,
+    "goldCities": [
+      "北京"
+    ],
+    "id": "p-0017"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "烤面筋串🔥",
+    "trueCategoryId": "bs-cc",
+    "parentId": "cat-bs",
+    "cities": [
+      "成都",
+      "北京",
+      "上海",
+      "广州"
+    ],
+    "price": 360.6,
+    "trueSales30d": 95,
+    "sales30d": 95,
+    "goldCities": [],
+    "id": "p-0018"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "【特惠】五花肉串",
+    "trueCategoryId": "bs-cc",
+    "parentId": "cat-bs",
+    "cities": [
+      "北京",
+      "广州",
+      "成都",
+      "上海"
+    ],
+    "price": 343.9,
+    "trueSales30d": 181,
+    "sales30d": 181,
+    "goldCities": [],
+    "id": "p-0019"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【门店专供】鸡心串 10kg/箱",
+    "trueCategoryId": "bs-cc",
+    "parentId": "cat-bs",
+    "cities": [
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "price": 351.1,
+    "trueSales30d": 91,
+    "inventorySeries": [
+      9,
+      6,
+      3,
+      7,
+      3,
+      0,
+      8,
+      13,
+      13
+    ],
+    "goldCities": [],
+    "id": "p-0020"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "金牌【门店专供】烤面筋串 20袋/箱 餐饮装",
+    "trueCategoryId": "bs-cc",
+    "parentId": "cat-bs",
+    "cities": [
+      "成都",
+      "上海"
+    ],
+    "price": 345,
+    "trueSales30d": 1966,
+    "inventorySeries": [
+      249,
+      212,
+      153,
+      309,
+      234,
+      200,
+      125,
+      90,
+      213
+    ],
+    "goldCities": [
+      "上海",
+      "成都"
+    ],
+    "id": "p-0021"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "精品【爆款】鸡脆骨串 2.5kg🔥 酒店专供",
+    "trueCategoryId": "bs-cc",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海",
+      "成都",
+      "北京"
+    ],
+    "price": 35.8,
+    "trueSales30d": 98,
+    "inventorySeries": [
+      13,
+      19,
+      16,
+      13,
+      9,
+      6,
+      4,
+      4,
+      4
+    ],
+    "goldCities": [],
+    "id": "p-0022"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "精品【爆款】鱿鱼串 大包装",
+    "trueCategoryId": "bs-cc",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海"
+    ],
+    "price": 14.7,
+    "trueSales30d": 207,
+    "inventorySeries": [
+      19,
+      14,
+      7,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0023"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "原切五花肉串 25kg 餐饮装",
+    "trueCategoryId": "bs-cc",
+    "parentId": "cat-bs",
+    "cities": [
+      "成都"
+    ],
+    "price": 146.2,
+    "trueSales30d": 160,
+    "inventorySeries": [
+      16,
+      9,
+      18,
+      12,
+      7,
+      4,
+      15,
+      9,
+      3
+    ],
+    "goldCities": [],
+    "id": "p-0024"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "正宗鱿鱼串 5斤装",
+    "trueCategoryId": "bs-cc",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海",
+      "成都",
+      "广州"
+    ],
+    "price": 130.5,
+    "trueSales30d": 62,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 12,
+      "onSale180d": 2,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0025"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "精品【特惠】烤面筋串 25kg",
+    "trueCategoryId": "bs-cc",
+    "parentId": "cat-bs",
+    "cities": [
+      "成都",
+      "上海",
+      "广州"
+    ],
+    "price": 57.2,
+    "trueSales30d": 127,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 14,
+      "onSale180d": 3,
+      "channelTags": [
+        "热销",
+        "爆款"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0026"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "牛肉串 2.5kg 商用装",
+    "trueCategoryId": "bs-cc",
+    "parentId": "cat-bs",
+    "cities": [
+      "广州",
+      "上海",
+      "成都"
+    ],
+    "price": 283.9,
+    "trueSales30d": 69,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 30,
+      "onSale180d": 4,
+      "channelTags": [
+        "热销"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0027"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "正宗掌中宝串 25kg 大包装",
+    "trueCategoryId": "bs-cc",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海",
+      "成都"
+    ],
+    "price": 415.4,
+    "trueSales30d": 49,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 26,
+      "onSale180d": 5,
+      "channelTags": [
+        "热销"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0028"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "【门店专供】撒尿牛丸 500g×20",
+    "trueCategoryId": "bs-wj",
+    "parentId": "cat-bs",
+    "cities": [
+      "成都",
+      "广州",
+      "北京",
+      "上海"
+    ],
+    "price": 386.7,
+    "trueSales30d": 89,
+    "sales30d": 89,
+    "goldCities": [],
+    "id": "p-0029"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "甄选【爆款】贡丸 500g✨",
+    "trueCategoryId": "bs-wj",
+    "parentId": "cat-bs",
+    "cities": [
+      "北京",
+      "成都",
+      "上海"
+    ],
+    "price": 182.3,
+    "trueSales30d": 131,
+    "sales30d": 131,
+    "goldCities": [],
+    "id": "p-0030"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "虾滑 商用装",
+    "trueCategoryId": "bs-wj",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海",
+      "成都"
+    ],
+    "price": 306,
+    "trueSales30d": 1497,
+    "sales30d": 1497,
+    "goldCities": [
+      "上海",
+      "成都"
+    ],
+    "id": "p-0031"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "【餐饮专供】韭菜猪肉水饺 2.5kg",
+    "trueCategoryId": "bs-wj",
+    "parentId": "cat-bs",
+    "cities": [
+      "广州",
+      "成都",
+      "上海"
+    ],
+    "price": 269.6,
+    "trueSales30d": 113,
+    "sales30d": 113,
+    "goldCities": [],
+    "id": "p-0032"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "原切【厂家直供】鱼豆腐",
+    "trueCategoryId": "bs-wj",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海",
+      "广州",
+      "北京"
+    ],
+    "price": 8.1,
+    "trueSales30d": 84,
+    "sales30d": 84,
+    "goldCities": [],
+    "id": "p-0033"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【爆款】贡丸 500g×20",
+    "trueCategoryId": "bs-wj",
+    "parentId": "cat-bs",
+    "cities": [
+      "成都",
+      "上海"
+    ],
+    "price": 322.7,
+    "trueSales30d": 212,
+    "inventorySeries": [
+      18,
+      28,
+      24,
+      19,
+      15,
+      15,
+      8,
+      8,
+      1
+    ],
+    "goldCities": [],
+    "id": "p-0034"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【爆款】贡丸 500g×20🔥",
+    "trueCategoryId": "bs-wj",
+    "parentId": "cat-bs",
+    "cities": [
+      "成都"
+    ],
+    "price": 272.8,
+    "trueSales30d": 206,
+    "inventorySeries": [
+      26,
+      19,
+      14,
+      10,
+      4,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0035"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "甄选【爆款】鱼豆腐 餐饮装",
+    "trueCategoryId": "bs-wj",
+    "parentId": "cat-bs",
+    "cities": [
+      "成都",
+      "上海",
+      "北京"
+    ],
+    "price": 389.5,
+    "trueSales30d": 759,
+    "inventorySeries": [
+      78,
+      60,
+      38,
+      71,
+      46,
+      15,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0036"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "虾滑⚡",
+    "trueCategoryId": "bs-wj",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海",
+      "北京",
+      "成都"
+    ],
+    "price": 20,
+    "trueSales30d": 1237,
+    "inventorySeries": [
+      145,
+      252,
+      227,
+      227,
+      201,
+      150,
+      119,
+      92,
+      46
+    ],
+    "goldCities": [],
+    "id": "p-0037"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "虾滑 10kg/箱⚡ 酒店专供",
+    "trueCategoryId": "bs-wj",
+    "parentId": "cat-bs",
+    "cities": [
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "price": 337.4,
+    "trueSales30d": 214,
+    "inventorySeries": [
+      28,
+      23,
+      19,
+      12,
+      8,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0038"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "火锅年糕条 500g 酒店专供",
+    "trueCategoryId": "bs-wj",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "price": 63.7,
+    "trueSales30d": 81,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 24,
+      "onSale180d": 6,
+      "channelTags": [
+        "热销"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0039"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "农家韭菜猪肉水饺 20袋/箱",
+    "trueCategoryId": "bs-wj",
+    "parentId": "cat-bs",
+    "cities": [
+      "广州",
+      "成都"
+    ],
+    "price": 292.5,
+    "trueSales30d": 52,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 29,
+      "onSale180d": 5,
+      "channelTags": [
+        "热销",
+        "爆款"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0040"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "撒尿牛丸 25kg",
+    "trueCategoryId": "bs-wj",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "price": 377.8,
+    "trueSales30d": 191,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 30,
+      "onSale180d": 5,
+      "channelTags": [
+        "热销",
+        "爆款"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0041"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "原切鱼豆腐 25kg",
+    "trueCategoryId": "bs-wj",
+    "parentId": "cat-bs",
+    "cities": [
+      "广州",
+      "上海"
+    ],
+    "price": 21.1,
+    "trueSales30d": 51,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 9,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0042"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "台式卤肉 2.5kg",
+    "trueCategoryId": "bs-yc",
+    "parentId": "cat-bs",
+    "cities": [
+      "广州",
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "price": 391,
+    "trueSales30d": 1809,
+    "sales30d": 1809,
+    "goldCities": [
+      "北京",
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "id": "p-0043"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "甄选宫保鸡丁 商用装",
+    "trueCategoryId": "bs-yc",
+    "parentId": "cat-bs",
+    "cities": [
+      "北京",
+      "广州",
+      "成都"
+    ],
+    "price": 148.7,
+    "trueSales30d": 1298,
+    "sales30d": 1298,
+    "goldCities": [
+      "北京",
+      "广州",
+      "成都"
+    ],
+    "id": "p-0044"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "佛跳墙 20袋/箱👍",
+    "trueCategoryId": "bs-yc",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海",
+      "北京",
+      "广州",
+      "成都"
+    ],
+    "price": 316.4,
+    "trueSales30d": 120,
+    "sales30d": 120,
+    "goldCities": [],
+    "id": "p-0045"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "佛跳墙 5斤装 餐饮装",
+    "trueCategoryId": "bs-yc",
+    "parentId": "cat-bs",
+    "cities": [
+      "北京",
+      "广州",
+      "成都"
+    ],
+    "price": 295.5,
+    "trueSales30d": 20,
+    "sales30d": 20,
+    "goldCities": [],
+    "id": "p-0046"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "农家红烧狮子头✨ 酒店专供",
+    "trueCategoryId": "bs-yc",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海",
+      "成都",
+      "北京"
+    ],
+    "price": 96.5,
+    "trueSales30d": 77,
+    "sales30d": 77,
+    "goldCities": [],
+    "id": "p-0047"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "辣子鸡 5斤装🔥",
+    "trueCategoryId": "bs-yc",
+    "parentId": "cat-bs",
+    "cities": [
+      "成都"
+    ],
+    "price": 91.2,
+    "trueSales30d": 59,
+    "inventorySeries": [
+      7,
+      11,
+      9,
+      7,
+      5,
+      5,
+      4,
+      1,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0048"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "农家酸菜鱼",
+    "trueCategoryId": "bs-yc",
+    "parentId": "cat-bs",
+    "cities": [
+      "北京",
+      "成都"
+    ],
+    "price": 116.7,
+    "trueSales30d": 2404,
+    "inventorySeries": [
+      296,
+      194,
+      143,
+      297,
+      206,
+      129,
+      67,
+      0,
+      0
+    ],
+    "goldCities": [
+      "北京",
+      "成都"
+    ],
+    "id": "p-0049"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "精品【特惠】宫保鸡丁 1kg🥩",
+    "trueCategoryId": "bs-yc",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海",
+      "北京",
+      "成都"
+    ],
+    "price": 263.8,
+    "trueSales30d": 119,
+    "inventorySeries": [
+      12,
+      8,
+      4,
+      2,
+      2,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0050"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "台式卤肉 500g×20 商用装",
+    "trueCategoryId": "bs-yc",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海",
+      "北京"
+    ],
+    "price": 234.1,
+    "trueSales30d": 22,
+    "inventorySeries": [
+      4,
+      4,
+      3,
+      2,
+      1,
+      2,
+      2,
+      1,
+      1
+    ],
+    "goldCities": [],
+    "id": "p-0051"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "大厨推荐【餐饮专供】宫保鸡丁 20袋/箱",
+    "trueCategoryId": "bs-yc",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海",
+      "成都"
+    ],
+    "price": 310.7,
+    "trueSales30d": 2075,
+    "inventorySeries": [
+      250,
+      203,
+      149,
+      75,
+      180,
+      111,
+      64,
+      0,
+      0
+    ],
+    "goldCities": [
+      "上海",
+      "成都"
+    ],
+    "id": "p-0052"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "酸菜鱼 2.5kg 大包装",
+    "trueCategoryId": "bs-yc",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海",
+      "广州"
+    ],
+    "price": 31.2,
+    "trueSales30d": 218,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 10,
+      "onSale180d": 2,
+      "channelTags": [
+        "新品尝鲜"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0053"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "甄选辣子鸡 25kg",
+    "trueCategoryId": "bs-yc",
+    "parentId": "cat-bs",
+    "cities": [
+      "成都",
+      "广州"
+    ],
+    "price": 310.7,
+    "trueSales30d": 1611,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 12,
+      "onSale180d": 2,
+      "channelTags": [
+        "新品尝鲜"
+      ]
+    },
+    "goldCities": [
+      "广州",
+      "成都"
+    ],
+    "id": "p-0054"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【厂家直供】佛跳墙 500g",
+    "trueCategoryId": "bs-yc",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海",
+      "成都",
+      "广州"
+    ],
+    "price": 18.9,
+    "trueSales30d": 2545,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 4,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "id": "p-0055"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "红烧狮子头 5斤装 大包装",
+    "trueCategoryId": "bs-yc",
+    "parentId": "cat-bs",
+    "cities": [
+      "成都",
+      "广州",
+      "上海"
+    ],
+    "price": 179.5,
+    "trueSales30d": 37,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 3,
+      "onSale180d": 1,
+      "channelTags": [
+        "新品尝鲜"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0056"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "牛腱子 20袋/箱",
+    "trueCategoryId": "sx-xr",
+    "parentId": "cat-sx",
+    "cities": [
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "price": 354.9,
+    "trueSales30d": 93,
+    "sales30d": 93,
+    "goldCities": [],
+    "id": "p-0057"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "羊后腿肉 2.5kg",
+    "trueCategoryId": "sx-xr",
+    "parentId": "cat-sx",
+    "cities": [
+      "成都",
+      "广州",
+      "上海",
+      "北京"
+    ],
+    "price": 22.4,
+    "trueSales30d": 969,
+    "sales30d": 969,
+    "goldCities": [],
+    "id": "p-0058"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "甄选猪里脊 500g×20✨",
+    "trueCategoryId": "sx-xr",
+    "parentId": "cat-sx",
+    "cities": [
+      "成都",
+      "上海"
+    ],
+    "price": 301.9,
+    "trueSales30d": 150,
+    "sales30d": 150,
+    "goldCities": [],
+    "id": "p-0059"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "鸡胸肉 1kg",
+    "trueCategoryId": "sx-xr",
+    "parentId": "cat-sx",
+    "cities": [
+      "成都",
+      "广州",
+      "上海",
+      "北京"
+    ],
+    "price": 276.9,
+    "trueSales30d": 52,
+    "sales30d": 52,
+    "goldCities": [],
+    "id": "p-0060"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "鸡胸肉 500g 酒店专供",
+    "trueCategoryId": "sx-xr",
+    "parentId": "cat-sx",
+    "cities": [
+      "广州",
+      "北京",
+      "上海"
+    ],
+    "price": 57.6,
+    "trueSales30d": 159,
+    "sales30d": 159,
+    "goldCities": [],
+    "id": "p-0061"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【餐饮专供】猪里脊 2.5kg🥩",
+    "trueCategoryId": "sx-xr",
+    "parentId": "cat-sx",
+    "cities": [
+      "上海",
+      "成都"
+    ],
+    "price": 286.7,
+    "trueSales30d": 17,
+    "inventorySeries": [
+      3,
+      2,
+      1,
+      0,
+      2,
+      2,
+      2,
+      1,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0062"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【餐饮专供】鸡胸肉 1kg 商用装",
+    "trueCategoryId": "sx-xr",
+    "parentId": "cat-sx",
+    "cities": [
+      "上海",
+      "北京",
+      "成都"
+    ],
+    "price": 156.5,
+    "trueSales30d": 170,
+    "inventorySeries": [
+      22,
+      17,
+      11,
+      7,
+      4,
+      4,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0063"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "原切羊后腿肉 5斤装",
+    "trueCategoryId": "sx-xr",
+    "parentId": "cat-sx",
+    "cities": [
+      "成都",
+      "上海"
+    ],
+    "price": 251.7,
+    "trueSales30d": 97,
+    "inventorySeries": [
+      9,
+      7,
+      5,
+      2,
+      0,
+      0,
+      0,
+      8,
+      8
+    ],
+    "goldCities": [],
+    "id": "p-0064"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "原切猪里脊 5斤装",
+    "trueCategoryId": "sx-xr",
+    "parentId": "cat-sx",
+    "cities": [
+      "上海",
+      "北京",
+      "成都"
+    ],
+    "price": 238.8,
+    "trueSales30d": 85,
+    "inventorySeries": [
+      10,
+      7,
+      4,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0065"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "大厨推荐牛腱子 10kg/箱",
+    "trueCategoryId": "sx-xr",
+    "parentId": "cat-sx",
+    "cities": [
+      "成都"
+    ],
+    "price": 401.7,
+    "trueSales30d": 130,
+    "inventorySeries": [
+      16,
+      11,
+      6,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0066"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "牛腱子 2.5kg🥩 大包装",
+    "trueCategoryId": "sx-xr",
+    "parentId": "cat-sx",
+    "cities": [
+      "上海",
+      "广州"
+    ],
+    "price": 375.6,
+    "trueSales30d": 169,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 4,
+      "onSale180d": 1,
+      "channelTags": [
+        "新品尝鲜"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0067"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "精品猪里脊",
+    "trueCategoryId": "sx-xr",
+    "parentId": "cat-sx",
+    "cities": [
+      "广州",
+      "上海",
+      "成都"
+    ],
+    "price": 325.8,
+    "trueSales30d": 39,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 7,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0068"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "金牌牛腩块 20袋/箱",
+    "trueCategoryId": "sx-xr",
+    "parentId": "cat-sx",
+    "cities": [
+      "成都",
+      "上海",
+      "广州"
+    ],
+    "price": 180.5,
+    "trueSales30d": 607,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 13,
+      "onSale180d": 3,
+      "channelTags": []
+    },
+    "goldCities": [
+      "上海"
+    ],
+    "id": "p-0069"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "金牌【爆款】猪里脊 500g",
+    "trueCategoryId": "sx-xr",
+    "parentId": "cat-sx",
+    "cities": [
+      "广州",
+      "成都",
+      "上海"
+    ],
+    "price": 312.3,
+    "trueSales30d": 133,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 22,
+      "onSale180d": 4,
+      "channelTags": [
+        "热销"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0070"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "冷冻猪排骨 1kg",
+    "trueCategoryId": "sx-lr",
+    "parentId": "cat-sx",
+    "cities": [
+      "上海",
+      "北京",
+      "广州"
+    ],
+    "price": 18.7,
+    "trueSales30d": 2224,
+    "sales30d": 2224,
+    "goldCities": [
+      "北京",
+      "上海",
+      "广州"
+    ],
+    "id": "p-0071"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "冷冻猪前腿肉 2.5kg",
+    "trueCategoryId": "sx-lr",
+    "parentId": "cat-sx",
+    "cities": [
+      "北京",
+      "成都",
+      "广州",
+      "上海"
+    ],
+    "price": 194.6,
+    "trueSales30d": 111,
+    "sales30d": 111,
+    "goldCities": [],
+    "id": "p-0072"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "冷冻鸡腿 500g×20",
+    "trueCategoryId": "sx-lr",
+    "parentId": "cat-sx",
+    "cities": [
+      "北京",
+      "广州",
+      "上海"
+    ],
+    "price": 336.8,
+    "trueSales30d": 2291,
+    "sales30d": 2291,
+    "goldCities": [
+      "北京",
+      "上海",
+      "广州"
+    ],
+    "id": "p-0073"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "大厨推荐【特惠】冷冻鹅腿 5斤装",
+    "trueCategoryId": "sx-lr",
+    "parentId": "cat-sx",
+    "cities": [
+      "成都",
+      "广州"
+    ],
+    "price": 337.2,
+    "trueSales30d": 194,
+    "sales30d": 194,
+    "goldCities": [],
+    "id": "p-0074"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "冷冻牛腩 500g×20",
+    "trueCategoryId": "sx-lr",
+    "parentId": "cat-sx",
+    "cities": [
+      "北京",
+      "广州"
+    ],
+    "price": 149.4,
+    "trueSales30d": 1893,
+    "sales30d": 1893,
+    "goldCities": [
+      "北京",
+      "广州"
+    ],
+    "id": "p-0075"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【特惠】冷冻鸡腿",
+    "trueCategoryId": "sx-lr",
+    "parentId": "cat-sx",
+    "cities": [
+      "北京"
+    ],
+    "price": 236.7,
+    "trueSales30d": 34,
+    "inventorySeries": [
+      3,
+      2,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0076"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "甄选冷冻猪排骨 5斤装",
+    "trueCategoryId": "sx-lr",
+    "parentId": "cat-sx",
+    "cities": [
+      "上海",
+      "成都",
+      "北京"
+    ],
+    "price": 304.9,
+    "trueSales30d": 44,
+    "inventorySeries": [
+      5,
+      5,
+      3,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0077"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "正宗冷冻羊肉卷 10kg/箱",
+    "trueCategoryId": "sx-lr",
+    "parentId": "cat-sx",
+    "cities": [
+      "上海",
+      "成都",
+      "北京"
+    ],
+    "price": 115.5,
+    "trueSales30d": 816,
+    "inventorySeries": [
+      69,
+      35,
+      12,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0078"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【餐饮专供】冷冻五花肉片 2.5kg",
+    "trueCategoryId": "sx-lr",
+    "parentId": "cat-sx",
+    "cities": [
+      "上海",
+      "成都"
+    ],
+    "price": 358.5,
+    "trueSales30d": 2290,
+    "inventorySeries": [
+      195,
+      195,
+      109,
+      27,
+      0,
+      0,
+      210,
+      122,
+      55
+    ],
+    "goldCities": [
+      "上海",
+      "成都"
+    ],
+    "id": "p-0079"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "冷冻鸡腿",
+    "trueCategoryId": "sx-lr",
+    "parentId": "cat-sx",
+    "cities": [
+      "上海"
+    ],
+    "price": 57.4,
+    "trueSales30d": 144,
+    "inventorySeries": [
+      14,
+      22,
+      22,
+      19,
+      14,
+      10,
+      6,
+      13,
+      8
+    ],
+    "goldCities": [],
+    "id": "p-0080"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "冷冻猪排骨 1kg",
+    "trueCategoryId": "sx-lr",
+    "parentId": "cat-sx",
+    "cities": [
+      "广州",
+      "成都"
+    ],
+    "price": 46.5,
+    "trueSales30d": 71,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 5,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0081"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "精品冷冻牛腩",
+    "trueCategoryId": "sx-lr",
+    "parentId": "cat-sx",
+    "cities": [
+      "广州",
+      "成都"
+    ],
+    "price": 242.8,
+    "trueSales30d": 214,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 17,
+      "onSale180d": 3,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0082"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "冷冻鹅腿 500g×20 商用装",
+    "trueCategoryId": "sx-lr",
+    "parentId": "cat-sx",
+    "cities": [
+      "广州",
+      "上海",
+      "成都"
+    ],
+    "price": 265.5,
+    "trueSales30d": 172,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 7,
+      "onSale180d": 2,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0083"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "冷冻牛肉块 5斤装",
+    "trueCategoryId": "sx-lr",
+    "parentId": "cat-sx",
+    "cities": [
+      "上海",
+      "成都",
+      "广州"
+    ],
+    "price": 88,
+    "trueSales30d": 161,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 20,
+      "onSale180d": 4,
+      "channelTags": [
+        "热销"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0084"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "正宗牛百叶 20袋/箱",
+    "trueCategoryId": "sx-nz",
+    "parentId": "cat-sx",
+    "cities": [
+      "广州",
+      "成都"
+    ],
+    "price": 331.4,
+    "trueSales30d": 78,
+    "sales30d": 78,
+    "goldCities": [],
+    "id": "p-0085"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "猪大肠 500g×20",
+    "trueCategoryId": "sx-nz",
+    "parentId": "cat-sx",
+    "cities": [
+      "成都",
+      "北京"
+    ],
+    "price": 65.5,
+    "trueSales30d": 34,
+    "sales30d": 34,
+    "goldCities": [],
+    "id": "p-0086"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "【爆款】猪肝",
+    "trueCategoryId": "sx-nz",
+    "parentId": "cat-sx",
+    "cities": [
+      "成都",
+      "北京"
+    ],
+    "price": 123.5,
+    "trueSales30d": 115,
+    "sales30d": 115,
+    "goldCities": [],
+    "id": "p-0087"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "甄选鸭肠 1kg 餐饮装",
+    "trueCategoryId": "sx-nz",
+    "parentId": "cat-sx",
+    "cities": [
+      "成都",
+      "北京",
+      "上海",
+      "广州"
+    ],
+    "price": 43,
+    "trueSales30d": 984,
+    "sales30d": 984,
+    "goldCities": [
+      "成都"
+    ],
+    "id": "p-0088"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "精品猪肚",
+    "trueCategoryId": "sx-nz",
+    "parentId": "cat-sx",
+    "cities": [
+      "成都",
+      "上海",
+      "北京",
+      "广州"
+    ],
+    "price": 134.4,
+    "trueSales30d": 1700,
+    "sales30d": 1700,
+    "goldCities": [
+      "上海",
+      "成都"
+    ],
+    "id": "p-0089"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "精品猪大肠 5斤装",
+    "trueCategoryId": "sx-nz",
+    "parentId": "cat-sx",
+    "cities": [
+      "上海"
+    ],
+    "price": 230.9,
+    "trueSales30d": 52,
+    "inventorySeries": [
+      5,
+      3,
+      2,
+      0,
+      0,
+      0,
+      0,
+      5,
+      5
+    ],
+    "goldCities": [],
+    "id": "p-0090"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "猪肚 2.5kg✨",
+    "trueCategoryId": "sx-nz",
+    "parentId": "cat-sx",
+    "cities": [
+      "北京",
+      "上海"
+    ],
+    "price": 401.9,
+    "trueSales30d": 2455,
+    "inventorySeries": [
+      211,
+      114,
+      19,
+      0,
+      238,
+      159,
+      100,
+      224,
+      143
+    ],
+    "goldCities": [
+      "北京",
+      "上海"
+    ],
+    "id": "p-0091"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【特惠】猪大肠 1kg",
+    "trueCategoryId": "sx-nz",
+    "parentId": "cat-sx",
+    "cities": [
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "price": 69.6,
+    "trueSales30d": 64,
+    "inventorySeries": [
+      6,
+      4,
+      3,
+      7,
+      5,
+      9,
+      7,
+      5,
+      5
+    ],
+    "goldCities": [],
+    "id": "p-0092"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "猪肝 2.5kg",
+    "trueCategoryId": "sx-nz",
+    "parentId": "cat-sx",
+    "cities": [
+      "成都"
+    ],
+    "price": 286,
+    "trueSales30d": 2330,
+    "inventorySeries": [
+      287,
+      287,
+      287,
+      233,
+      233,
+      187,
+      138,
+      65,
+      174
+    ],
+    "goldCities": [
+      "成都"
+    ],
+    "id": "p-0093"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "猪肚",
+    "trueCategoryId": "sx-nz",
+    "parentId": "cat-sx",
+    "cities": [
+      "北京",
+      "上海"
+    ],
+    "price": 170,
+    "trueSales30d": 16,
+    "inventorySeries": [
+      4,
+      3,
+      2,
+      1,
+      3,
+      4,
+      4,
+      3,
+      2
+    ],
+    "goldCities": [],
+    "id": "p-0094"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "精品【餐饮专供】牛百叶 1kg",
+    "trueCategoryId": "sx-nz",
+    "parentId": "cat-sx",
+    "cities": [
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "price": 20.5,
+    "trueSales30d": 1798,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 12,
+      "onSale180d": 3,
+      "channelTags": []
+    },
+    "goldCities": [
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "id": "p-0095"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "原切【特惠】鸭血 10kg/箱",
+    "trueCategoryId": "sx-nz",
+    "parentId": "cat-sx",
+    "cities": [
+      "成都",
+      "上海",
+      "广州"
+    ],
+    "price": 262.4,
+    "trueSales30d": 61,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 17,
+      "onSale180d": 3,
+      "channelTags": [
+        "热销"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0096"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【厂家直供】猪肝 20袋/箱",
+    "trueCategoryId": "sx-nz",
+    "parentId": "cat-sx",
+    "cities": [
+      "上海",
+      "成都"
+    ],
+    "price": 117.5,
+    "trueSales30d": 27,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 27,
+      "onSale180d": 4,
+      "channelTags": [
+        "热销"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0097"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【门店专供】鸭血 10kg/箱⚡",
+    "trueCategoryId": "sx-nz",
+    "parentId": "cat-sx",
+    "cities": [
+      "成都",
+      "上海",
+      "广州"
+    ],
+    "price": 271.8,
+    "trueSales30d": 1114,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 3,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [
+      "上海",
+      "广州"
+    ],
+    "id": "p-0098"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "大厨推荐碎米 25kg",
+    "trueCategoryId": "mm-dm",
+    "parentId": "cat-mm",
+    "cities": [
+      "北京",
+      "广州",
+      "成都",
+      "上海"
+    ],
+    "price": 310.7,
+    "trueSales30d": 78,
+    "sales30d": 78,
+    "goldCities": [],
+    "id": "p-0099"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "大厨推荐稻花香米",
+    "trueCategoryId": "mm-dm",
+    "parentId": "cat-mm",
+    "cities": [
+      "广州",
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "price": 37.9,
+    "trueSales30d": 1036,
+    "sales30d": 1036,
+    "goldCities": [
+      "北京",
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "id": "p-0100"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "金牌胚芽米 2.5kg🔥",
+    "trueCategoryId": "mm-dm",
+    "parentId": "cat-mm",
+    "cities": [
+      "广州",
+      "上海",
+      "北京",
+      "成都"
+    ],
+    "price": 162.8,
+    "trueSales30d": 186,
+    "sales30d": 186,
+    "goldCities": [],
+    "id": "p-0101"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "糯米 500g👍",
+    "trueCategoryId": "mm-dm",
+    "parentId": "cat-mm",
+    "cities": [
+      "上海",
+      "北京",
+      "成都"
+    ],
+    "price": 146.1,
+    "trueSales30d": 1439,
+    "sales30d": 1439,
+    "goldCities": [
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "id": "p-0102"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "五常大米 2.5kg",
+    "trueCategoryId": "mm-dm",
+    "parentId": "cat-mm",
+    "cities": [
+      "上海",
+      "成都",
+      "北京"
+    ],
+    "price": 367,
+    "trueSales30d": 34,
+    "sales30d": 34,
+    "goldCities": [],
+    "id": "p-0103"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "东北珍珠米 20袋/箱",
+    "trueCategoryId": "mm-dm",
+    "parentId": "cat-mm",
+    "cities": [
+      "北京",
+      "成都",
+      "上海"
+    ],
+    "price": 21.2,
+    "trueSales30d": 106,
+    "inventorySeries": [
+      10,
+      7,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0104"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "原切【爆款】五常大米 2.5kg",
+    "trueCategoryId": "mm-dm",
+    "parentId": "cat-mm",
+    "cities": [
+      "上海",
+      "成都"
+    ],
+    "price": 215.2,
+    "trueSales30d": 157,
+    "inventorySeries": [
+      21,
+      15,
+      15,
+      11,
+      5,
+      13,
+      9,
+      16,
+      10
+    ],
+    "goldCities": [],
+    "id": "p-0105"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【厂家直供】胚芽米✨",
+    "trueCategoryId": "mm-dm",
+    "parentId": "cat-mm",
+    "cities": [
+      "北京",
+      "上海"
+    ],
+    "price": 118.3,
+    "trueSales30d": 2531,
+    "inventorySeries": [
+      336,
+      430,
+      430,
+      430,
+      545,
+      487,
+      383,
+      536,
+      483
+    ],
+    "goldCities": [
+      "北京",
+      "上海"
+    ],
+    "id": "p-0106"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "长粒香米 500g×20 商用装",
+    "trueCategoryId": "mm-dm",
+    "parentId": "cat-mm",
+    "cities": [
+      "北京",
+      "上海"
+    ],
+    "price": 366.5,
+    "trueSales30d": 195,
+    "inventorySeries": [
+      23,
+      16,
+      13,
+      8,
+      8,
+      3,
+      0,
+      17,
+      10
+    ],
+    "goldCities": [],
+    "id": "p-0107"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "胚芽米 10kg/箱 餐饮装",
+    "trueCategoryId": "mm-dm",
+    "parentId": "cat-mm",
+    "cities": [
+      "上海",
+      "北京"
+    ],
+    "price": 231.9,
+    "trueSales30d": 2056,
+    "inventorySeries": [
+      247,
+      180,
+      112,
+      41,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [
+      "北京",
+      "上海"
+    ],
+    "id": "p-0108"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "原切糯米 500g×20 餐饮装",
+    "trueCategoryId": "mm-dm",
+    "parentId": "cat-mm",
+    "cities": [
+      "广州",
+      "上海"
+    ],
+    "price": 43.6,
+    "trueSales30d": 1004,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 3,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0109"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "金牌东北珍珠米 25kg",
+    "trueCategoryId": "mm-dm",
+    "parentId": "cat-mm",
+    "cities": [
+      "成都",
+      "上海"
+    ],
+    "price": 50.4,
+    "trueSales30d": 2258,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 21,
+      "onSale180d": 3,
+      "channelTags": [
+        "热销"
+      ]
+    },
+    "goldCities": [
+      "上海",
+      "成都"
+    ],
+    "id": "p-0110"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "糯米",
+    "trueCategoryId": "mm-dm",
+    "parentId": "cat-mm",
+    "cities": [
+      "广州",
+      "上海"
+    ],
+    "price": 23.5,
+    "trueSales30d": 761,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 12,
+      "onSale180d": 2,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0111"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "正宗长粒香米 500g 餐饮装",
+    "trueCategoryId": "mm-dm",
+    "parentId": "cat-mm",
+    "cities": [
+      "广州",
+      "成都",
+      "上海"
+    ],
+    "price": 244.9,
+    "trueSales30d": 1276,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 16,
+      "onSale180d": 2,
+      "channelTags": []
+    },
+    "goldCities": [
+      "广州"
+    ],
+    "id": "p-0112"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "面包粉 2.5kg 大包装",
+    "trueCategoryId": "mm-mf",
+    "parentId": "cat-mm",
+    "cities": [
+      "成都",
+      "上海",
+      "广州",
+      "北京"
+    ],
+    "price": 309.2,
+    "trueSales30d": 185,
+    "sales30d": 185,
+    "goldCities": [],
+    "id": "p-0113"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "金牌低筋面粉 20袋/箱",
+    "trueCategoryId": "mm-mf",
+    "parentId": "cat-mm",
+    "cities": [
+      "广州",
+      "成都",
+      "北京"
+    ],
+    "price": 221.1,
+    "trueSales30d": 25,
+    "sales30d": 25,
+    "goldCities": [],
+    "id": "p-0114"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "澄粉 25kg 大包装",
+    "trueCategoryId": "mm-mf",
+    "parentId": "cat-mm",
+    "cities": [
+      "北京",
+      "广州",
+      "成都",
+      "上海"
+    ],
+    "price": 101.4,
+    "trueSales30d": 34,
+    "sales30d": 34,
+    "goldCities": [],
+    "id": "p-0115"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "精品【门店专供】低筋面粉 10kg/箱✨",
+    "trueCategoryId": "mm-mf",
+    "parentId": "cat-mm",
+    "cities": [
+      "上海",
+      "成都"
+    ],
+    "price": 216.4,
+    "trueSales30d": 67,
+    "sales30d": 67,
+    "goldCities": [],
+    "id": "p-0116"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "【特惠】中筋面粉 酒店专供",
+    "trueCategoryId": "mm-mf",
+    "parentId": "cat-mm",
+    "cities": [
+      "成都",
+      "北京",
+      "上海"
+    ],
+    "price": 328.1,
+    "trueSales30d": 191,
+    "sales30d": 191,
+    "goldCities": [],
+    "id": "p-0117"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "饺子粉",
+    "trueCategoryId": "mm-mf",
+    "parentId": "cat-mm",
+    "cities": [
+      "北京"
+    ],
+    "price": 146.7,
+    "trueSales30d": 1109,
+    "inventorySeries": [
+      94,
+      49,
+      8,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0118"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "中筋面粉 500g×20",
+    "trueCategoryId": "mm-mf",
+    "parentId": "cat-mm",
+    "cities": [
+      "上海",
+      "成都",
+      "北京"
+    ],
+    "price": 286.4,
+    "trueSales30d": 31,
+    "inventorySeries": [
+      3,
+      2,
+      3,
+      2,
+      5,
+      7,
+      6,
+      5,
+      3
+    ],
+    "goldCities": [],
+    "id": "p-0119"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【门店专供】面包粉 25kg👍",
+    "trueCategoryId": "mm-mf",
+    "parentId": "cat-mm",
+    "cities": [
+      "北京",
+      "成都"
+    ],
+    "price": 399.9,
+    "trueSales30d": 50,
+    "inventorySeries": [
+      6,
+      4,
+      2,
+      1,
+      0,
+      5,
+      3,
+      1,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0120"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【餐饮专供】高筋面粉🥩",
+    "trueCategoryId": "mm-mf",
+    "parentId": "cat-mm",
+    "cities": [
+      "北京",
+      "成都",
+      "上海"
+    ],
+    "price": 355.2,
+    "trueSales30d": 2141,
+    "inventorySeries": [
+      245,
+      198,
+      121,
+      121,
+      71,
+      33,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "id": "p-0121"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "甄选中筋面粉 20袋/箱🥩",
+    "trueCategoryId": "mm-mf",
+    "parentId": "cat-mm",
+    "cities": [
+      "成都"
+    ],
+    "price": 67.1,
+    "trueSales30d": 162,
+    "inventorySeries": [
+      14,
+      11,
+      6,
+      1,
+      0,
+      0,
+      0,
+      0,
+      16
+    ],
+    "goldCities": [],
+    "id": "p-0122"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【门店专供】面包粉",
+    "trueCategoryId": "mm-mf",
+    "parentId": "cat-mm",
+    "cities": [
+      "成都",
+      "上海",
+      "广州"
+    ],
+    "price": 179,
+    "trueSales30d": 90,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 12,
+      "onSale180d": 3,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0123"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "农家中筋面粉 5斤装🔥",
+    "trueCategoryId": "mm-mf",
+    "parentId": "cat-mm",
+    "cities": [
+      "广州",
+      "成都",
+      "上海"
+    ],
+    "price": 349,
+    "trueSales30d": 2260,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 3,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "id": "p-0124"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "大厨推荐澄粉 大包装",
+    "trueCategoryId": "mm-mf",
+    "parentId": "cat-mm",
+    "cities": [
+      "广州",
+      "成都"
+    ],
+    "price": 66.4,
+    "trueSales30d": 209,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 11,
+      "onSale180d": 2,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0125"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "澄粉 500g",
+    "trueCategoryId": "mm-mf",
+    "parentId": "cat-mm",
+    "cities": [
+      "成都",
+      "上海",
+      "广州"
+    ],
+    "price": 405,
+    "trueSales30d": 23,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 4,
+      "onSale180d": 1,
+      "channelTags": [
+        "新品尝鲜"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0126"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "原切玉米油 5斤装 商用装",
+    "trueCategoryId": "mm-sy",
+    "parentId": "cat-mm",
+    "cities": [
+      "成都",
+      "北京",
+      "上海"
+    ],
+    "price": 146,
+    "trueSales30d": 36,
+    "sales30d": 36,
+    "goldCities": [],
+    "id": "p-0127"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "大厨推荐调和油 10kg/箱",
+    "trueCategoryId": "mm-sy",
+    "parentId": "cat-mm",
+    "cities": [
+      "成都",
+      "广州"
+    ],
+    "price": 271.1,
+    "trueSales30d": 185,
+    "sales30d": 185,
+    "goldCities": [],
+    "id": "p-0128"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "菜籽油 20袋/箱",
+    "trueCategoryId": "mm-sy",
+    "parentId": "cat-mm",
+    "cities": [
+      "上海",
+      "广州"
+    ],
+    "price": 362.4,
+    "trueSales30d": 72,
+    "sales30d": 72,
+    "goldCities": [],
+    "id": "p-0129"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "精品【餐饮专供】大豆油 1kg👍",
+    "trueCategoryId": "mm-sy",
+    "parentId": "cat-mm",
+    "cities": [
+      "北京",
+      "广州",
+      "成都",
+      "上海"
+    ],
+    "price": 40,
+    "trueSales30d": 2186,
+    "sales30d": 2186,
+    "goldCities": [
+      "北京",
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "id": "p-0130"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "精品玉米油 2.5kg",
+    "trueCategoryId": "mm-sy",
+    "parentId": "cat-mm",
+    "cities": [
+      "成都",
+      "上海",
+      "广州"
+    ],
+    "price": 10.9,
+    "trueSales30d": 20,
+    "sales30d": 20,
+    "goldCities": [],
+    "id": "p-0131"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "芝麻香油",
+    "trueCategoryId": "mm-sy",
+    "parentId": "cat-mm",
+    "cities": [
+      "成都"
+    ],
+    "price": 157.2,
+    "trueSales30d": 266,
+    "inventorySeries": [
+      24,
+      17,
+      5,
+      0,
+      0,
+      20,
+      20,
+      10,
+      1
+    ],
+    "goldCities": [
+      "成都"
+    ],
+    "id": "p-0132"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【厂家直供】芝麻香油 25kg⚡ 大包装",
+    "trueCategoryId": "mm-sy",
+    "parentId": "cat-mm",
+    "cities": [
+      "上海",
+      "北京",
+      "成都"
+    ],
+    "price": 171.2,
+    "trueSales30d": 118,
+    "inventorySeries": [
+      15,
+      11,
+      8,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0133"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【爆款】芝麻香油 25kg 大包装",
+    "trueCategoryId": "mm-sy",
+    "parentId": "cat-mm",
+    "cities": [
+      "北京",
+      "上海"
+    ],
+    "price": 121.7,
+    "trueSales30d": 1781,
+    "inventorySeries": [
+      198,
+      144,
+      107,
+      34,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [
+      "上海"
+    ],
+    "id": "p-0134"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "甄选【爆款】花生油 20袋/箱🥩 大包装",
+    "trueCategoryId": "mm-sy",
+    "parentId": "cat-mm",
+    "cities": [
+      "成都",
+      "上海",
+      "北京"
+    ],
+    "price": 357.7,
+    "trueSales30d": 218,
+    "inventorySeries": [
+      20,
+      13,
+      29,
+      24,
+      16,
+      9,
+      1,
+      17,
+      11
+    ],
+    "goldCities": [],
+    "id": "p-0135"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "大厨推荐葵花籽油 5斤装",
+    "trueCategoryId": "mm-sy",
+    "parentId": "cat-mm",
+    "cities": [
+      "成都",
+      "北京",
+      "上海"
+    ],
+    "price": 116,
+    "trueSales30d": 1487,
+    "inventorySeries": [
+      134,
+      82,
+      47,
+      0,
+      0,
+      121,
+      89,
+      55,
+      1
+    ],
+    "goldCities": [
+      "成都"
+    ],
+    "id": "p-0136"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【爆款】大豆油 1kg✨ 大包装",
+    "trueCategoryId": "mm-sy",
+    "parentId": "cat-mm",
+    "cities": [
+      "广州",
+      "上海",
+      "成都"
+    ],
+    "price": 50.2,
+    "trueSales30d": 1970,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 3,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "id": "p-0137"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "甄选稻米油",
+    "trueCategoryId": "mm-sy",
+    "parentId": "cat-mm",
+    "cities": [
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "price": 178.3,
+    "trueSales30d": 113,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 14,
+      "onSale180d": 2,
+      "channelTags": [
+        "新品尝鲜"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0138"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "调和油",
+    "trueCategoryId": "mm-sy",
+    "parentId": "cat-mm",
+    "cities": [
+      "广州",
+      "成都"
+    ],
+    "price": 205.4,
+    "trueSales30d": 30,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 13,
+      "onSale180d": 3,
+      "channelTags": [
+        "新品尝鲜"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0139"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "花生油 500g",
+    "trueCategoryId": "mm-sy",
+    "parentId": "cat-mm",
+    "cities": [
+      "广州",
+      "成都",
+      "上海"
+    ],
+    "price": 317.3,
+    "trueSales30d": 37,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 24,
+      "onSale180d": 5,
+      "channelTags": [
+        "热销"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0140"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "【厂家直供】小米",
+    "trueCategoryId": "mm-zl",
+    "parentId": "cat-mm",
+    "cities": [
+      "广州",
+      "北京"
+    ],
+    "price": 38,
+    "trueSales30d": 31,
+    "sales30d": 31,
+    "goldCities": [],
+    "id": "p-0141"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "正宗【门店专供】红豆 2.5kg",
+    "trueCategoryId": "mm-zl",
+    "parentId": "cat-mm",
+    "cities": [
+      "广州",
+      "成都"
+    ],
+    "price": 323.7,
+    "trueSales30d": 18,
+    "sales30d": 18,
+    "goldCities": [],
+    "id": "p-0142"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "糙米",
+    "trueCategoryId": "mm-zl",
+    "parentId": "cat-mm",
+    "cities": [
+      "北京",
+      "上海"
+    ],
+    "price": 33.7,
+    "trueSales30d": 182,
+    "sales30d": 182,
+    "goldCities": [],
+    "id": "p-0143"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "甄选【门店专供】荞麦米 1kg 大包装",
+    "trueCategoryId": "mm-zl",
+    "parentId": "cat-mm",
+    "cities": [
+      "广州",
+      "成都",
+      "上海"
+    ],
+    "price": 152.5,
+    "trueSales30d": 24,
+    "sales30d": 24,
+    "goldCities": [],
+    "id": "p-0144"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "糙米 5斤装",
+    "trueCategoryId": "mm-zl",
+    "parentId": "cat-mm",
+    "cities": [
+      "成都",
+      "广州",
+      "北京",
+      "上海"
+    ],
+    "price": 279.1,
+    "trueSales30d": 218,
+    "sales30d": 218,
+    "goldCities": [
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "id": "p-0145"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "燕麦米 10kg/箱⚡",
+    "trueCategoryId": "mm-zl",
+    "parentId": "cat-mm",
+    "cities": [
+      "成都",
+      "北京",
+      "上海"
+    ],
+    "price": 149,
+    "trueSales30d": 117,
+    "inventorySeries": [
+      11,
+      8,
+      5,
+      5,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0146"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "糙米 5斤装",
+    "trueCategoryId": "mm-zl",
+    "parentId": "cat-mm",
+    "cities": [
+      "上海",
+      "北京",
+      "成都"
+    ],
+    "price": 40.7,
+    "trueSales30d": 39,
+    "inventorySeries": [
+      4,
+      3,
+      3,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0147"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "燕麦米 25kg 商用装",
+    "trueCategoryId": "mm-zl",
+    "parentId": "cat-mm",
+    "cities": [
+      "上海"
+    ],
+    "price": 100.2,
+    "trueSales30d": 81,
+    "inventorySeries": [
+      9,
+      7,
+      11,
+      8,
+      8,
+      8,
+      6,
+      6,
+      3
+    ],
+    "goldCities": [],
+    "id": "p-0148"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "农家燕麦米 25kg",
+    "trueCategoryId": "mm-zl",
+    "parentId": "cat-mm",
+    "cities": [
+      "上海"
+    ],
+    "price": 207.7,
+    "trueSales30d": 63,
+    "inventorySeries": [
+      8,
+      6,
+      4,
+      7,
+      6,
+      4,
+      1,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0149"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "糙米 500g 大包装",
+    "trueCategoryId": "mm-zl",
+    "parentId": "cat-mm",
+    "cities": [
+      "上海"
+    ],
+    "price": 139.9,
+    "trueSales30d": 1024,
+    "inventorySeries": [
+      135,
+      108,
+      70,
+      42,
+      13,
+      0,
+      0,
+      0,
+      102
+    ],
+    "goldCities": [],
+    "id": "p-0150"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【门店专供】红豆 2.5kg",
+    "trueCategoryId": "mm-zl",
+    "parentId": "cat-mm",
+    "cities": [
+      "广州",
+      "成都",
+      "上海"
+    ],
+    "price": 169.6,
+    "trueSales30d": 857,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 18,
+      "onSale180d": 4,
+      "channelTags": [
+        "热销",
+        "爆款"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0151"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "金牌【爆款】糙米 25kg",
+    "trueCategoryId": "mm-zl",
+    "parentId": "cat-mm",
+    "cities": [
+      "广州",
+      "成都"
+    ],
+    "price": 159.7,
+    "trueSales30d": 29,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 12,
+      "onSale180d": 2,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0152"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【爆款】糙米 20袋/箱",
+    "trueCategoryId": "mm-zl",
+    "parentId": "cat-mm",
+    "cities": [
+      "广州",
+      "上海",
+      "成都"
+    ],
+    "price": 377.4,
+    "trueSales30d": 551,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 3,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0153"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "甄选糙米 10kg/箱",
+    "trueCategoryId": "mm-zl",
+    "parentId": "cat-mm",
+    "cities": [
+      "广州",
+      "成都",
+      "上海"
+    ],
+    "price": 324.6,
+    "trueSales30d": 173,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 18,
+      "onSale180d": 3,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0154"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "原切白醋 20袋/箱 餐饮装",
+    "trueCategoryId": "tw-jy",
+    "parentId": "cat-tw",
+    "cities": [
+      "上海",
+      "成都",
+      "北京",
+      "广州"
+    ],
+    "price": 160.9,
+    "trueSales30d": 89,
+    "sales30d": 89,
+    "goldCities": [],
+    "id": "p-0155"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "大厨推荐白醋 500g×20 酒店专供",
+    "trueCategoryId": "tw-jy",
+    "parentId": "cat-tw",
+    "cities": [
+      "北京",
+      "上海",
+      "成都",
+      "广州"
+    ],
+    "price": 342.7,
+    "trueSales30d": 1934,
+    "sales30d": 1934,
+    "goldCities": [
+      "北京",
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "id": "p-0156"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "金牌香醋 25kg",
+    "trueCategoryId": "tw-jy",
+    "parentId": "cat-tw",
+    "cities": [
+      "上海",
+      "北京",
+      "广州",
+      "成都"
+    ],
+    "price": 144.4,
+    "trueSales30d": 97,
+    "sales30d": 97,
+    "goldCities": [],
+    "id": "p-0157"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "大厨推荐白醋 500g 商用装",
+    "trueCategoryId": "tw-jy",
+    "parentId": "cat-tw",
+    "cities": [
+      "上海",
+      "北京",
+      "广州",
+      "成都"
+    ],
+    "price": 99.1,
+    "trueSales30d": 199,
+    "sales30d": 199,
+    "goldCities": [],
+    "id": "p-0158"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "精品香醋 500g×20",
+    "trueCategoryId": "tw-jy",
+    "parentId": "cat-tw",
+    "cities": [
+      "北京",
+      "广州",
+      "成都",
+      "上海"
+    ],
+    "price": 95,
+    "trueSales30d": 328,
+    "sales30d": 328,
+    "goldCities": [],
+    "id": "p-0159"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "金牌【门店专供】老抽 25kg✨",
+    "trueCategoryId": "tw-jy",
+    "parentId": "cat-tw",
+    "cities": [
+      "北京",
+      "成都"
+    ],
+    "price": 67.8,
+    "trueSales30d": 103,
+    "inventorySeries": [
+      9,
+      6,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0160"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "生抽 500g✨",
+    "trueCategoryId": "tw-jy",
+    "parentId": "cat-tw",
+    "cities": [
+      "北京",
+      "上海"
+    ],
+    "price": 275.6,
+    "trueSales30d": 58,
+    "inventorySeries": [
+      7,
+      5,
+      5,
+      3,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0161"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "农家薄盐酱油",
+    "trueCategoryId": "tw-jy",
+    "parentId": "cat-tw",
+    "cities": [
+      "成都",
+      "上海"
+    ],
+    "price": 397.5,
+    "trueSales30d": 107,
+    "inventorySeries": [
+      12,
+      9,
+      7,
+      3,
+      0,
+      10,
+      15,
+      11,
+      7
+    ],
+    "goldCities": [],
+    "id": "p-0162"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "农家草菇酱油 5斤装",
+    "trueCategoryId": "tw-jy",
+    "parentId": "cat-tw",
+    "cities": [
+      "成都",
+      "上海"
+    ],
+    "price": 208,
+    "trueSales30d": 108,
+    "inventorySeries": [
+      14,
+      10,
+      6,
+      3,
+      1,
+      11,
+      11,
+      8,
+      3
+    ],
+    "goldCities": [],
+    "id": "p-0163"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "薄盐酱油 20袋/箱 商用装",
+    "trueCategoryId": "tw-jy",
+    "parentId": "cat-tw",
+    "cities": [
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "price": 124.1,
+    "trueSales30d": 211,
+    "inventorySeries": [
+      22,
+      14,
+      14,
+      5,
+      1,
+      18,
+      9,
+      3,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0164"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "原切【厂家直供】薄盐酱油 20袋/箱",
+    "trueCategoryId": "tw-jy",
+    "parentId": "cat-tw",
+    "cities": [
+      "成都",
+      "广州"
+    ],
+    "price": 230.7,
+    "trueSales30d": 106,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 19,
+      "onSale180d": 4,
+      "channelTags": [
+        "热销",
+        "爆款"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0165"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "薄盐酱油 25kg 酒店专供",
+    "trueCategoryId": "tw-jy",
+    "parentId": "cat-tw",
+    "cities": [
+      "成都",
+      "广州"
+    ],
+    "price": 93.3,
+    "trueSales30d": 174,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 4,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0166"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "陈醋 25kg",
+    "trueCategoryId": "tw-jy",
+    "parentId": "cat-tw",
+    "cities": [
+      "成都",
+      "广州"
+    ],
+    "price": 309.5,
+    "trueSales30d": 1332,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 23,
+      "onSale180d": 6,
+      "channelTags": [
+        "热销"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0167"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "白醋 2.5kg",
+    "trueCategoryId": "tw-jy",
+    "parentId": "cat-tw",
+    "cities": [
+      "广州",
+      "上海"
+    ],
+    "price": 226.6,
+    "trueSales30d": 76,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 21,
+      "onSale180d": 4,
+      "channelTags": [
+        "热销",
+        "爆款"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0168"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "照烧汁 5斤装",
+    "trueCategoryId": "tw-fh",
+    "parentId": "cat-tw",
+    "cities": [
+      "上海",
+      "成都",
+      "北京",
+      "广州"
+    ],
+    "price": 229,
+    "trueSales30d": 42,
+    "sales30d": 42,
+    "goldCities": [],
+    "id": "p-0169"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "沙茶酱 餐饮装",
+    "trueCategoryId": "tw-fh",
+    "parentId": "cat-tw",
+    "cities": [
+      "成都",
+      "北京",
+      "广州"
+    ],
+    "price": 306.5,
+    "trueSales30d": 194,
+    "sales30d": 194,
+    "goldCities": [],
+    "id": "p-0170"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "【餐饮专供】蒜蓉酱 25kg",
+    "trueCategoryId": "tw-fh",
+    "parentId": "cat-tw",
+    "cities": [
+      "北京",
+      "广州"
+    ],
+    "price": 157.9,
+    "trueSales30d": 15,
+    "sales30d": 15,
+    "goldCities": [],
+    "id": "p-0171"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "味极鲜 1kg",
+    "trueCategoryId": "tw-fh",
+    "parentId": "cat-tw",
+    "cities": [
+      "上海",
+      "北京",
+      "成都",
+      "广州"
+    ],
+    "price": 250,
+    "trueSales30d": 129,
+    "sales30d": 129,
+    "goldCities": [],
+    "id": "p-0172"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "烧烤酱 1kg",
+    "trueCategoryId": "tw-fh",
+    "parentId": "cat-tw",
+    "cities": [
+      "上海",
+      "北京"
+    ],
+    "price": 13.7,
+    "trueSales30d": 124,
+    "sales30d": 124,
+    "goldCities": [],
+    "id": "p-0173"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【特惠】沙茶酱 1kg✨",
+    "trueCategoryId": "tw-fh",
+    "parentId": "cat-tw",
+    "cities": [
+      "北京"
+    ],
+    "price": 255,
+    "trueSales30d": 187,
+    "inventorySeries": [
+      23,
+      32,
+      26,
+      20,
+      16,
+      12,
+      25,
+      19,
+      13
+    ],
+    "goldCities": [],
+    "id": "p-0174"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【厂家直供】鸡精 2.5kg🥩",
+    "trueCategoryId": "tw-fh",
+    "parentId": "cat-tw",
+    "cities": [
+      "上海"
+    ],
+    "price": 368.3,
+    "trueSales30d": 916,
+    "inventorySeries": [
+      110,
+      72,
+      37,
+      11,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [
+      "上海"
+    ],
+    "id": "p-0175"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "烧烤酱 10kg/箱🥩",
+    "trueCategoryId": "tw-fh",
+    "parentId": "cat-tw",
+    "cities": [
+      "成都",
+      "北京"
+    ],
+    "price": 390.5,
+    "trueSales30d": 25,
+    "inventorySeries": [
+      3,
+      2,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3
+    ],
+    "goldCities": [],
+    "id": "p-0176"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【门店专供】烧烤酱 25kg",
+    "trueCategoryId": "tw-fh",
+    "parentId": "cat-tw",
+    "cities": [
+      "北京",
+      "成都"
+    ],
+    "price": 126.9,
+    "trueSales30d": 1287,
+    "inventorySeries": [
+      136,
+      207,
+      168,
+      134,
+      94,
+      49,
+      12,
+      0,
+      0
+    ],
+    "goldCities": [
+      "北京",
+      "成都"
+    ],
+    "id": "p-0177"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "精品【厂家直供】沙茶酱 20袋/箱",
+    "trueCategoryId": "tw-fh",
+    "parentId": "cat-tw",
+    "cities": [
+      "北京"
+    ],
+    "price": 34.3,
+    "trueSales30d": 1057,
+    "inventorySeries": [
+      133,
+      93,
+      70,
+      37,
+      37,
+      9,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [
+      "北京"
+    ],
+    "id": "p-0178"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "精品味极鲜 10kg/箱",
+    "trueCategoryId": "tw-fh",
+    "parentId": "cat-tw",
+    "cities": [
+      "广州",
+      "上海"
+    ],
+    "price": 298.8,
+    "trueSales30d": 140,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 4,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0179"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【厂家直供】味极鲜 500g×20",
+    "trueCategoryId": "tw-fh",
+    "parentId": "cat-tw",
+    "cities": [
+      "广州",
+      "成都"
+    ],
+    "price": 96.2,
+    "trueSales30d": 1888,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 20,
+      "onSale180d": 4,
+      "channelTags": [
+        "热销"
+      ]
+    },
+    "goldCities": [
+      "广州",
+      "成都"
+    ],
+    "id": "p-0180"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "藤椒酱 商用装",
+    "trueCategoryId": "tw-fh",
+    "parentId": "cat-tw",
+    "cities": [
+      "成都",
+      "广州",
+      "上海"
+    ],
+    "price": 158,
+    "trueSales30d": 2251,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 21,
+      "onSale180d": 3,
+      "channelTags": [
+        "热销",
+        "爆款"
+      ]
+    },
+    "goldCities": [
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "id": "p-0181"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【餐饮专供】鸡精 25kg",
+    "trueCategoryId": "tw-fh",
+    "parentId": "cat-tw",
+    "cities": [
+      "成都",
+      "上海"
+    ],
+    "price": 162.9,
+    "trueSales30d": 2506,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 9,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [
+      "上海",
+      "成都"
+    ],
+    "id": "p-0182"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "花椒 2.5kg",
+    "trueCategoryId": "tw-xx",
+    "parentId": "cat-tw",
+    "cities": [
+      "广州",
+      "成都",
+      "上海"
+    ],
+    "price": 143,
+    "trueSales30d": 35,
+    "sales30d": 35,
+    "goldCities": [],
+    "id": "p-0183"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "孜然粒 5斤装",
+    "trueCategoryId": "tw-xx",
+    "parentId": "cat-tw",
+    "cities": [
+      "成都",
+      "上海",
+      "北京"
+    ],
+    "price": 110.7,
+    "trueSales30d": 86,
+    "sales30d": 86,
+    "goldCities": [],
+    "id": "p-0184"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "八角 10kg/箱",
+    "trueCategoryId": "tw-xx",
+    "parentId": "cat-tw",
+    "cities": [
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "price": 249.1,
+    "trueSales30d": 119,
+    "sales30d": 119,
+    "goldCities": [],
+    "id": "p-0185"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "白胡椒粉 5斤装✨ 酒店专供",
+    "trueCategoryId": "tw-xx",
+    "parentId": "cat-tw",
+    "cities": [
+      "北京",
+      "广州"
+    ],
+    "price": 275.8,
+    "trueSales30d": 136,
+    "sales30d": 136,
+    "goldCities": [],
+    "id": "p-0186"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "大厨推荐辣椒粉 2.5kg",
+    "trueCategoryId": "tw-xx",
+    "parentId": "cat-tw",
+    "cities": [
+      "上海",
+      "广州",
+      "成都",
+      "北京"
+    ],
+    "price": 370.1,
+    "trueSales30d": 426,
+    "sales30d": 426,
+    "goldCities": [
+      "北京",
+      "广州",
+      "成都"
+    ],
+    "id": "p-0187"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "甄选【厂家直供】桂皮 20袋/箱",
+    "trueCategoryId": "tw-xx",
+    "parentId": "cat-tw",
+    "cities": [
+      "成都",
+      "上海",
+      "北京"
+    ],
+    "price": 179.6,
+    "trueSales30d": 97,
+    "inventorySeries": [
+      9,
+      6,
+      4,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0188"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【爆款】丁香 10kg/箱",
+    "trueCategoryId": "tw-xx",
+    "parentId": "cat-tw",
+    "cities": [
+      "上海"
+    ],
+    "price": 55.3,
+    "trueSales30d": 951,
+    "inventorySeries": [
+      98,
+      76,
+      113,
+      86,
+      86,
+      54,
+      32,
+      2,
+      0
+    ],
+    "goldCities": [
+      "上海"
+    ],
+    "id": "p-0189"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "孜然粒 20袋/箱⚡",
+    "trueCategoryId": "tw-xx",
+    "parentId": "cat-tw",
+    "cities": [
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "price": 98.9,
+    "trueSales30d": 100,
+    "inventorySeries": [
+      12,
+      12,
+      17,
+      22,
+      21,
+      27,
+      24,
+      21,
+      24
+    ],
+    "goldCities": [],
+    "id": "p-0190"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【门店专供】孜然粒 2.5kg",
+    "trueCategoryId": "tw-xx",
+    "parentId": "cat-tw",
+    "cities": [
+      "上海",
+      "成都",
+      "北京"
+    ],
+    "price": 137.7,
+    "trueSales30d": 351,
+    "inventorySeries": [
+      35,
+      23,
+      48,
+      41,
+      34,
+      20,
+      13,
+      6,
+      29
+    ],
+    "goldCities": [],
+    "id": "p-0191"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "原切丁香 5斤装",
+    "trueCategoryId": "tw-xx",
+    "parentId": "cat-tw",
+    "cities": [
+      "成都"
+    ],
+    "price": 301.3,
+    "trueSales30d": 2294,
+    "inventorySeries": [
+      279,
+      218,
+      381,
+      295,
+      221,
+      170,
+      94,
+      34,
+      0
+    ],
+    "goldCities": [
+      "成都"
+    ],
+    "id": "p-0192"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "甄选【餐饮专供】八角 500g",
+    "trueCategoryId": "tw-xx",
+    "parentId": "cat-tw",
+    "cities": [
+      "成都",
+      "广州"
+    ],
+    "price": 14.5,
+    "trueSales30d": 171,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 14,
+      "onSale180d": 3,
+      "channelTags": [
+        "新品尝鲜"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0193"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "金牌丁香 20袋/箱",
+    "trueCategoryId": "tw-xx",
+    "parentId": "cat-tw",
+    "cities": [
+      "成都",
+      "广州"
+    ],
+    "price": 370.7,
+    "trueSales30d": 366,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 14,
+      "onSale180d": 2,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0194"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "正宗花椒 2.5kg 商用装",
+    "trueCategoryId": "tw-xx",
+    "parentId": "cat-tw",
+    "cities": [
+      "成都",
+      "广州"
+    ],
+    "price": 227.7,
+    "trueSales30d": 105,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 23,
+      "onSale180d": 5,
+      "channelTags": [
+        "热销",
+        "爆款"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0195"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【厂家直供】丁香 25kg 酒店专供",
+    "trueCategoryId": "tw-xx",
+    "parentId": "cat-tw",
+    "cities": [
+      "上海",
+      "广州"
+    ],
+    "price": 389.7,
+    "trueSales30d": 1244,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 23,
+      "onSale180d": 5,
+      "channelTags": [
+        "热销"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0196"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "牛油麻辣底料 5斤装👍",
+    "trueCategoryId": "tw-hd",
+    "parentId": "cat-tw",
+    "cities": [
+      "北京",
+      "上海"
+    ],
+    "price": 412,
+    "trueSales30d": 2146,
+    "sales30d": 2146,
+    "goldCities": [
+      "北京",
+      "上海"
+    ],
+    "id": "p-0197"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "菌汤底料 500g×20",
+    "trueCategoryId": "tw-hd",
+    "parentId": "cat-tw",
+    "cities": [
+      "成都",
+      "上海"
+    ],
+    "price": 47,
+    "trueSales30d": 54,
+    "sales30d": 54,
+    "goldCities": [],
+    "id": "p-0198"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "金牌【门店专供】清油底料",
+    "trueCategoryId": "tw-hd",
+    "parentId": "cat-tw",
+    "cities": [
+      "成都",
+      "北京"
+    ],
+    "price": 87.2,
+    "trueSales30d": 33,
+    "sales30d": 33,
+    "goldCities": [],
+    "id": "p-0199"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "清油底料 25kg",
+    "trueCategoryId": "tw-hd",
+    "parentId": "cat-tw",
+    "cities": [
+      "上海",
+      "广州"
+    ],
+    "price": 183.7,
+    "trueSales30d": 495,
+    "sales30d": 495,
+    "goldCities": [
+      "上海",
+      "广州"
+    ],
+    "id": "p-0200"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "【厂家直供】清油底料 1kg",
+    "trueCategoryId": "tw-hd",
+    "parentId": "cat-tw",
+    "cities": [
+      "成都",
+      "北京"
+    ],
+    "price": 415,
+    "trueSales30d": 919,
+    "sales30d": 919,
+    "goldCities": [
+      "北京",
+      "成都"
+    ],
+    "id": "p-0201"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【爆款】菌汤底料 5斤装",
+    "trueCategoryId": "tw-hd",
+    "parentId": "cat-tw",
+    "cities": [
+      "成都"
+    ],
+    "price": 40.5,
+    "trueSales30d": 138,
+    "inventorySeries": [
+      15,
+      12,
+      8,
+      3,
+      0,
+      0,
+      0,
+      10,
+      16
+    ],
+    "goldCities": [],
+    "id": "p-0202"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "精品【特惠】鸳鸯锅底料 1kg 大包装",
+    "trueCategoryId": "tw-hd",
+    "parentId": "cat-tw",
+    "cities": [
+      "成都",
+      "北京"
+    ],
+    "price": 387.7,
+    "trueSales30d": 729,
+    "inventorySeries": [
+      92,
+      74,
+      51,
+      37,
+      6,
+      0,
+      0,
+      0,
+      69
+    ],
+    "goldCities": [
+      "北京"
+    ],
+    "id": "p-0203"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "番茄底料",
+    "trueCategoryId": "tw-hd",
+    "parentId": "cat-tw",
+    "cities": [
+      "成都",
+      "上海"
+    ],
+    "price": 245.9,
+    "trueSales30d": 30,
+    "inventorySeries": [
+      3,
+      2,
+      1,
+      2,
+      3,
+      2,
+      1,
+      1,
+      2
+    ],
+    "goldCities": [],
+    "id": "p-0204"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "甄选牛油麻辣底料 10kg/箱🔥",
+    "trueCategoryId": "tw-hd",
+    "parentId": "cat-tw",
+    "cities": [
+      "上海",
+      "成都"
+    ],
+    "price": 87.6,
+    "trueSales30d": 138,
+    "inventorySeries": [
+      13,
+      10,
+      4,
+      11,
+      7,
+      3,
+      0,
+      13,
+      13
+    ],
+    "goldCities": [],
+    "id": "p-0205"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "农家菌汤底料 2.5kg",
+    "trueCategoryId": "tw-hd",
+    "parentId": "cat-tw",
+    "cities": [
+      "上海",
+      "成都"
+    ],
+    "price": 155.6,
+    "trueSales30d": 1519,
+    "inventorySeries": [
+      139,
+      204,
+      163,
+      235,
+      324,
+      276,
+      243,
+      345,
+      313
+    ],
+    "goldCities": [
+      "上海",
+      "成都"
+    ],
+    "id": "p-0206"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "正宗冬阴功底料 2.5kg",
+    "trueCategoryId": "tw-hd",
+    "parentId": "cat-tw",
+    "cities": [
+      "成都",
+      "上海",
+      "广州"
+    ],
+    "price": 402.7,
+    "trueSales30d": 18,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 4,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0207"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【餐饮专供】鸳鸯锅底料 10kg/箱",
+    "trueCategoryId": "tw-hd",
+    "parentId": "cat-tw",
+    "cities": [
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "price": 377.9,
+    "trueSales30d": 1438,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 9,
+      "onSale180d": 2,
+      "channelTags": []
+    },
+    "goldCities": [
+      "上海",
+      "广州"
+    ],
+    "id": "p-0208"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【特惠】骨汤底料 20袋/箱 大包装",
+    "trueCategoryId": "tw-hd",
+    "parentId": "cat-tw",
+    "cities": [
+      "广州",
+      "成都",
+      "上海"
+    ],
+    "price": 132.3,
+    "trueSales30d": 121,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 3,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0209"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "大厨推荐【厂家直供】番茄底料 10kg/箱",
+    "trueCategoryId": "tw-hd",
+    "parentId": "cat-tw",
+    "cities": [
+      "广州",
+      "成都"
+    ],
+    "price": 263.5,
+    "trueSales30d": 671,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 15,
+      "onSale180d": 3,
+      "channelTags": [
+        "热销",
+        "爆款"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0210"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "【特惠】秋刀鱼 1kg",
+    "trueCategoryId": "dp-yl",
+    "parentId": "cat-dp",
+    "cities": [
+      "上海",
+      "成都"
+    ],
+    "price": 374.3,
+    "trueSales30d": 208,
+    "sales30d": 208,
+    "goldCities": [],
+    "id": "p-0211"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "秋刀鱼 1kg",
+    "trueCategoryId": "dp-yl",
+    "parentId": "cat-dp",
+    "cities": [
+      "成都",
+      "广州"
+    ],
+    "price": 23.2,
+    "trueSales30d": 166,
+    "sales30d": 166,
+    "goldCities": [],
+    "id": "p-0212"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "三文鱼段 500g×20",
+    "trueCategoryId": "dp-yl",
+    "parentId": "cat-dp",
+    "cities": [
+      "成都",
+      "广州",
+      "北京",
+      "上海"
+    ],
+    "price": 85,
+    "trueSales30d": 134,
+    "sales30d": 134,
+    "goldCities": [],
+    "id": "p-0213"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "金牌【厂家直供】巴沙鱼片 500g×20",
+    "trueCategoryId": "dp-yl",
+    "parentId": "cat-dp",
+    "cities": [
+      "上海",
+      "北京",
+      "成都",
+      "广州"
+    ],
+    "price": 317.5,
+    "trueSales30d": 1239,
+    "sales30d": 1239,
+    "goldCities": [
+      "成都"
+    ],
+    "id": "p-0214"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "鲅鱼段 2.5kg",
+    "trueCategoryId": "dp-yl",
+    "parentId": "cat-dp",
+    "cities": [
+      "上海",
+      "成都",
+      "北京",
+      "广州"
+    ],
+    "price": 322.6,
+    "trueSales30d": 31,
+    "sales30d": 31,
+    "goldCities": [],
+    "id": "p-0215"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "巴沙鱼片 2.5kg 酒店专供",
+    "trueCategoryId": "dp-yl",
+    "parentId": "cat-dp",
+    "cities": [
+      "上海"
+    ],
+    "price": 354.8,
+    "trueSales30d": 31,
+    "inventorySeries": [
+      3,
+      2,
+      0,
+      0,
+      0,
+      0,
+      2,
+      2,
+      4
+    ],
+    "goldCities": [],
+    "id": "p-0216"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "带鱼段 25kg",
+    "trueCategoryId": "dp-yl",
+    "parentId": "cat-dp",
+    "cities": [
+      "上海",
+      "北京"
+    ],
+    "price": 311.5,
+    "trueSales30d": 76,
+    "inventorySeries": [
+      9,
+      12,
+      10,
+      8,
+      6,
+      10,
+      8,
+      5,
+      3
+    ],
+    "goldCities": [],
+    "id": "p-0217"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "精品秋刀鱼 2.5kg",
+    "trueCategoryId": "dp-yl",
+    "parentId": "cat-dp",
+    "cities": [
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "price": 267.3,
+    "trueSales30d": 1953,
+    "inventorySeries": [
+      201,
+      128,
+      81,
+      163,
+      89,
+      220,
+      220,
+      142,
+      84
+    ],
+    "goldCities": [
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "id": "p-0218"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "农家三文鱼段🥩 商用装",
+    "trueCategoryId": "dp-yl",
+    "parentId": "cat-dp",
+    "cities": [
+      "成都",
+      "北京"
+    ],
+    "price": 147.2,
+    "trueSales30d": 81,
+    "inventorySeries": [
+      7,
+      6,
+      2,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0219"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "鲈鱼 20袋/箱",
+    "trueCategoryId": "dp-yl",
+    "parentId": "cat-dp",
+    "cities": [
+      "成都",
+      "北京",
+      "上海"
+    ],
+    "price": 63.8,
+    "trueSales30d": 147,
+    "inventorySeries": [
+      15,
+      9,
+      6,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0220"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【特惠】秋刀鱼 1kg",
+    "trueCategoryId": "dp-yl",
+    "parentId": "cat-dp",
+    "cities": [
+      "广州",
+      "成都"
+    ],
+    "price": 416.7,
+    "trueSales30d": 146,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 5,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0221"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【特惠】鲅鱼段",
+    "trueCategoryId": "dp-yl",
+    "parentId": "cat-dp",
+    "cities": [
+      "上海",
+      "成都"
+    ],
+    "price": 88.1,
+    "trueSales30d": 1978,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 11,
+      "onSale180d": 2,
+      "channelTags": [
+        "新品尝鲜"
+      ]
+    },
+    "goldCities": [
+      "上海",
+      "成都"
+    ],
+    "id": "p-0222"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "鲈鱼 20袋/箱",
+    "trueCategoryId": "dp-yl",
+    "parentId": "cat-dp",
+    "cities": [
+      "成都",
+      "上海",
+      "广州"
+    ],
+    "price": 397.9,
+    "trueSales30d": 856,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 18,
+      "onSale180d": 5,
+      "channelTags": [
+        "热销",
+        "爆款"
+      ]
+    },
+    "goldCities": [
+      "广州"
+    ],
+    "id": "p-0223"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "秋刀鱼 2.5kg",
+    "trueCategoryId": "dp-yl",
+    "parentId": "cat-dp",
+    "cities": [
+      "上海",
+      "成都"
+    ],
+    "price": 368,
+    "trueSales30d": 124,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 19,
+      "onSale180d": 5,
+      "channelTags": [
+        "热销"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0224"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "甄选虾仁 2.5kg",
+    "trueCategoryId": "dp-xl",
+    "parentId": "cat-dp",
+    "cities": [
+      "成都",
+      "上海",
+      "北京",
+      "广州"
+    ],
+    "price": 314.2,
+    "trueSales30d": 2278,
+    "sales30d": 2278,
+    "goldCities": [
+      "北京",
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "id": "p-0225"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "【门店专供】龙虾尾 1kg",
+    "trueCategoryId": "dp-xl",
+    "parentId": "cat-dp",
+    "cities": [
+      "上海",
+      "广州",
+      "成都",
+      "北京"
+    ],
+    "price": 73.5,
+    "trueSales30d": 51,
+    "sales30d": 51,
+    "goldCities": [],
+    "id": "p-0226"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "农家【厂家直供】黑虎虾",
+    "trueCategoryId": "dp-xl",
+    "parentId": "cat-dp",
+    "cities": [
+      "广州",
+      "成都"
+    ],
+    "price": 341.8,
+    "trueSales30d": 146,
+    "sales30d": 146,
+    "goldCities": [],
+    "id": "p-0227"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "黑虎虾 20袋/箱",
+    "trueCategoryId": "dp-xl",
+    "parentId": "cat-dp",
+    "cities": [
+      "广州",
+      "北京",
+      "成都"
+    ],
+    "price": 317.9,
+    "trueSales30d": 80,
+    "sales30d": 80,
+    "goldCities": [],
+    "id": "p-0228"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "大厨推荐【特惠】南美白对虾 25kg",
+    "trueCategoryId": "dp-xl",
+    "parentId": "cat-dp",
+    "cities": [
+      "成都",
+      "广州",
+      "上海",
+      "北京"
+    ],
+    "price": 384.4,
+    "trueSales30d": 1638,
+    "sales30d": 1638,
+    "goldCities": [
+      "北京",
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "id": "p-0229"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "皮皮虾肉 1kg",
+    "trueCategoryId": "dp-xl",
+    "parentId": "cat-dp",
+    "cities": [
+      "上海"
+    ],
+    "price": 371.5,
+    "trueSales30d": 692,
+    "inventorySeries": [
+      72,
+      47,
+      20,
+      4,
+      0,
+      0,
+      0,
+      68,
+      99
+    ],
+    "goldCities": [],
+    "id": "p-0230"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "原切基围虾 5斤装",
+    "trueCategoryId": "dp-xl",
+    "parentId": "cat-dp",
+    "cities": [
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "price": 113.1,
+    "trueSales30d": 919,
+    "inventorySeries": [
+      83,
+      66,
+      40,
+      21,
+      0,
+      0,
+      0,
+      0,
+      72
+    ],
+    "goldCities": [
+      "上海"
+    ],
+    "id": "p-0231"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "大厨推荐【爆款】基围虾 500g×20",
+    "trueCategoryId": "dp-xl",
+    "parentId": "cat-dp",
+    "cities": [
+      "上海",
+      "北京"
+    ],
+    "price": 374.4,
+    "trueSales30d": 17,
+    "inventorySeries": [
+      4,
+      3,
+      2,
+      1,
+      0,
+      2,
+      2,
+      0,
+      3
+    ],
+    "goldCities": [],
+    "id": "p-0232"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "甄选龙虾尾 25kg",
+    "trueCategoryId": "dp-xl",
+    "parentId": "cat-dp",
+    "cities": [
+      "北京",
+      "上海"
+    ],
+    "price": 304.7,
+    "trueSales30d": 67,
+    "inventorySeries": [
+      7,
+      5,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0233"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "虾仁 25kg",
+    "trueCategoryId": "dp-xl",
+    "parentId": "cat-dp",
+    "cities": [
+      "北京",
+      "成都"
+    ],
+    "price": 42.1,
+    "trueSales30d": 1978,
+    "inventorySeries": [
+      222,
+      172,
+      134,
+      85,
+      14,
+      167,
+      99,
+      51,
+      0
+    ],
+    "goldCities": [
+      "北京",
+      "成都"
+    ],
+    "id": "p-0234"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【爆款】龙虾尾 20袋/箱 大包装",
+    "trueCategoryId": "dp-xl",
+    "parentId": "cat-dp",
+    "cities": [
+      "成都",
+      "广州"
+    ],
+    "price": 122.6,
+    "trueSales30d": 137,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 3,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0235"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "原切【爆款】虾仁 500g",
+    "trueCategoryId": "dp-xl",
+    "parentId": "cat-dp",
+    "cities": [
+      "上海",
+      "成都"
+    ],
+    "price": 404.2,
+    "trueSales30d": 110,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 3,
+      "onSale180d": 1,
+      "channelTags": [
+        "新品尝鲜"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0236"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "精品黑虎虾 25kg",
+    "trueCategoryId": "dp-xl",
+    "parentId": "cat-dp",
+    "cities": [
+      "成都",
+      "广州",
+      "上海"
+    ],
+    "price": 87,
+    "trueSales30d": 1281,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 9,
+      "onSale180d": 2,
+      "channelTags": []
+    },
+    "goldCities": [
+      "上海",
+      "广州"
+    ],
+    "id": "p-0237"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "金牌南美白对虾 20袋/箱✨",
+    "trueCategoryId": "dp-xl",
+    "parentId": "cat-dp",
+    "cities": [
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "price": 362.9,
+    "trueSales30d": 151,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 7,
+      "onSale180d": 2,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0238"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "大厨推荐花蛤肉 500g",
+    "trueCategoryId": "dp-bl",
+    "parentId": "cat-dp",
+    "cities": [
+      "上海",
+      "成都",
+      "北京"
+    ],
+    "price": 199.4,
+    "trueSales30d": 108,
+    "sales30d": 108,
+    "goldCities": [],
+    "id": "p-0239"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "蛏子肉 1kg",
+    "trueCategoryId": "dp-bl",
+    "parentId": "cat-dp",
+    "cities": [
+      "成都",
+      "上海",
+      "广州",
+      "北京"
+    ],
+    "price": 346.1,
+    "trueSales30d": 219,
+    "sales30d": 219,
+    "goldCities": [],
+    "id": "p-0240"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "正宗【门店专供】蛤蜊肉 500g×20",
+    "trueCategoryId": "dp-bl",
+    "parentId": "cat-dp",
+    "cities": [
+      "北京",
+      "上海",
+      "广州"
+    ],
+    "price": 273.6,
+    "trueSales30d": 1262,
+    "sales30d": 1262,
+    "goldCities": [
+      "北京",
+      "上海",
+      "广州"
+    ],
+    "id": "p-0241"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "【爆款】北极贝",
+    "trueCategoryId": "dp-bl",
+    "parentId": "cat-dp",
+    "cities": [
+      "上海",
+      "广州"
+    ],
+    "price": 141,
+    "trueSales30d": 121,
+    "sales30d": 121,
+    "goldCities": [],
+    "id": "p-0242"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "【门店专供】鲍鱼 1kg",
+    "trueCategoryId": "dp-bl",
+    "parentId": "cat-dp",
+    "cities": [
+      "成都",
+      "上海",
+      "北京",
+      "广州"
+    ],
+    "price": 377.3,
+    "trueSales30d": 1129,
+    "sales30d": 1129,
+    "goldCities": [],
+    "id": "p-0243"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【爆款】蛤蜊肉 500g×20",
+    "trueCategoryId": "dp-bl",
+    "parentId": "cat-dp",
+    "cities": [
+      "成都"
+    ],
+    "price": 349,
+    "trueSales30d": 2422,
+    "inventorySeries": [
+      236,
+      236,
+      134,
+      86,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [
+      "成都"
+    ],
+    "id": "p-0244"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【门店专供】鲍鱼 25kg👍 商用装",
+    "trueCategoryId": "dp-bl",
+    "parentId": "cat-dp",
+    "cities": [
+      "上海",
+      "成都",
+      "北京"
+    ],
+    "price": 369.4,
+    "trueSales30d": 162,
+    "inventorySeries": [
+      14,
+      10,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0245"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "鲍鱼",
+    "trueCategoryId": "dp-bl",
+    "parentId": "cat-dp",
+    "cities": [
+      "上海",
+      "成都",
+      "北京"
+    ],
+    "price": 398.2,
+    "trueSales30d": 31,
+    "inventorySeries": [
+      4,
+      3,
+      3,
+      3,
+      2,
+      1,
+      1,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0246"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "农家花蛤肉",
+    "trueCategoryId": "dp-bl",
+    "parentId": "cat-dp",
+    "cities": [
+      "北京",
+      "成都",
+      "上海"
+    ],
+    "price": 316.7,
+    "trueSales30d": 58,
+    "inventorySeries": [
+      6,
+      4,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0247"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "金牌贻贝肉 500g👍",
+    "trueCategoryId": "dp-bl",
+    "parentId": "cat-dp",
+    "cities": [
+      "上海",
+      "成都",
+      "北京"
+    ],
+    "price": 83.7,
+    "trueSales30d": 1852,
+    "inventorySeries": [
+      170,
+      259,
+      187,
+      273,
+      195,
+      115,
+      115,
+      80,
+      207
+    ],
+    "goldCities": [
+      "北京",
+      "上海"
+    ],
+    "id": "p-0248"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "金牌【门店专供】生蚝肉 20袋/箱",
+    "trueCategoryId": "dp-bl",
+    "parentId": "cat-dp",
+    "cities": [
+      "广州",
+      "成都"
+    ],
+    "price": 194.7,
+    "trueSales30d": 548,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 7,
+      "onSale180d": 2,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0249"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "正宗【爆款】鲍鱼 5斤装",
+    "trueCategoryId": "dp-bl",
+    "parentId": "cat-dp",
+    "cities": [
+      "上海",
+      "广州"
+    ],
+    "price": 124.9,
+    "trueSales30d": 74,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 23,
+      "onSale180d": 4,
+      "channelTags": [
+        "热销"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0250"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【厂家直供】花蛤肉 商用装",
+    "trueCategoryId": "dp-bl",
+    "parentId": "cat-dp",
+    "cities": [
+      "成都",
+      "上海"
+    ],
+    "price": 42.5,
+    "trueSales30d": 2535,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 4,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [
+      "上海",
+      "成都"
+    ],
+    "id": "p-0251"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "北极贝 10kg/箱",
+    "trueCategoryId": "dp-bl",
+    "parentId": "cat-dp",
+    "cities": [
+      "成都",
+      "广州"
+    ],
+    "price": 80.1,
+    "trueSales30d": 1302,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 22,
+      "onSale180d": 4,
+      "channelTags": [
+        "热销",
+        "爆款"
+      ]
+    },
+    "goldCities": [
+      "广州",
+      "成都"
+    ],
+    "id": "p-0252"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "甄选浓香型白酒 5斤装🔥",
+    "trueCategoryId": "js-bj",
+    "parentId": "cat-js",
+    "cities": [
+      "成都",
+      "上海",
+      "北京"
+    ],
+    "price": 402.4,
+    "trueSales30d": 1611,
+    "sales30d": 1611,
+    "goldCities": [
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "id": "p-0253"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "金牌【餐饮专供】清香型白酒 2.5kg",
+    "trueCategoryId": "js-bj",
+    "parentId": "cat-js",
+    "cities": [
+      "上海",
+      "广州"
+    ],
+    "price": 248.4,
+    "trueSales30d": 204,
+    "sales30d": 204,
+    "goldCities": [],
+    "id": "p-0254"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "大厨推荐【门店专供】酱香大曲酒 1kg",
+    "trueCategoryId": "js-bj",
+    "parentId": "cat-js",
+    "cities": [
+      "北京",
+      "成都",
+      "上海",
+      "广州"
+    ],
+    "price": 253,
+    "trueSales30d": 853,
+    "sales30d": 853,
+    "goldCities": [],
+    "id": "p-0255"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "高粱酒 10kg/箱 商用装",
+    "trueCategoryId": "js-bj",
+    "parentId": "cat-js",
+    "cities": [
+      "成都",
+      "北京",
+      "上海",
+      "广州"
+    ],
+    "price": 26.4,
+    "trueSales30d": 172,
+    "sales30d": 172,
+    "goldCities": [],
+    "id": "p-0256"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "金牌米酒 500g×20",
+    "trueCategoryId": "js-bj",
+    "parentId": "cat-js",
+    "cities": [
+      "上海",
+      "广州"
+    ],
+    "price": 189,
+    "trueSales30d": 190,
+    "sales30d": 190,
+    "goldCities": [],
+    "id": "p-0257"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "农家【特惠】酱香大曲酒 10kg/箱👍",
+    "trueCategoryId": "js-bj",
+    "parentId": "cat-js",
+    "cities": [
+      "上海",
+      "成都",
+      "北京"
+    ],
+    "price": 210.4,
+    "trueSales30d": 30,
+    "inventorySeries": [
+      4,
+      3,
+      2,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0258"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "清香型白酒 20袋/箱",
+    "trueCategoryId": "js-bj",
+    "parentId": "cat-js",
+    "cities": [
+      "上海",
+      "北京",
+      "成都"
+    ],
+    "price": 87.1,
+    "trueSales30d": 2093,
+    "inventorySeries": [
+      190,
+      107,
+      21,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "id": "p-0259"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "清香型白酒 25kg 商用装",
+    "trueCategoryId": "js-bj",
+    "parentId": "cat-js",
+    "cities": [
+      "北京"
+    ],
+    "price": 410.3,
+    "trueSales30d": 76,
+    "inventorySeries": [
+      6,
+      11,
+      15,
+      12,
+      10,
+      7,
+      5,
+      11,
+      10
+    ],
+    "goldCities": [],
+    "id": "p-0260"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "大厨推荐酱香大曲酒 5斤装",
+    "trueCategoryId": "js-bj",
+    "parentId": "cat-js",
+    "cities": [
+      "北京",
+      "成都",
+      "上海"
+    ],
+    "price": 338,
+    "trueSales30d": 385,
+    "inventorySeries": [
+      48,
+      34,
+      20,
+      7,
+      37,
+      20,
+      11,
+      1,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0261"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【爆款】浓香型白酒 5斤装",
+    "trueCategoryId": "js-bj",
+    "parentId": "cat-js",
+    "cities": [
+      "成都"
+    ],
+    "price": 49.3,
+    "trueSales30d": 47,
+    "inventorySeries": [
+      5,
+      4,
+      2,
+      0,
+      4,
+      3,
+      1,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0262"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【餐饮专供】浓香型白酒 25kg",
+    "trueCategoryId": "js-bj",
+    "parentId": "cat-js",
+    "cities": [
+      "成都",
+      "上海"
+    ],
+    "price": 139.3,
+    "trueSales30d": 2452,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 26,
+      "onSale180d": 6,
+      "channelTags": [
+        "热销",
+        "爆款"
+      ]
+    },
+    "goldCities": [
+      "上海",
+      "成都"
+    ],
+    "id": "p-0263"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "正宗二锅头",
+    "trueCategoryId": "js-bj",
+    "parentId": "cat-js",
+    "cities": [
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "price": 317.7,
+    "trueSales30d": 335,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 19,
+      "onSale180d": 5,
+      "channelTags": [
+        "热销"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0264"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "甄选酱香大曲酒 500g",
+    "trueCategoryId": "js-bj",
+    "parentId": "cat-js",
+    "cities": [
+      "广州",
+      "成都"
+    ],
+    "price": 37.9,
+    "trueSales30d": 30,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 19,
+      "onSale180d": 3,
+      "channelTags": [
+        "热销",
+        "爆款"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0265"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【门店专供】荞麦酒 1kg",
+    "trueCategoryId": "js-bj",
+    "parentId": "cat-js",
+    "cities": [
+      "成都",
+      "广州"
+    ],
+    "price": 372.2,
+    "trueSales30d": 1550,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 15,
+      "onSale180d": 4,
+      "channelTags": [
+        "新品尝鲜"
+      ]
+    },
+    "goldCities": [
+      "广州",
+      "成都"
+    ],
+    "id": "p-0266"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "黑啤 500g",
+    "trueCategoryId": "js-pj",
+    "parentId": "cat-js",
+    "cities": [
+      "北京",
+      "成都",
+      "广州",
+      "上海"
+    ],
+    "price": 119.3,
+    "trueSales30d": 46,
+    "sales30d": 46,
+    "goldCities": [],
+    "id": "p-0267"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "原切全麦白啤",
+    "trueCategoryId": "js-pj",
+    "parentId": "cat-js",
+    "cities": [
+      "成都",
+      "上海",
+      "广州"
+    ],
+    "price": 218.7,
+    "trueSales30d": 1068,
+    "sales30d": 1068,
+    "goldCities": [],
+    "id": "p-0268"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "果味啤酒 10kg/箱",
+    "trueCategoryId": "js-pj",
+    "parentId": "cat-js",
+    "cities": [
+      "成都",
+      "上海",
+      "广州"
+    ],
+    "price": 355.9,
+    "trueSales30d": 1269,
+    "sales30d": 1269,
+    "goldCities": [
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "id": "p-0269"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "正宗全麦白啤",
+    "trueCategoryId": "js-pj",
+    "parentId": "cat-js",
+    "cities": [
+      "广州",
+      "上海",
+      "北京",
+      "成都"
+    ],
+    "price": 302.2,
+    "trueSales30d": 17,
+    "sales30d": 17,
+    "goldCities": [],
+    "id": "p-0270"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "原浆啤酒 10kg/箱 酒店专供",
+    "trueCategoryId": "js-pj",
+    "parentId": "cat-js",
+    "cities": [
+      "广州",
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "price": 394.9,
+    "trueSales30d": 308,
+    "sales30d": 308,
+    "goldCities": [],
+    "id": "p-0271"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "甄选果味啤酒 500g×20🥩",
+    "trueCategoryId": "js-pj",
+    "parentId": "cat-js",
+    "cities": [
+      "上海",
+      "成都",
+      "北京"
+    ],
+    "price": 140.9,
+    "trueSales30d": 17,
+    "inventorySeries": [
+      3,
+      6,
+      5,
+      4,
+      3,
+      5,
+      4,
+      3,
+      2
+    ],
+    "goldCities": [],
+    "id": "p-0272"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【爆款】全麦白啤 500g",
+    "trueCategoryId": "js-pj",
+    "parentId": "cat-js",
+    "cities": [
+      "成都",
+      "北京"
+    ],
+    "price": 85.6,
+    "trueSales30d": 1666,
+    "inventorySeries": [
+      167,
+      101,
+      73,
+      45,
+      45,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [
+      "北京",
+      "成都"
+    ],
+    "id": "p-0273"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【餐饮专供】无醇啤酒 1kg",
+    "trueCategoryId": "js-pj",
+    "parentId": "cat-js",
+    "cities": [
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "price": 115.6,
+    "trueSales30d": 1370,
+    "inventorySeries": [
+      147,
+      91,
+      58,
+      3,
+      0,
+      0,
+      0,
+      0,
+      108
+    ],
+    "goldCities": [
+      "北京",
+      "上海"
+    ],
+    "id": "p-0274"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【餐饮专供】黑啤 500g×20",
+    "trueCategoryId": "js-pj",
+    "parentId": "cat-js",
+    "cities": [
+      "成都"
+    ],
+    "price": 33.7,
+    "trueSales30d": 25,
+    "inventorySeries": [
+      3,
+      4,
+      3,
+      5,
+      7,
+      6,
+      6,
+      5,
+      5
+    ],
+    "goldCities": [],
+    "id": "p-0275"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "全麦白啤 20袋/箱",
+    "trueCategoryId": "js-pj",
+    "parentId": "cat-js",
+    "cities": [
+      "上海",
+      "北京"
+    ],
+    "price": 329.1,
+    "trueSales30d": 265,
+    "inventorySeries": [
+      30,
+      25,
+      18,
+      9,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0276"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "金牌【门店专供】黑啤 5斤装",
+    "trueCategoryId": "js-pj",
+    "parentId": "cat-js",
+    "cities": [
+      "广州",
+      "上海",
+      "成都"
+    ],
+    "price": 391.7,
+    "trueSales30d": 33,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 19,
+      "onSale180d": 4,
+      "channelTags": [
+        "热销"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0277"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "大罐黄啤 5斤装",
+    "trueCategoryId": "js-pj",
+    "parentId": "cat-js",
+    "cities": [
+      "成都",
+      "上海",
+      "广州"
+    ],
+    "price": 373,
+    "trueSales30d": 181,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 7,
+      "onSale180d": 2,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0278"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【餐饮专供】果味啤酒 500g",
+    "trueCategoryId": "js-pj",
+    "parentId": "cat-js",
+    "cities": [
+      "广州",
+      "成都",
+      "上海"
+    ],
+    "price": 315.4,
+    "trueSales30d": 15,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 21,
+      "onSale180d": 4,
+      "channelTags": [
+        "热销"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0279"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "原浆啤酒",
+    "trueCategoryId": "js-pj",
+    "parentId": "cat-js",
+    "cities": [
+      "上海",
+      "成都"
+    ],
+    "price": 285.1,
+    "trueSales30d": 32,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 12,
+      "onSale180d": 2,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0280"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "酸梅汤 25kg⚡",
+    "trueCategoryId": "js-yl",
+    "parentId": "cat-js",
+    "cities": [
+      "广州",
+      "成都",
+      "北京",
+      "上海"
+    ],
+    "price": 181.2,
+    "trueSales30d": 1193,
+    "sales30d": 1193,
+    "goldCities": [
+      "北京",
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "id": "p-0281"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "原切【餐饮专供】柠檬茶",
+    "trueCategoryId": "js-yl",
+    "parentId": "cat-js",
+    "cities": [
+      "北京",
+      "成都"
+    ],
+    "price": 114.1,
+    "trueSales30d": 21,
+    "sales30d": 21,
+    "goldCities": [],
+    "id": "p-0282"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "气泡水",
+    "trueCategoryId": "js-yl",
+    "parentId": "cat-js",
+    "cities": [
+      "成都",
+      "上海"
+    ],
+    "price": 305.1,
+    "trueSales30d": 89,
+    "sales30d": 89,
+    "goldCities": [],
+    "id": "p-0283"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "精品椰子水 25kg",
+    "trueCategoryId": "js-yl",
+    "parentId": "cat-js",
+    "cities": [
+      "成都",
+      "上海"
+    ],
+    "price": 157.4,
+    "trueSales30d": 63,
+    "sales30d": 63,
+    "goldCities": [],
+    "id": "p-0284"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "冰红茶 10kg/箱 酒店专供",
+    "trueCategoryId": "js-yl",
+    "parentId": "cat-js",
+    "cities": [
+      "成都",
+      "北京"
+    ],
+    "price": 381.5,
+    "trueSales30d": 210,
+    "sales30d": 210,
+    "goldCities": [],
+    "id": "p-0285"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "气泡水 1kg",
+    "trueCategoryId": "js-yl",
+    "parentId": "cat-js",
+    "cities": [
+      "上海"
+    ],
+    "price": 238.3,
+    "trueSales30d": 37,
+    "inventorySeries": [
+      4,
+      3,
+      3,
+      2,
+      2,
+      1,
+      3,
+      1,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0286"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "金牌酸梅汤 1kg",
+    "trueCategoryId": "js-yl",
+    "parentId": "cat-js",
+    "cities": [
+      "上海"
+    ],
+    "price": 261.6,
+    "trueSales30d": 146,
+    "inventorySeries": [
+      18,
+      13,
+      10,
+      6,
+      6,
+      1,
+      1,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0287"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "气泡水 500g",
+    "trueCategoryId": "js-yl",
+    "parentId": "cat-js",
+    "cities": [
+      "上海"
+    ],
+    "price": 133,
+    "trueSales30d": 1840,
+    "inventorySeries": [
+      159,
+      109,
+      35,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [
+      "上海"
+    ],
+    "id": "p-0288"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "冰红茶 1kg",
+    "trueCategoryId": "js-yl",
+    "parentId": "cat-js",
+    "cities": [
+      "成都"
+    ],
+    "price": 263.5,
+    "trueSales30d": 71,
+    "inventorySeries": [
+      8,
+      7,
+      4,
+      1,
+      0,
+      0,
+      0,
+      0,
+      6
+    ],
+    "goldCities": [],
+    "id": "p-0289"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "农家【特惠】气泡水 10kg/箱",
+    "trueCategoryId": "js-yl",
+    "parentId": "cat-js",
+    "cities": [
+      "上海",
+      "北京"
+    ],
+    "price": 92.4,
+    "trueSales30d": 87,
+    "inventorySeries": [
+      10,
+      7,
+      4,
+      1,
+      7,
+      7,
+      4,
+      3,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0290"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【爆款】椰子水 500g🔥",
+    "trueCategoryId": "js-yl",
+    "parentId": "cat-js",
+    "cities": [
+      "成都",
+      "上海",
+      "广州"
+    ],
+    "price": 117.7,
+    "trueSales30d": 669,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 13,
+      "onSale180d": 2,
+      "channelTags": []
+    },
+    "goldCities": [
+      "上海"
+    ],
+    "id": "p-0291"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "精品【爆款】豆奶 500g×20",
+    "trueCategoryId": "js-yl",
+    "parentId": "cat-js",
+    "cities": [
+      "成都",
+      "广州"
+    ],
+    "price": 175.4,
+    "trueSales30d": 1687,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 13,
+      "onSale180d": 2,
+      "channelTags": [
+        "新品尝鲜"
+      ]
+    },
+    "goldCities": [
+      "广州",
+      "成都"
+    ],
+    "id": "p-0292"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "冰红茶",
+    "trueCategoryId": "js-yl",
+    "parentId": "cat-js",
+    "cities": [
+      "成都",
+      "广州",
+      "上海"
+    ],
+    "price": 144.9,
+    "trueSales30d": 209,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 7,
+      "onSale180d": 1,
+      "channelTags": [
+        "新品尝鲜"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0293"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "气泡水 25kg 大包装",
+    "trueCategoryId": "js-yl",
+    "parentId": "cat-js",
+    "cities": [
+      "广州",
+      "成都",
+      "上海"
+    ],
+    "price": 352.4,
+    "trueSales30d": 92,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 13,
+      "onSale180d": 3,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0294"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "奶粉✨ 大包装",
+    "trueCategoryId": "js-rp",
+    "parentId": "cat-js",
+    "cities": [
+      "北京",
+      "成都",
+      "广州",
+      "上海"
+    ],
+    "price": 284.6,
+    "trueSales30d": 68,
+    "sales30d": 68,
+    "goldCities": [],
+    "id": "p-0295"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "正宗【门店专供】调制乳 1kg",
+    "trueCategoryId": "js-rp",
+    "parentId": "cat-js",
+    "cities": [
+      "成都",
+      "北京",
+      "广州"
+    ],
+    "price": 38.5,
+    "trueSales30d": 71,
+    "sales30d": 71,
+    "goldCities": [],
+    "id": "p-0296"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "纯牛奶",
+    "trueCategoryId": "js-rp",
+    "parentId": "cat-js",
+    "cities": [
+      "北京",
+      "广州",
+      "上海"
+    ],
+    "price": 292.9,
+    "trueSales30d": 266,
+    "sales30d": 266,
+    "goldCities": [],
+    "id": "p-0297"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "【特惠】炼乳 2.5kg",
+    "trueCategoryId": "js-rp",
+    "parentId": "cat-js",
+    "cities": [
+      "上海",
+      "广州"
+    ],
+    "price": 173.5,
+    "trueSales30d": 123,
+    "sales30d": 123,
+    "goldCities": [],
+    "id": "p-0298"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "大厨推荐【门店专供】纯牛奶 20袋/箱🔥 餐饮装",
+    "trueCategoryId": "js-rp",
+    "parentId": "cat-js",
+    "cities": [
+      "上海",
+      "成都",
+      "北京",
+      "广州"
+    ],
+    "price": 144.6,
+    "trueSales30d": 2301,
+    "sales30d": 2301,
+    "goldCities": [
+      "北京",
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "id": "p-0299"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "甄选调制乳👍",
+    "trueCategoryId": "js-rp",
+    "parentId": "cat-js",
+    "cities": [
+      "成都"
+    ],
+    "price": 227.6,
+    "trueSales30d": 30,
+    "inventorySeries": [
+      3,
+      2,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2
+    ],
+    "goldCities": [],
+    "id": "p-0300"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "原切奶粉 25kg",
+    "trueCategoryId": "js-rp",
+    "parentId": "cat-js",
+    "cities": [
+      "上海"
+    ],
+    "price": 37.4,
+    "trueSales30d": 1160,
+    "inventorySeries": [
+      104,
+      71,
+      33,
+      0,
+      0,
+      0,
+      0,
+      80,
+      173
+    ],
+    "goldCities": [],
+    "id": "p-0301"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "奶酪碎",
+    "trueCategoryId": "js-rp",
+    "parentId": "cat-js",
+    "cities": [
+      "成都"
+    ],
+    "price": 63.6,
+    "trueSales30d": 1814,
+    "inventorySeries": [
+      204,
+      164,
+      96,
+      21,
+      0,
+      180,
+      143,
+      113,
+      47
+    ],
+    "goldCities": [
+      "成都"
+    ],
+    "id": "p-0302"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "农家奶粉 5斤装",
+    "trueCategoryId": "js-rp",
+    "parentId": "cat-js",
+    "cities": [
+      "成都",
+      "北京"
+    ],
+    "price": 340.1,
+    "trueSales30d": 157,
+    "inventorySeries": [
+      13,
+      7,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      12
+    ],
+    "goldCities": [],
+    "id": "p-0303"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "原切酸奶 1kg",
+    "trueCategoryId": "js-rp",
+    "parentId": "cat-js",
+    "cities": [
+      "北京"
+    ],
+    "price": 276.3,
+    "trueSales30d": 62,
+    "inventorySeries": [
+      8,
+      6,
+      4,
+      4,
+      1,
+      0,
+      0,
+      6,
+      4
+    ],
+    "goldCities": [],
+    "id": "p-0304"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【特惠】酸奶 500g 餐饮装",
+    "trueCategoryId": "js-rp",
+    "parentId": "cat-js",
+    "cities": [
+      "上海",
+      "成都"
+    ],
+    "price": 332.2,
+    "trueSales30d": 139,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 19,
+      "onSale180d": 3,
+      "channelTags": [
+        "热销",
+        "爆款"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0305"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "奶粉",
+    "trueCategoryId": "js-rp",
+    "parentId": "cat-js",
+    "cities": [
+      "上海",
+      "成都",
+      "广州"
+    ],
+    "price": 402.5,
+    "trueSales30d": 685,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 18,
+      "onSale180d": 4,
+      "channelTags": [
+        "热销"
+      ]
+    },
+    "goldCities": [
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "id": "p-0306"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "金牌奶粉 20袋/箱",
+    "trueCategoryId": "js-rp",
+    "parentId": "cat-js",
+    "cities": [
+      "广州",
+      "上海",
+      "成都"
+    ],
+    "price": 73.4,
+    "trueSales30d": 146,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 27,
+      "onSale180d": 5,
+      "channelTags": [
+        "热销",
+        "爆款"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0307"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【特惠】奶酪碎 1kg",
+    "trueCategoryId": "js-rp",
+    "parentId": "cat-js",
+    "cities": [
+      "广州",
+      "成都",
+      "上海"
+    ],
+    "price": 82.3,
+    "trueSales30d": 55,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 27,
+      "onSale180d": 5,
+      "channelTags": [
+        "热销",
+        "爆款"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0308"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "玉米脆 10kg/箱",
+    "trueCategoryId": "xl-ph",
+    "parentId": "cat-xl",
+    "cities": [
+      "广州",
+      "成都"
+    ],
+    "price": 367.3,
+    "trueSales30d": 86,
+    "sales30d": 86,
+    "goldCities": [],
+    "id": "p-0309"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "虾条 大包装",
+    "trueCategoryId": "xl-ph",
+    "parentId": "cat-xl",
+    "cities": [
+      "北京",
+      "成都"
+    ],
+    "price": 88.3,
+    "trueSales30d": 72,
+    "sales30d": 72,
+    "goldCities": [],
+    "id": "p-0310"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "正宗【门店专供】玉米脆 2.5kg 商用装",
+    "trueCategoryId": "xl-ph",
+    "parentId": "cat-xl",
+    "cities": [
+      "上海",
+      "成都"
+    ],
+    "price": 393.7,
+    "trueSales30d": 2046,
+    "sales30d": 2046,
+    "goldCities": [
+      "上海",
+      "成都"
+    ],
+    "id": "p-0311"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "米饼 20袋/箱",
+    "trueCategoryId": "xl-ph",
+    "parentId": "cat-xl",
+    "cities": [
+      "成都",
+      "广州"
+    ],
+    "price": 192.3,
+    "trueSales30d": 135,
+    "sales30d": 135,
+    "goldCities": [],
+    "id": "p-0312"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "原切【爆款】锅巴 500g×20",
+    "trueCategoryId": "xl-ph",
+    "parentId": "cat-xl",
+    "cities": [
+      "上海",
+      "北京",
+      "成都"
+    ],
+    "price": 356.5,
+    "trueSales30d": 98,
+    "sales30d": 98,
+    "goldCities": [],
+    "id": "p-0313"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "米饼",
+    "trueCategoryId": "xl-ph",
+    "parentId": "cat-xl",
+    "cities": [
+      "北京",
+      "上海"
+    ],
+    "price": 15.9,
+    "trueSales30d": 851,
+    "inventorySeries": [
+      79,
+      79,
+      56,
+      25,
+      60,
+      34,
+      15,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0314"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【厂家直供】洋葱圈 5斤装",
+    "trueCategoryId": "xl-ph",
+    "parentId": "cat-xl",
+    "cities": [
+      "北京"
+    ],
+    "price": 226.9,
+    "trueSales30d": 115,
+    "inventorySeries": [
+      10,
+      5,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0315"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【厂家直供】爆米花 10kg/箱",
+    "trueCategoryId": "xl-ph",
+    "parentId": "cat-xl",
+    "cities": [
+      "上海",
+      "北京"
+    ],
+    "price": 246.4,
+    "trueSales30d": 187,
+    "inventorySeries": [
+      18,
+      12,
+      24,
+      20,
+      16,
+      27,
+      27,
+      23,
+      17
+    ],
+    "goldCities": [],
+    "id": "p-0316"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "金牌【厂家直供】虾条 20袋/箱 商用装",
+    "trueCategoryId": "xl-ph",
+    "parentId": "cat-xl",
+    "cities": [
+      "成都",
+      "上海",
+      "北京"
+    ],
+    "price": 306.2,
+    "trueSales30d": 1839,
+    "inventorySeries": [
+      197,
+      164,
+      107,
+      63,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "id": "p-0317"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【餐饮专供】薯片 20袋/箱",
+    "trueCategoryId": "xl-ph",
+    "parentId": "cat-xl",
+    "cities": [
+      "成都"
+    ],
+    "price": 173.4,
+    "trueSales30d": 200,
+    "inventorySeries": [
+      21,
+      16,
+      16,
+      12,
+      5,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0318"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "锅巴 500g",
+    "trueCategoryId": "xl-ph",
+    "parentId": "cat-xl",
+    "cities": [
+      "上海",
+      "成都"
+    ],
+    "price": 363.3,
+    "trueSales30d": 24,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 24,
+      "onSale180d": 4,
+      "channelTags": [
+        "热销"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0319"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "虾条 500g×20",
+    "trueCategoryId": "xl-ph",
+    "parentId": "cat-xl",
+    "cities": [
+      "成都",
+      "广州",
+      "上海"
+    ],
+    "price": 194.5,
+    "trueSales30d": 1974,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 15,
+      "onSale180d": 2,
+      "channelTags": [
+        "新品尝鲜"
+      ]
+    },
+    "goldCities": [
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "id": "p-0320"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【厂家直供】虾条 2.5kg",
+    "trueCategoryId": "xl-ph",
+    "parentId": "cat-xl",
+    "cities": [
+      "成都",
+      "广州",
+      "上海"
+    ],
+    "price": 114,
+    "trueSales30d": 122,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 12,
+      "onSale180d": 2,
+      "channelTags": [
+        "新品尝鲜"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0321"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "锅巴 10kg/箱 大包装",
+    "trueCategoryId": "xl-ph",
+    "parentId": "cat-xl",
+    "cities": [
+      "成都",
+      "广州",
+      "上海"
+    ],
+    "price": 386,
+    "trueSales30d": 173,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 3,
+      "onSale180d": 1,
+      "channelTags": [
+        "新品尝鲜"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0322"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "【特惠】老婆饼 500g×20",
+    "trueCategoryId": "xl-gd",
+    "parentId": "cat-xl",
+    "cities": [
+      "北京",
+      "上海"
+    ],
+    "price": 294.5,
+    "trueSales30d": 151,
+    "sales30d": 151,
+    "goldCities": [],
+    "id": "p-0323"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "绿豆糕 5斤装",
+    "trueCategoryId": "xl-gd",
+    "parentId": "cat-xl",
+    "cities": [
+      "北京",
+      "成都"
+    ],
+    "price": 306.7,
+    "trueSales30d": 101,
+    "sales30d": 101,
+    "goldCities": [],
+    "id": "p-0324"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "【餐饮专供】凤梨酥 5斤装",
+    "trueCategoryId": "xl-gd",
+    "parentId": "cat-xl",
+    "cities": [
+      "成都",
+      "广州",
+      "上海"
+    ],
+    "price": 154.9,
+    "trueSales30d": 85,
+    "sales30d": 85,
+    "goldCities": [],
+    "id": "p-0325"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "【餐饮专供】桃酥 1kg",
+    "trueCategoryId": "xl-gd",
+    "parentId": "cat-xl",
+    "cities": [
+      "北京",
+      "上海",
+      "成都",
+      "广州"
+    ],
+    "price": 333.9,
+    "trueSales30d": 40,
+    "sales30d": 40,
+    "goldCities": [],
+    "id": "p-0326"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "绿豆糕 500g×20",
+    "trueCategoryId": "xl-gd",
+    "parentId": "cat-xl",
+    "cities": [
+      "广州",
+      "上海",
+      "北京",
+      "成都"
+    ],
+    "price": 18.3,
+    "trueSales30d": 86,
+    "sales30d": 86,
+    "goldCities": [],
+    "id": "p-0327"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "大厨推荐曲奇 2.5kg",
+    "trueCategoryId": "xl-gd",
+    "parentId": "cat-xl",
+    "cities": [
+      "上海",
+      "成都",
+      "北京"
+    ],
+    "price": 365,
+    "trueSales30d": 1008,
+    "inventorySeries": [
+      95,
+      69,
+      48,
+      4,
+      0,
+      0,
+      95,
+      57,
+      57
+    ],
+    "goldCities": [],
+    "id": "p-0328"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "大厨推荐麻薯 1kg",
+    "trueCategoryId": "xl-gd",
+    "parentId": "cat-xl",
+    "cities": [
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "price": 46.3,
+    "trueSales30d": 66,
+    "inventorySeries": [
+      8,
+      7,
+      9,
+      9,
+      8,
+      6,
+      4,
+      2,
+      5
+    ],
+    "goldCities": [],
+    "id": "p-0329"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【特惠】绿豆糕 5斤装",
+    "trueCategoryId": "xl-gd",
+    "parentId": "cat-xl",
+    "cities": [
+      "北京"
+    ],
+    "price": 199.4,
+    "trueSales30d": 75,
+    "inventorySeries": [
+      10,
+      7,
+      6,
+      11,
+      8,
+      12,
+      10,
+      7,
+      11
+    ],
+    "goldCities": [],
+    "id": "p-0330"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【门店专供】曲奇",
+    "trueCategoryId": "xl-gd",
+    "parentId": "cat-xl",
+    "cities": [
+      "北京"
+    ],
+    "price": 26.1,
+    "trueSales30d": 2009,
+    "inventorySeries": [
+      247,
+      307,
+      426,
+      376,
+      293,
+      250,
+      250,
+      212,
+      353
+    ],
+    "goldCities": [
+      "北京"
+    ],
+    "id": "p-0331"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "正宗麻薯 20袋/箱 商用装",
+    "trueCategoryId": "xl-gd",
+    "parentId": "cat-xl",
+    "cities": [
+      "成都",
+      "上海"
+    ],
+    "price": 118.6,
+    "trueSales30d": 191,
+    "inventorySeries": [
+      22,
+      14,
+      10,
+      29,
+      25,
+      18,
+      12,
+      6,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0332"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "金牌麻薯 2.5kg",
+    "trueCategoryId": "xl-gd",
+    "parentId": "cat-xl",
+    "cities": [
+      "成都",
+      "广州",
+      "上海"
+    ],
+    "price": 184.4,
+    "trueSales30d": 303,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 7,
+      "onSale180d": 2,
+      "channelTags": [
+        "新品尝鲜"
+      ]
+    },
+    "goldCities": [
+      "上海"
+    ],
+    "id": "p-0333"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "蛋黄酥",
+    "trueCategoryId": "xl-gd",
+    "parentId": "cat-xl",
+    "cities": [
+      "成都",
+      "广州"
+    ],
+    "price": 138.1,
+    "trueSales30d": 1710,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 7,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [
+      "广州",
+      "成都"
+    ],
+    "id": "p-0334"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "桃酥 25kg 商用装",
+    "trueCategoryId": "xl-gd",
+    "parentId": "cat-xl",
+    "cities": [
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "price": 251.6,
+    "trueSales30d": 101,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 14,
+      "onSale180d": 3,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0335"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【厂家直供】桃酥 2.5kg",
+    "trueCategoryId": "xl-gd",
+    "parentId": "cat-xl",
+    "cities": [
+      "广州",
+      "上海",
+      "成都"
+    ],
+    "price": 274,
+    "trueSales30d": 42,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 9,
+      "onSale180d": 2,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0336"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "瓜子",
+    "trueCategoryId": "xl-jg",
+    "parentId": "cat-xl",
+    "cities": [
+      "广州",
+      "上海",
+      "北京",
+      "成都"
+    ],
+    "price": 335.4,
+    "trueSales30d": 17,
+    "sales30d": 17,
+    "goldCities": [],
+    "id": "p-0337"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "【爆款】松子 2.5kg 大包装",
+    "trueCategoryId": "xl-jg",
+    "parentId": "cat-xl",
+    "cities": [
+      "北京",
+      "上海"
+    ],
+    "price": 363.4,
+    "trueSales30d": 158,
+    "sales30d": 158,
+    "goldCities": [],
+    "id": "p-0338"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "【餐饮专供】花生米 20袋/箱",
+    "trueCategoryId": "xl-jg",
+    "parentId": "cat-xl",
+    "cities": [
+      "成都",
+      "广州"
+    ],
+    "price": 127.6,
+    "trueSales30d": 148,
+    "sales30d": 148,
+    "goldCities": [],
+    "id": "p-0339"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "【厂家直供】腰果 20袋/箱",
+    "trueCategoryId": "xl-jg",
+    "parentId": "cat-xl",
+    "cities": [
+      "北京",
+      "成都"
+    ],
+    "price": 57.2,
+    "trueSales30d": 53,
+    "sales30d": 53,
+    "goldCities": [],
+    "id": "p-0340"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "【特惠】花生米 10kg/箱🥩 餐饮装",
+    "trueCategoryId": "xl-jg",
+    "parentId": "cat-xl",
+    "cities": [
+      "上海",
+      "广州"
+    ],
+    "price": 218.8,
+    "trueSales30d": 2014,
+    "sales30d": 2014,
+    "goldCities": [
+      "上海",
+      "广州"
+    ],
+    "id": "p-0341"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "腰果 5斤装⚡",
+    "trueCategoryId": "xl-jg",
+    "parentId": "cat-xl",
+    "cities": [
+      "上海",
+      "北京",
+      "成都"
+    ],
+    "price": 419.8,
+    "trueSales30d": 1745,
+    "inventorySeries": [
+      186,
+      113,
+      60,
+      0,
+      142,
+      83,
+      136,
+      76,
+      45
+    ],
+    "goldCities": [],
+    "id": "p-0342"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "巴旦木 10kg/箱 商用装",
+    "trueCategoryId": "xl-jg",
+    "parentId": "cat-xl",
+    "cities": [
+      "上海",
+      "北京"
+    ],
+    "price": 300.8,
+    "trueSales30d": 69,
+    "inventorySeries": [
+      8,
+      6,
+      6,
+      4,
+      2,
+      0,
+      0,
+      6,
+      3
+    ],
+    "goldCities": [],
+    "id": "p-0343"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "松子 500g",
+    "trueCategoryId": "xl-jg",
+    "parentId": "cat-xl",
+    "cities": [
+      "上海",
+      "成都",
+      "北京"
+    ],
+    "price": 216.7,
+    "trueSales30d": 2199,
+    "inventorySeries": [
+      205,
+      132,
+      92,
+      11,
+      11,
+      0,
+      0,
+      199,
+      155
+    ],
+    "goldCities": [
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "id": "p-0344"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "松子 10kg/箱",
+    "trueCategoryId": "xl-jg",
+    "parentId": "cat-xl",
+    "cities": [
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "price": 143.5,
+    "trueSales30d": 1749,
+    "inventorySeries": [
+      223,
+      193,
+      119,
+      52,
+      153,
+      153,
+      81,
+      17,
+      0
+    ],
+    "goldCities": [
+      "上海",
+      "成都"
+    ],
+    "id": "p-0345"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "精品夏威夷果 20袋/箱",
+    "trueCategoryId": "xl-jg",
+    "parentId": "cat-xl",
+    "cities": [
+      "北京"
+    ],
+    "price": 308.1,
+    "trueSales30d": 30,
+    "inventorySeries": [
+      3,
+      2,
+      1,
+      0,
+      0,
+      0,
+      0,
+      3,
+      2
+    ],
+    "goldCities": [],
+    "id": "p-0346"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "花生米",
+    "trueCategoryId": "xl-jg",
+    "parentId": "cat-xl",
+    "cities": [
+      "上海",
+      "成都",
+      "广州"
+    ],
+    "price": 44.9,
+    "trueSales30d": 146,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 9,
+      "onSale180d": 2,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0347"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【特惠】瓜子",
+    "trueCategoryId": "xl-jg",
+    "parentId": "cat-xl",
+    "cities": [
+      "成都",
+      "上海",
+      "广州"
+    ],
+    "price": 39,
+    "trueSales30d": 1797,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 18,
+      "onSale180d": 4,
+      "channelTags": [
+        "热销",
+        "爆款"
+      ]
+    },
+    "goldCities": [
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "id": "p-0348"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "农家巴旦木 500g×20✨",
+    "trueCategoryId": "xl-jg",
+    "parentId": "cat-xl",
+    "cities": [
+      "成都",
+      "上海",
+      "广州"
+    ],
+    "price": 292.6,
+    "trueSales30d": 179,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 23,
+      "onSale180d": 5,
+      "channelTags": [
+        "热销",
+        "爆款"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0349"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "松子 10kg/箱 大包装",
+    "trueCategoryId": "xl-jg",
+    "parentId": "cat-xl",
+    "cities": [
+      "上海",
+      "成都"
+    ],
+    "price": 269.7,
+    "trueSales30d": 52,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 10,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0350"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "原切一次性手套 10kg/箱",
+    "trueCategoryId": "bh-cj",
+    "parentId": "cat-bh",
+    "cities": [
+      "成都",
+      "上海",
+      "广州",
+      "北京"
+    ],
+    "price": 147.3,
+    "trueSales30d": 190,
+    "sales30d": 190,
+    "goldCities": [],
+    "id": "p-0351"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "大厨推荐保鲜膜 20袋/箱✨",
+    "trueCategoryId": "bh-cj",
+    "parentId": "cat-bh",
+    "cities": [
+      "上海",
+      "广州"
+    ],
+    "price": 239.2,
+    "trueSales30d": 56,
+    "sales30d": 56,
+    "goldCities": [],
+    "id": "p-0352"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "纸杯 1kg",
+    "trueCategoryId": "bh-cj",
+    "parentId": "cat-bh",
+    "cities": [
+      "成都",
+      "上海"
+    ],
+    "price": 168.9,
+    "trueSales30d": 1393,
+    "sales30d": 1393,
+    "goldCities": [
+      "上海",
+      "成都"
+    ],
+    "id": "p-0353"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "一次性筷子 500g×20",
+    "trueCategoryId": "bh-cj",
+    "parentId": "cat-bh",
+    "cities": [
+      "上海",
+      "北京"
+    ],
+    "price": 150.4,
+    "trueSales30d": 68,
+    "sales30d": 68,
+    "goldCities": [],
+    "id": "p-0354"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "塑料勺 25kg",
+    "trueCategoryId": "bh-cj",
+    "parentId": "cat-bh",
+    "cities": [
+      "北京",
+      "成都",
+      "广州",
+      "上海"
+    ],
+    "price": 245.5,
+    "trueSales30d": 51,
+    "sales30d": 51,
+    "goldCities": [],
+    "id": "p-0355"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "打包袋 10kg/箱",
+    "trueCategoryId": "bh-cj",
+    "parentId": "cat-bh",
+    "cities": [
+      "成都"
+    ],
+    "price": 402.9,
+    "trueSales30d": 84,
+    "inventorySeries": [
+      10,
+      10,
+      8,
+      12,
+      12,
+      9,
+      7,
+      5,
+      5
+    ],
+    "goldCities": [],
+    "id": "p-0356"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "正宗吸管 25kg",
+    "trueCategoryId": "bh-cj",
+    "parentId": "cat-bh",
+    "cities": [
+      "上海",
+      "成都",
+      "北京"
+    ],
+    "price": 139.6,
+    "trueSales30d": 1001,
+    "inventorySeries": [
+      121,
+      87,
+      60,
+      42,
+      20,
+      0,
+      90,
+      71,
+      33
+    ],
+    "goldCities": [
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "id": "p-0357"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "降解餐盒 10kg/箱✨",
+    "trueCategoryId": "bh-cj",
+    "parentId": "cat-bh",
+    "cities": [
+      "北京",
+      "成都"
+    ],
+    "price": 168.3,
+    "trueSales30d": 1565,
+    "inventorySeries": [
+      157,
+      242,
+      242,
+      330,
+      280,
+      216,
+      177,
+      270,
+      239
+    ],
+    "goldCities": [
+      "北京",
+      "成都"
+    ],
+    "id": "p-0358"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【门店专供】一次性筷子 10kg/箱",
+    "trueCategoryId": "bh-cj",
+    "parentId": "cat-bh",
+    "cities": [
+      "北京",
+      "上海"
+    ],
+    "price": 403.6,
+    "trueSales30d": 82,
+    "inventorySeries": [
+      7,
+      5,
+      3,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0359"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【爆款】吸管 1kg",
+    "trueCategoryId": "bh-cj",
+    "parentId": "cat-bh",
+    "cities": [
+      "成都",
+      "北京",
+      "上海"
+    ],
+    "price": 196.7,
+    "trueSales30d": 36,
+    "inventorySeries": [
+      3,
+      2,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0360"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "塑料勺 5斤装✨",
+    "trueCategoryId": "bh-cj",
+    "parentId": "cat-bh",
+    "cities": [
+      "成都",
+      "广州",
+      "上海"
+    ],
+    "price": 171.9,
+    "trueSales30d": 97,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 5,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0361"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "原切吸管",
+    "trueCategoryId": "bh-cj",
+    "parentId": "cat-bh",
+    "cities": [
+      "上海",
+      "成都",
+      "广州"
+    ],
+    "price": 235.1,
+    "trueSales30d": 1759,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 3,
+      "onSale180d": 1,
+      "channelTags": [
+        "新品尝鲜"
+      ]
+    },
+    "goldCities": [
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "id": "p-0362"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "保鲜膜 25kg",
+    "trueCategoryId": "bh-cj",
+    "parentId": "cat-bh",
+    "cities": [
+      "广州",
+      "成都",
+      "上海"
+    ],
+    "price": 414.5,
+    "trueSales30d": 1998,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 30,
+      "onSale180d": 4,
+      "channelTags": [
+        "热销"
+      ]
+    },
+    "goldCities": [
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "id": "p-0363"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "保鲜膜 20袋/箱🔥",
+    "trueCategoryId": "bh-cj",
+    "parentId": "cat-bh",
+    "cities": [
+      "上海",
+      "成都",
+      "广州"
+    ],
+    "price": 264.9,
+    "trueSales30d": 79,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 19,
+      "onSale180d": 4,
+      "channelTags": [
+        "热销"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0364"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "精品钢丝球 1kg 大包装",
+    "trueCategoryId": "bh-qj",
+    "parentId": "cat-bh",
+    "cities": [
+      "成都",
+      "广州",
+      "北京"
+    ],
+    "price": 265.7,
+    "trueSales30d": 184,
+    "sales30d": 184,
+    "goldCities": [],
+    "id": "p-0365"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "84消毒液",
+    "trueCategoryId": "bh-qj",
+    "parentId": "cat-bh",
+    "cities": [
+      "成都",
+      "广州"
+    ],
+    "price": 81.8,
+    "trueSales30d": 94,
+    "sales30d": 94,
+    "goldCities": [],
+    "id": "p-0366"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "精品【门店专供】钢丝球",
+    "trueCategoryId": "bh-qj",
+    "parentId": "cat-bh",
+    "cities": [
+      "成都",
+      "上海",
+      "北京"
+    ],
+    "price": 66.2,
+    "trueSales30d": 185,
+    "sales30d": 185,
+    "goldCities": [],
+    "id": "p-0367"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "地拖 1kg",
+    "trueCategoryId": "bh-qj",
+    "parentId": "cat-bh",
+    "cities": [
+      "成都",
+      "上海",
+      "北京"
+    ],
+    "price": 173.6,
+    "trueSales30d": 191,
+    "sales30d": 191,
+    "goldCities": [],
+    "id": "p-0368"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "【爆款】洗洁精",
+    "trueCategoryId": "bh-qj",
+    "parentId": "cat-bh",
+    "cities": [
+      "上海",
+      "成都",
+      "广州"
+    ],
+    "price": 399.4,
+    "trueSales30d": 26,
+    "sales30d": 26,
+    "goldCities": [],
+    "id": "p-0369"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【特惠】垃圾袋 2.5kg",
+    "trueCategoryId": "bh-qj",
+    "parentId": "cat-bh",
+    "cities": [
+      "成都"
+    ],
+    "price": 13.8,
+    "trueSales30d": 177,
+    "inventorySeries": [
+      21,
+      13,
+      6,
+      2,
+      0,
+      0,
+      0,
+      17,
+      12
+    ],
+    "goldCities": [],
+    "id": "p-0370"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "精品【门店专供】除油剂 25kg",
+    "trueCategoryId": "bh-qj",
+    "parentId": "cat-bh",
+    "cities": [
+      "成都"
+    ],
+    "price": 365.8,
+    "trueSales30d": 202,
+    "inventorySeries": [
+      25,
+      20,
+      29,
+      20,
+      15,
+      8,
+      2,
+      18,
+      14
+    ],
+    "goldCities": [],
+    "id": "p-0371"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【餐饮专供】地拖 1kg",
+    "trueCategoryId": "bh-qj",
+    "parentId": "cat-bh",
+    "cities": [
+      "成都",
+      "北京"
+    ],
+    "price": 172.6,
+    "trueSales30d": 24,
+    "inventorySeries": [
+      4,
+      3,
+      2,
+      1,
+      0,
+      0,
+      3,
+      4,
+      4
+    ],
+    "goldCities": [],
+    "id": "p-0372"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "洗手液 2.5kg",
+    "trueCategoryId": "bh-qj",
+    "parentId": "cat-bh",
+    "cities": [
+      "上海"
+    ],
+    "price": 341.1,
+    "trueSales30d": 124,
+    "inventorySeries": [
+      16,
+      12,
+      8,
+      5,
+      0,
+      11,
+      16,
+      10,
+      8
+    ],
+    "goldCities": [],
+    "id": "p-0373"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "钢丝球 25kg 餐饮装",
+    "trueCategoryId": "bh-qj",
+    "parentId": "cat-bh",
+    "cities": [
+      "成都",
+      "上海"
+    ],
+    "price": 106.7,
+    "trueSales30d": 88,
+    "inventorySeries": [
+      10,
+      8,
+      5,
+      8,
+      6,
+      12,
+      12,
+      9,
+      14
+    ],
+    "goldCities": [],
+    "id": "p-0374"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "农家84消毒液 500g",
+    "trueCategoryId": "bh-qj",
+    "parentId": "cat-bh",
+    "cities": [
+      "广州",
+      "成都"
+    ],
+    "price": 56.8,
+    "trueSales30d": 212,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 4,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0375"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【门店专供】地拖 500g×20",
+    "trueCategoryId": "bh-qj",
+    "parentId": "cat-bh",
+    "cities": [
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "price": 72.2,
+    "trueSales30d": 96,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 15,
+      "onSale180d": 3,
+      "channelTags": [
+        "热销"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0376"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "原切【爆款】洗手液 2.5kg👍",
+    "trueCategoryId": "bh-qj",
+    "parentId": "cat-bh",
+    "cities": [
+      "广州",
+      "成都",
+      "上海"
+    ],
+    "price": 267.2,
+    "trueSales30d": 1184,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 8,
+      "onSale180d": 2,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0377"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "地拖 500g",
+    "trueCategoryId": "bh-qj",
+    "parentId": "cat-bh",
+    "cities": [
+      "成都",
+      "广州",
+      "上海"
+    ],
+    "price": 329,
+    "trueSales30d": 752,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 3,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0378"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "农家锡纸 2.5kg 大包装",
+    "trueCategoryId": "bh-yc",
+    "parentId": "cat-bh",
+    "cities": [
+      "广州",
+      "成都"
+    ],
+    "price": 22.8,
+    "trueSales30d": 165,
+    "sales30d": 165,
+    "goldCities": [],
+    "id": "p-0379"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "【爆款】一次性围裙 5斤装",
+    "trueCategoryId": "bh-yc",
+    "parentId": "cat-bh",
+    "cities": [
+      "上海",
+      "北京",
+      "广州",
+      "成都"
+    ],
+    "price": 41.6,
+    "trueSales30d": 37,
+    "sales30d": 37,
+    "goldCities": [],
+    "id": "p-0380"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "锡纸 酒店专供",
+    "trueCategoryId": "bh-yc",
+    "parentId": "cat-bh",
+    "cities": [
+      "上海",
+      "广州"
+    ],
+    "price": 124.5,
+    "trueSales30d": 102,
+    "sales30d": 102,
+    "goldCities": [],
+    "id": "p-0381"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "精品一次性围裙 20袋/箱",
+    "trueCategoryId": "bh-yc",
+    "parentId": "cat-bh",
+    "cities": [
+      "上海",
+      "成都",
+      "北京"
+    ],
+    "price": 123.7,
+    "trueSales30d": 213,
+    "sales30d": 213,
+    "goldCities": [
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "id": "p-0382"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "精品一次性围裙",
+    "trueCategoryId": "bh-yc",
+    "parentId": "cat-bh",
+    "cities": [
+      "上海",
+      "成都",
+      "北京"
+    ],
+    "price": 315,
+    "trueSales30d": 146,
+    "sales30d": 146,
+    "goldCities": [],
+    "id": "p-0383"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【餐饮专供】隔油纸 2.5kg",
+    "trueCategoryId": "bh-yc",
+    "parentId": "cat-bh",
+    "cities": [
+      "上海",
+      "成都"
+    ],
+    "price": 316.3,
+    "trueSales30d": 1512,
+    "inventorySeries": [
+      145,
+      98,
+      53,
+      159,
+      104,
+      59,
+      176,
+      285,
+      345
+    ],
+    "goldCities": [
+      "上海",
+      "成都"
+    ],
+    "id": "p-0384"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "金牌湿巾 20袋/箱",
+    "trueCategoryId": "bh-yc",
+    "parentId": "cat-bh",
+    "cities": [
+      "成都",
+      "北京",
+      "上海"
+    ],
+    "price": 372.8,
+    "trueSales30d": 43,
+    "inventorySeries": [
+      6,
+      5,
+      5,
+      3,
+      3,
+      1,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "id": "p-0385"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "农家餐巾纸 5斤装🥩",
+    "trueCategoryId": "bh-yc",
+    "parentId": "cat-bh",
+    "cities": [
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "price": 157.9,
+    "trueSales30d": 606,
+    "inventorySeries": [
+      62,
+      50,
+      28,
+      16,
+      0,
+      0,
+      0,
+      49,
+      35
+    ],
+    "goldCities": [
+      "北京",
+      "上海"
+    ],
+    "id": "p-0386"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "保鲜袋",
+    "trueCategoryId": "bh-yc",
+    "parentId": "cat-bh",
+    "cities": [
+      "上海",
+      "北京",
+      "成都"
+    ],
+    "price": 333.5,
+    "trueSales30d": 27,
+    "inventorySeries": [
+      3,
+      6,
+      4,
+      3,
+      2,
+      1,
+      3,
+      4,
+      3
+    ],
+    "goldCities": [],
+    "id": "p-0387"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "农家餐巾纸 1kg",
+    "trueCategoryId": "bh-yc",
+    "parentId": "cat-bh",
+    "cities": [
+      "上海"
+    ],
+    "price": 391.3,
+    "trueSales30d": 71,
+    "inventorySeries": [
+      8,
+      7,
+      5,
+      3,
+      1,
+      1,
+      0,
+      7,
+      12
+    ],
+    "goldCities": [],
+    "id": "p-0388"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "甄选【门店专供】餐巾纸",
+    "trueCategoryId": "bh-yc",
+    "parentId": "cat-bh",
+    "cities": [
+      "成都",
+      "上海"
+    ],
+    "price": 356.2,
+    "trueSales30d": 196,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 22,
+      "onSale180d": 5,
+      "channelTags": [
+        "热销",
+        "爆款"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0389"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "精品保鲜袋 10kg/箱 酒店专供",
+    "trueCategoryId": "bh-yc",
+    "parentId": "cat-bh",
+    "cities": [
+      "广州",
+      "成都"
+    ],
+    "price": 401.7,
+    "trueSales30d": 747,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 14,
+      "onSale180d": 3,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "id": "p-0390"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "甄选一次性桌布 25kg",
+    "trueCategoryId": "bh-yc",
+    "parentId": "cat-bh",
+    "cities": [
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "price": 405.7,
+    "trueSales30d": 187,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 22,
+      "onSale180d": 5,
+      "channelTags": [
+        "热销",
+        "爆款"
+      ]
+    },
+    "goldCities": [],
+    "id": "p-0391"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "正宗湿巾",
+    "trueCategoryId": "bh-yc",
+    "parentId": "cat-bh",
+    "cities": [
+      "广州",
+      "上海",
+      "成都"
+    ],
+    "price": 59.3,
+    "trueSales30d": 1301,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 5,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "id": "p-0392"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "【门店专供】秘制腌料腌制五花肉片500g 烧烤专用",
+    "trueCategoryId": "bs-yw",
+    "parentId": "cat-bs",
+    "cities": [
+      "广州",
+      "上海"
+    ],
+    "price": 202,
+    "trueSales30d": 189,
+    "sales30d": 189,
+    "goldCities": [],
+    "isBoundaryCase": true,
+    "id": "p-0393"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "现穿羔羊肉串20串装 腌制入味✨",
+    "trueCategoryId": "bs-cc",
+    "parentId": "cat-bs",
+    "cities": [
+      "成都",
+      "北京"
+    ],
+    "price": 66.3,
+    "trueSales30d": 78,
+    "sales30d": 78,
+    "goldCities": [],
+    "isBoundaryCase": true,
+    "id": "p-0394"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "烧烤用鲜羊肉块500g 未腌制现切",
+    "trueCategoryId": "sx-xr",
+    "parentId": "cat-sx",
+    "cities": [
+      "成都",
+      "广州"
+    ],
+    "price": 68.4,
+    "trueSales30d": 1137,
+    "sales30d": 1137,
+    "goldCities": [
+      "成都"
+    ],
+    "isBoundaryCase": true,
+    "id": "p-0395"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "碳烤牛肉串 生鲜现穿 整条装",
+    "trueCategoryId": "bs-cc",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海",
+      "广州"
+    ],
+    "price": 18.7,
+    "trueSales30d": 1363,
+    "sales30d": 1363,
+    "goldCities": [
+      "上海",
+      "广州"
+    ],
+    "isBoundaryCase": true,
+    "id": "p-0396"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "奥尔良腌鸡腿肉 烤肉店专用2.5kg",
+    "trueCategoryId": "bs-yw",
+    "parentId": "cat-bs",
+    "cities": [
+      "成都",
+      "北京",
+      "广州"
+    ],
+    "price": 108.6,
+    "trueSales30d": 2093,
+    "sales30d": 2093,
+    "goldCities": [
+      "北京",
+      "广州",
+      "成都"
+    ],
+    "isBoundaryCase": true,
+    "id": "p-0397"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "穿签雪花牛肉串15签装",
+    "trueCategoryId": "bs-cc",
+    "parentId": "cat-bs",
+    "cities": [
+      "北京",
+      "广州",
+      "上海"
+    ],
+    "price": 211.9,
+    "trueSales30d": 118,
+    "sales30d": 118,
+    "goldCities": [],
+    "isBoundaryCase": true,
+    "id": "p-0398"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "鲜切黄牛肉片 火锅烧烤两用",
+    "trueCategoryId": "sx-xr",
+    "parentId": "cat-sx",
+    "cities": [
+      "成都",
+      "北京",
+      "上海"
+    ],
+    "price": 127.4,
+    "trueSales30d": 1060,
+    "sales30d": 1060,
+    "goldCities": [
+      "成都"
+    ],
+    "isBoundaryCase": true,
+    "id": "p-0399"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "冷冻未腌制羊后腿肉块 整块5kg",
+    "trueCategoryId": "sx-lr",
+    "parentId": "cat-sx",
+    "cities": [
+      "北京",
+      "上海",
+      "成都"
+    ],
+    "price": 106.6,
+    "trueSales30d": 749,
+    "sales30d": 749,
+    "goldCities": [],
+    "isBoundaryCase": true,
+    "id": "p-0400"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "酱香腌制猪颈肉片400g 韩式烤肉",
+    "trueCategoryId": "bs-yw",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海",
+      "广州",
+      "成都"
+    ],
+    "price": 220.8,
+    "trueSales30d": 1242,
+    "sales30d": 1242,
+    "goldCities": [
+      "上海",
+      "成都"
+    ],
+    "isBoundaryCase": true,
+    "id": "p-0401"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "农家土猪肉五花切块 现杀现发",
+    "trueCategoryId": "sx-xr",
+    "parentId": "cat-sx",
+    "cities": [
+      "成都",
+      "广州"
+    ],
+    "price": 188.6,
+    "trueSales30d": 69,
+    "sales30d": 69,
+    "goldCities": [],
+    "isBoundaryCase": true,
+    "id": "p-0402"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "火锅用肥牛卷 冷冻原切3kg",
+    "trueCategoryId": "sx-lr",
+    "parentId": "cat-sx",
+    "cities": [
+      "北京",
+      "成都"
+    ],
+    "price": 249.8,
+    "trueSales30d": 146,
+    "sales30d": 146,
+    "goldCities": [],
+    "isBoundaryCase": true,
+    "id": "p-0403"
+  },
+  {
+    "competitorId": "comp-a",
+    "title": "黑椒腌制牛肉粒 铁板烧用1kg",
+    "trueCategoryId": "bs-yw",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海",
+      "成都",
+      "广州"
+    ],
+    "price": 104.7,
+    "trueSales30d": 125,
+    "sales30d": 125,
+    "goldCities": [],
+    "isBoundaryCase": true,
+    "id": "p-0404"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "【厂家直供】蒜香腌制鸡翅中 调味装2kg",
+    "trueCategoryId": "bs-yw",
+    "parentId": "cat-bs",
+    "cities": [
+      "北京",
+      "成都"
+    ],
+    "price": 217.8,
+    "trueSales30d": 154,
+    "inventorySeries": [
+      19,
+      19,
+      12,
+      8,
+      15,
+      12,
+      23,
+      28,
+      38
+    ],
+    "goldCities": [],
+    "isBoundaryCase": true,
+    "id": "p-0405"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "生穿鸡肉串 未腌制 大串20根",
+    "trueCategoryId": "bs-cc",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海"
+    ],
+    "price": 183.7,
+    "trueSales30d": 124,
+    "inventorySeries": [
+      15,
+      11,
+      8,
+      5,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "isBoundaryCase": true,
+    "id": "p-0406"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "内蒙古羔羊肉卷 涮肉用 未加工",
+    "trueCategoryId": "sx-lr",
+    "parentId": "cat-sx",
+    "cities": [
+      "成都",
+      "北京"
+    ],
+    "price": 202.6,
+    "trueSales30d": 688,
+    "inventorySeries": [
+      63,
+      37,
+      20,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "isBoundaryCase": true,
+    "id": "p-0407"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "烧烤用精品牛五花切片 现切不腌制",
+    "trueCategoryId": "sx-xr",
+    "parentId": "cat-sx",
+    "cities": [
+      "成都"
+    ],
+    "price": 98.7,
+    "trueSales30d": 197,
+    "inventorySeries": [
+      17,
+      9,
+      1,
+      0,
+      15,
+      10,
+      6,
+      1,
+      0
+    ],
+    "goldCities": [],
+    "isBoundaryCase": true,
+    "id": "p-0408"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "藤椒腌制鸡腿肉串 穿签即烤",
+    "trueCategoryId": "bs-cc",
+    "parentId": "cat-bs",
+    "cities": [
+      "北京",
+      "上海"
+    ],
+    "price": 122.8,
+    "trueSales30d": 1888,
+    "inventorySeries": [
+      238,
+      163,
+      163,
+      111,
+      37,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [
+      "北京",
+      "上海"
+    ],
+    "isBoundaryCase": true,
+    "id": "p-0409"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "秘制孜然腌羊肉片 烤肉腌制专用",
+    "trueCategoryId": "bs-yw",
+    "parentId": "cat-bs",
+    "cities": [
+      "北京",
+      "成都"
+    ],
+    "price": 154.9,
+    "trueSales30d": 967,
+    "inventorySeries": [
+      128,
+      89,
+      62,
+      25,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [],
+    "isBoundaryCase": true,
+    "id": "p-0410"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "鲜猪肋排段 烧烤斩块 未加工",
+    "trueCategoryId": "sx-xr",
+    "parentId": "cat-sx",
+    "cities": [
+      "成都"
+    ],
+    "price": 93.8,
+    "trueSales30d": 1486,
+    "inventorySeries": [
+      124,
+      60,
+      35,
+      133,
+      82,
+      45,
+      19,
+      0,
+      0
+    ],
+    "goldCities": [
+      "成都"
+    ],
+    "isBoundaryCase": true,
+    "id": "p-0411"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "冷冻原切猪五花肉片 火锅食材",
+    "trueCategoryId": "sx-lr",
+    "parentId": "cat-sx",
+    "cities": [
+      "上海",
+      "北京"
+    ],
+    "price": 152.4,
+    "trueSales30d": 1169,
+    "inventorySeries": [
+      138,
+      109,
+      77,
+      31,
+      0,
+      102,
+      102,
+      58,
+      58
+    ],
+    "goldCities": [
+      "北京"
+    ],
+    "isBoundaryCase": true,
+    "id": "p-0412"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "和牛雪花牛肉粒 腌制调味装",
+    "trueCategoryId": "bs-yw",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海"
+    ],
+    "price": 179.8,
+    "trueSales30d": 272,
+    "inventorySeries": [
+      28,
+      20,
+      10,
+      0,
+      0,
+      0,
+      23,
+      16,
+      5
+    ],
+    "goldCities": [],
+    "isBoundaryCase": true,
+    "id": "p-0413"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "掌中宝穿串 生鲜现穿30串",
+    "trueCategoryId": "bs-cc",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海",
+      "成都"
+    ],
+    "price": 57.4,
+    "trueSales30d": 80,
+    "inventorySeries": [
+      9,
+      9,
+      8,
+      11,
+      8,
+      6,
+      3,
+      1,
+      0
+    ],
+    "goldCities": [],
+    "isBoundaryCase": true,
+    "id": "p-0414"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "排酸牛后腿肉块 现切鲜冻两用",
+    "trueCategoryId": "sx-lr",
+    "parentId": "cat-sx",
+    "cities": [
+      "上海",
+      "北京"
+    ],
+    "price": 158.6,
+    "trueSales30d": 1270,
+    "inventorySeries": [
+      132,
+      195,
+      147,
+      109,
+      58,
+      12,
+      0,
+      0,
+      0
+    ],
+    "goldCities": [
+      "北京",
+      "上海"
+    ],
+    "isBoundaryCase": true,
+    "id": "p-0415"
+  },
+  {
+    "competitorId": "comp-b",
+    "title": "腌制蜜汁叉烧肉 烤箱专用800g",
+    "trueCategoryId": "bs-yw",
+    "parentId": "cat-bs",
+    "cities": [
+      "北京"
+    ],
+    "price": 222.7,
+    "trueSales30d": 1164,
+    "inventorySeries": [
+      135,
+      99,
+      62,
+      22,
+      0,
+      0,
+      0,
+      0,
+      80
+    ],
+    "goldCities": [],
+    "isBoundaryCase": true,
+    "id": "p-0416"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "【爆款】香辣腌制鸡翅根 烤制预调",
+    "trueCategoryId": "bs-yw",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海"
+    ],
+    "price": 113.5,
+    "trueSales30d": 1495,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 24,
+      "onSale180d": 4,
+      "channelTags": [
+        "热销"
+      ]
+    },
+    "goldCities": [
+      "上海"
+    ],
+    "isBoundaryCase": true,
+    "id": "p-0417"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "无骨鸡爪穿串 泡椒风味",
+    "trueCategoryId": "bs-cc",
+    "parentId": "cat-bs",
+    "cities": [
+      "成都",
+      "广州"
+    ],
+    "price": 62.5,
+    "trueSales30d": 1385,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 16,
+      "onSale180d": 4,
+      "channelTags": [
+        "热销",
+        "爆款"
+      ]
+    },
+    "goldCities": [
+      "成都"
+    ],
+    "isBoundaryCase": true,
+    "id": "p-0418"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "原切未腌制牛舌片 烧肉店用",
+    "trueCategoryId": "sx-xr",
+    "parentId": "cat-sx",
+    "cities": [
+      "成都"
+    ],
+    "price": 141.7,
+    "trueSales30d": 1354,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 19,
+      "onSale180d": 3,
+      "channelTags": [
+        "热销",
+        "爆款"
+      ]
+    },
+    "goldCities": [
+      "成都"
+    ],
+    "isBoundaryCase": true,
+    "id": "p-0419"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "冷冻带骨羊排 整扇未加工",
+    "trueCategoryId": "sx-lr",
+    "parentId": "cat-sx",
+    "cities": [
+      "广州"
+    ],
+    "price": 175.2,
+    "trueSales30d": 1667,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 27,
+      "onSale180d": 4,
+      "channelTags": [
+        "热销"
+      ]
+    },
+    "goldCities": [
+      "广州"
+    ],
+    "isBoundaryCase": true,
+    "id": "p-0420"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "川香腌制麻辣牛肉片 烤串店专用",
+    "trueCategoryId": "bs-yw",
+    "parentId": "cat-bs",
+    "cities": [
+      "广州"
+    ],
+    "price": 174,
+    "trueSales30d": 2109,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 22,
+      "onSale180d": 6,
+      "channelTags": [
+        "热销",
+        "爆款"
+      ]
+    },
+    "goldCities": [
+      "广州"
+    ],
+    "isBoundaryCase": true,
+    "id": "p-0421"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "竹签穿五花肉卷 生鲜未腌",
+    "trueCategoryId": "bs-cc",
+    "parentId": "cat-bs",
+    "cities": [
+      "广州"
+    ],
+    "price": 82,
+    "trueSales30d": 189,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 3,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "isBoundaryCase": true,
+    "id": "p-0422"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "精品鲜羊肉片 手切涮肉",
+    "trueCategoryId": "sx-xr",
+    "parentId": "cat-sx",
+    "cities": [
+      "成都",
+      "上海"
+    ],
+    "price": 163.4,
+    "trueSales30d": 177,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 3,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "isBoundaryCase": true,
+    "id": "p-0423"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "冷冻腌制牛肉串 半成品穿串",
+    "trueCategoryId": "bs-cc",
+    "parentId": "cat-bs",
+    "cities": [
+      "广州"
+    ],
+    "price": 150.2,
+    "trueSales30d": 1855,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 28,
+      "onSale180d": 6,
+      "channelTags": [
+        "热销",
+        "爆款"
+      ]
+    },
+    "goldCities": [
+      "广州"
+    ],
+    "isBoundaryCase": true,
+    "id": "p-0424"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "黑猪五花肉块 铁板烧用 鲜肉现切",
+    "trueCategoryId": "sx-xr",
+    "parentId": "cat-sx",
+    "cities": [
+      "成都"
+    ],
+    "price": 27.3,
+    "trueSales30d": 1400,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 22,
+      "onSale180d": 4,
+      "channelTags": [
+        "热销"
+      ]
+    },
+    "goldCities": [
+      "成都"
+    ],
+    "isBoundaryCase": true,
+    "id": "p-0425"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "冷冻调理腌制猪排 炸物预腌",
+    "trueCategoryId": "bs-yw",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海",
+      "成都"
+    ],
+    "price": 99.6,
+    "trueSales30d": 152,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 3,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "isBoundaryCase": true,
+    "id": "p-0426"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "孜然腌制羊肉粒 烧烤撒料版",
+    "trueCategoryId": "bs-yw",
+    "parentId": "cat-bs",
+    "cities": [
+      "上海"
+    ],
+    "price": 249.1,
+    "trueSales30d": 1276,
+    "factors": {
+      "promo7d": false,
+      "onSale30d": 19,
+      "onSale180d": 4,
+      "channelTags": [
+        "热销"
+      ]
+    },
+    "goldCities": [
+      "上海"
+    ],
+    "isBoundaryCase": true,
+    "id": "p-0427"
+  },
+  {
+    "competitorId": "comp-c",
+    "title": "四季豆培根卷 穿串半成品",
+    "trueCategoryId": "bs-cc",
+    "parentId": "cat-bs",
+    "cities": [
+      "成都"
+    ],
+    "price": 106.8,
+    "trueSales30d": 145,
+    "factors": {
+      "promo7d": true,
+      "onSale30d": 3,
+      "onSale180d": 1,
+      "channelTags": []
+    },
+    "goldCities": [],
+    "isBoundaryCase": true,
+    "id": "p-0428"
+  }
+]

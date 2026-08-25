@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# 平台运行时数据（live case、自定义 prompt、live 回归结果）
+/data/runtime/
+.gstack/
+.omc/

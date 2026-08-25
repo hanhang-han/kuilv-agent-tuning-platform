@@ -1,0 +1,94 @@
+[
+  {
+    "id": "kv-v0",
+    "label": "kv-v0（首版）",
+    "note": "v0.9 时代：仅类目枚举，无边界定义、无样例",
+    "entries": []
+  },
+  {
+    "id": "kv-v1",
+    "label": "kv-v1（边界完备化）",
+    "note": "R2 迭代：补全易混淆类目组的自然语言边界规则",
+    "entries": [
+      {
+        "categoryId": "bs-yw",
+        "boundaryRules": "腌制、调味、酱制处理过的肉制品（未穿串）归本类。注意：即使标题含「烤肉」「烧烤」字样，只要经过腌制且未穿串，仍归本类。"
+      },
+      {
+        "categoryId": "bs-cc",
+        "boundaryRules": "穿串、穿签预处理的商品归本类，无论是否腌制（穿串优先于腌制判断）。"
+      },
+      {
+        "categoryId": "sx-xr",
+        "boundaryRules": "未加工的鲜肉归本类。注意：标题仅含烹饪建议词（烧烤用、火锅用、铁板烧用）不代表经过加工。"
+      },
+      {
+        "categoryId": "sx-lr",
+        "boundaryRules": "冷冻的未加工肉归本类。冷冻羊肉卷、肥牛卷等虽为涮肉用途，仍属冷冻肉类。"
+      }
+    ]
+  },
+  {
+    "id": "kv-v2",
+    "label": "kv-v2（样例扩充）",
+    "note": "R5 迭代：评审 case 回流，few-shot 对比样例库扩充",
+    "entries": [
+      {
+        "categoryId": "bs-yw",
+        "boundaryRules": "腌制、调味、酱制处理过的肉制品（未穿串）归本类。注意：即使标题含「烤肉」「烧烤」字样，只要经过腌制且未穿串，仍归本类。",
+        "fewShots": [
+          {
+            "title": "秘制腌料腌制五花肉片 烧烤专用",
+            "categoryId": "bs-yw"
+          },
+          {
+            "title": "黑椒腌制牛肉粒 铁板烧用",
+            "categoryId": "bs-yw"
+          }
+        ]
+      },
+      {
+        "categoryId": "bs-cc",
+        "boundaryRules": "穿串、穿签预处理的商品归本类，无论是否腌制（穿串优先于腌制判断）。",
+        "fewShots": [
+          {
+            "title": "现穿羔羊肉串 腌制入味",
+            "categoryId": "bs-cc"
+          },
+          {
+            "title": "生穿鸡肉串 未腌制",
+            "categoryId": "bs-cc"
+          }
+        ]
+      },
+      {
+        "categoryId": "sx-xr",
+        "boundaryRules": "未加工的鲜肉归本类。注意：标题仅含烹饪建议词（烧烤用、火锅用、铁板烧用）不代表经过加工。",
+        "fewShots": [
+          {
+            "title": "烧烤用鲜羊肉块 未腌制现切",
+            "categoryId": "sx-xr"
+          },
+          {
+            "title": "鲜切黄牛肉片 火锅烧烤两用",
+            "categoryId": "sx-xr"
+          }
+        ]
+      },
+      {
+        "categoryId": "sx-lr",
+        "boundaryRules": "冷冻的未加工肉归本类。冷冻羊肉卷、肥牛卷等虽为涮肉用途，仍属冷冻肉类。",
+        "fewShots": [
+          {
+            "title": "冷冻未腌制羊后腿肉块",
+            "categoryId": "sx-lr"
+          },
+          {
+            "title": "火锅用肥牛卷 冷冻原切",
+            "categoryId": "sx-lr"
+          }
+        ]
+      }
+    ]
+  }
+]
