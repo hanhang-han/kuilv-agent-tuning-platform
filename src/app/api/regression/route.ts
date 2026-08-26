@@ -6,6 +6,7 @@ import { getStore } from '@/lib/storage';
 import { runRegression } from '@/lib/eval/regression';
 
 export const dynamic = 'force-dynamic';
+export const maxDuration = 300;
 
 export async function GET() {
   return Response.json({ results: getStore().listRegressions() });

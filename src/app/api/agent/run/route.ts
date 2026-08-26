@@ -9,6 +9,7 @@ import { runAgent } from '@/lib/agent/runner';
 import type { AgentCase, CaseSpec } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
+export const maxDuration = 60;
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
