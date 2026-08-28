@@ -69,7 +69,7 @@ export async function runAgent(spec: CaseSpec, promptVersionId: string, opts: Ru
     throw new Error('口径参数无效（竞对/城市/品类不匹配）');
   }
 
-  const state: RunState = { spec, promptVersion: pv };
+  const state: RunState = { spec, promptVersion: pv, lockedSpec: true };
   const chain: ToolCall[] = [];
   const saveStep = (call: ToolCall) => { chain.push(call); opts.onStep?.(call); };
 

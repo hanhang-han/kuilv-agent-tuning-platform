@@ -50,9 +50,32 @@ export interface ReasonResult {
 export interface RunState {
   spec: CaseSpec;
   promptVersion: PromptVersion;
+  /** 口径模式（运行台）锁定 spec：模型传参不生效；对话模式放开：口径从自然语言解析 */
+  lockedSpec?: boolean;
   strategy?: { tool: 'T2' | 'T3' | 'T4'; candidates: StrategyCandidate[] };
   alignments?: AlignmentResult[];
   reasons?: ReasonResult[];
+}
+
+/**
+ * 解析本次工具调用的口径：对话模式优先取模型参数（自然语言解析结果），
+ * 口径模式锁定 state.spec。解析成功会更新 state.spec（后续组装 case 用）。
+ */
+export function resolveSpec(args: Record<string, unknown>, state: RunState): CaseSpec {
+  if (state.lockedSpec) return state.spec;
+  const store = getStore();
+  const competitorId = typeof args.competitorId === 'string' ? args.competitorId : state.spec.competitorId;
+  const city = typeof args.city === 'string' ? args.city : state.spec.city;
+  const parentId = typeof args.parentId === 'string' ? args.parentId : state.spec.parentId;
+  const comp = store.competitors.find((c) => c.id === competitorId && c.cities.includes(city));
+  const top = store.categories.find((c) => c.id === parentId && c.parentId === 'root');
+  if (!comp || !top) {
+    throw new Error(
+      `口径参数无效（competitorId=${competitorId}, city=${city}, parentId=${parentId}）。可用竞对：${store.competitors.map((c) => c.id).join('/')}，可用品类：${store.categories.filter((c) => c.parentId === 'root').map((c) => c.id).join('/')}`,
+    );
+  }
+  state.spec = { competitorId, city, parentId };
+  return state.spec;
 }
 
 export function cellProducts(state: RunState): Product[] {

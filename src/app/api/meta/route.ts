@@ -8,6 +8,7 @@ export async function GET() {
   return Response.json({
     competitors: store.competitors,
     categories: store.categories.filter((c) => c.parentId === 'root'),
+    categoryMap: Object.fromEntries(store.categories.map((c) => [c.id, c.name])),
     prompts: store.listPrompts().map((p) => ({
       id: p.id, label: p.label, isBaseline: !!p.isBaseline, builtin: !!p.builtin,
       t6Mode: p.t6Mode, knowledgeVersionId: p.knowledgeVersionId, changeNote: p.changeNote,

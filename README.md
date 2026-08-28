@@ -1,6 +1,6 @@
-# 选品 Agent 调优平台
+# 选品 Agent（对话式）+ 调优平台
 
-选品 Agent 的评估、评审与回归调优基础设施。基于模拟数据构建：3 个竞对平台（不同数据覆盖档位）、8 个品类、600 条 agent 运行记录，完整演示 AI Agent 从「跑起来」到「跑得对」的评估迭代闭环。
+一个可以对话的选品 Agent：用自然语言提出选品需求（竞对 × 城市 × 品类），Agent 探测数据覆盖、路由识别策略、对齐类目、生成推荐理由——每次推荐自动进入 Case 池供评审。背后的评估基础设施（仪表盘 / 评审工作台 / Prompt 实验室 / 回归测试）完整呈现「从跑起来到跑得对」的迭代闭环。基于模拟数据构建：3 个竞对平台（不同数据覆盖档位）、8 个品类、600 条运行记录。
 
 ```bash
 npm install
@@ -20,7 +20,8 @@ npm run dev             # http://localhost:3000
 
 | 页面 | 路由 | 功能 | 对标业界 |
 |------|------|------|---------|
-| 仪表盘 | `/` | E1-E5 错误分布、8 周准召率/通过率趋势、按竞对切片、最新回归大数字 | LangSmith 看板 |
+| 对话台 | `/` | 自然语言对话：口径澄清 → 工具链执行 → 流式推荐；支持追问（换城市/换品类）；每次运行自动入 Case 池 | ChatGPT 式 Agent 界面 |
+| 仪表盘 | `/dashboard` | E1-E5 错误分布、8 周准召率/通过率趋势、按竞对切片、最新回归大数字 | LangSmith 看板 |
 | Case 池 | `/cases` | Agent 运行记录全量，按口径/状态/错误类型/来源筛选 | LangSmith trace 列表 |
 | 评审工作台 | `/review` | 单 case 三栏评审：自动评测 → 决策链路 → 输出清单；通过/打回+E1-E5 | LangSmith 标注队列 |
 | Prompt 实验室 | `/prompts` | 版本管理（fork/编辑）、可优化资产编辑、回归测试与版本对比 | Promptfoo 回归测试 |
@@ -53,7 +54,8 @@ Validator（Schema + 类目枚举 + 数值一致性，失败重试≤3）
 
 | 代码位置 | 职责 |
 |----------|------|
-| `src/lib/agent/runner.ts` | ReAct 循环（步数上限 8，temperature=0 保证可复现） |
+| `src/lib/agent/runner.ts` | ReAct 循环（口径模式，步数上限 8，temperature=0 保证可复现） |
+| `src/lib/agent/chat-runner.ts` | 对话模式：自然语言解析口径、多轮上下文、流式输出、运行自动入池 |
 | `src/lib/agent/tools/t1~t6.ts` | 六工具实现，T1-T4 确定性计算，T5/T6 内部 LLM 子调用 |
 | `src/lib/agent/validator.ts` | 结构化输出校验闸门 |
 | `src/lib/eval/auto-eval.ts` | 自动评测四指标：格式合规 / 类目对齐 / 理由数值一致 / 准召率（vs 真值金标） |
@@ -109,7 +111,7 @@ data/                    种子数据（generate-data.ts 产出，可重跑）
 scripts/generate-data.ts 数据生成脚本
 scripts/smoke-test.ts    无 LLM 冒烟测试
 src/lib/types.ts         领域类型
-src/lib/agent/           Agent 运行时（runner / tools / validator）
+src/lib/agent/           Agent 运行时（runner / chat-runner / tools / validator）
 src/lib/eval/            自动评测 + 回归引擎
 src/lib/llm/client.ts    DeepSeek 客户端（OpenAI 兼容，temperature=0）
 src/lib/storage/         存储层

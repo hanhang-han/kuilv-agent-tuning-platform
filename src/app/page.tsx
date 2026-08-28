@@ -1,167 +1,288 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import {
-  Bar, BarChart, CartesianGrid, Cell, Legend, Line, LineChart,
-  ResponsiveContainer, Tooltip, XAxis, YAxis,
-} from 'recharts';
-import { Skeleton } from '@/components/ui/skeleton';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
+import { ArrowUp, ChevronDown, ChevronRight, Loader2, Send } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ERROR_META, fmtPct } from '@/lib/format';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import type { RecommendationItem, ToolCall } from '@/lib/types';
+import { TOOL_BADGE, splitReasonNumbers } from '@/lib/format';
 import { cn } from '@/lib/utils';
 
-interface DashboardData {
-  totals: { cases: number; reviewed: number; pending: number; liveCases: number };
-  errorDist: Record<string, number>;
-  weekly: { week: number; passRate: number | null; precision: number | null; recall: number | null; n: number }[];
-  competitorSlice: { competitor: string; errorRate: number; caseCount: number; byType: Record<string, number> }[];
-  latestRegression: { metrics: Record<string, number | undefined>; narrative?: string } | null;
-  regressions: { id: string; promptLabel: string; metrics: Record<string, number | undefined>; mode: string; createdAt: string; narrative?: string }[];
+interface ChatMessage {
+  role: 'user' | 'assistant';
+  content: string;
+  toolSteps?: (ToolCall & { pending?: boolean })[];
+  output?: RecommendationItem[];
+  caseId?: string;
+  error?: boolean;
 }
 
-const ERROR_COLORS: Record<string, string> = {
-  E1: '#f59e0b', E2: '#f97316', E3: '#ef4444', E4: '#f43f5e', E5: '#eab308',
-};
+interface Meta {
+  categoryMap: Record<string, string>;
+  prompts: { id: string; label: string }[];
+  mode: { hasApiKey: boolean; mode: string; model: string };
+}
 
-function BigCard({ label, value, sub }: { label: string; value: string; sub?: string }) {
+const EXAMPLES = [
+  '看看竞对A在北京的半熟调理类目有什么高销品',
+  '竞对B上海的生鲜肉类有什么值得引入的？',
+  '帮我分析竞对C成都的调味酱料选品机会',
+  '火锅季快到了，竞对A广州的冻品水产有什么趋势商品？',
+];
+
+function ToolStep({ step }: { step: ToolCall & { pending?: boolean } }) {
+  const [open, setOpen] = useState(false);
+  const badge = TOOL_BADGE[step.tool];
   return (
-    <div className="rounded-lg border border-border bg-card px-4 py-3">
-      <div className="text-xs text-muted-foreground">{label}</div>
-      <div className="mt-1 text-2xl font-semibold tabular-nums">{value}</div>
-      {sub && <div className="mt-0.5 text-[11px] text-muted-foreground">{sub}</div>}
+    <div className="rounded-md border border-border/60 bg-muted/20 text-xs">
+      <button type="button" className="flex w-full items-center gap-2 px-2.5 py-1.5 text-left" onClick={() => setOpen(!open)}>
+        <span className={cn('rounded border px-1 py-0.5 font-mono text-[10px]', badge.className)}>{badge.label}</span>
+        <span className="text-muted-foreground">{step.name}</span>
+        {step.pending ? (
+          <Loader2 className="size-3 animate-spin text-muted-foreground" />
+        ) : (
+          <>
+            <span className="text-[10px] text-muted-foreground">{step.durationMs}ms</span>
+            {step.status !== 'ok' && <span className="rounded border border-red-500/30 bg-red-500/10 px-1 text-[10px] text-red-400">{step.status === 'retry' ? '重试' : '异常'}</span>}
+          </>
+        )}
+        <span className="ml-auto text-muted-foreground">{open ? <ChevronDown className="size-3" /> : <ChevronRight className="size-3" />}</span>
+      </button>
+      {open && !step.pending && (
+        <div className="grid gap-2 border-t border-border/60 px-2.5 py-2 md:grid-cols-2">
+          <div>
+            <div className="mb-0.5 text-[10px] text-muted-foreground">输入</div>
+            <pre className="max-h-48 overflow-auto rounded bg-muted/40 p-1.5 font-mono text-[10px] text-muted-foreground">{JSON.stringify(step.input, null, 2)}</pre>
+          </div>
+          <div>
+            <div className="mb-0.5 text-[10px] text-muted-foreground">输出</div>
+            <pre className="max-h-48 overflow-auto rounded bg-muted/40 p-1.5 font-mono text-[10px] text-muted-foreground">{JSON.stringify(step.output, null, 2)}</pre>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
 
-const tooltipStyle = {
-  backgroundColor: 'hsl(var(--card))',
-  border: '1px solid hsl(var(--border))',
-  borderRadius: '8px',
-  fontSize: '12px',
-  color: 'hsl(var(--foreground))',
-};
+function OutputCard({ item, categoryName }: { item: RecommendationItem; categoryName: string }) {
+  return (
+    <div className="rounded-lg border border-border bg-card px-3 py-2.5">
+      <div className="truncate text-sm font-medium">{item.title}</div>
+      <div className="mt-1 flex flex-wrap items-center gap-1.5 text-[11px]">
+        <Badge variant="outline">{categoryName}</Badge>
+        <span className="text-muted-foreground">{item.strategy}</span>
+        {item.metric !== undefined && <span className="font-mono text-muted-foreground">{item.metric} 件/30天</span>}
+        {item.score !== undefined && <span className="font-mono text-muted-foreground">评分 {item.score}</span>}
+      </div>
+      <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+        {splitReasonNumbers(item.reason).map((p, i) =>
+          p.num ? <mark key={i} className="rounded bg-sky-500/20 px-0.5 font-mono text-sky-300">{p.text}</mark> : <span key={i}>{p.text}</span>,
+        )}
+      </p>
+    </div>
+  );
+}
 
-export default function DashboardPage() {
-  const [data, setData] = useState<DashboardData | null>(null);
+export default function ChatPage() {
+  const [meta, setMeta] = useState<Meta | null>(null);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [input, setInput] = useState('');
+  const [streaming, setStreaming] = useState(false);
+  const [promptVersionId, setPromptVersionId] = useState('pv-baseline');
+  const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    fetch('/api/dashboard').then((r) => r.json()).then(setData).catch(() => {});
+    fetch('/api/meta').then((r) => r.json()).then(setMeta).catch(() => {});
   }, []);
 
-  if (!data) {
-    return (
-      <div className="space-y-4 p-6">
-        <Skeleton className="h-8 w-48" />
-        <div className="grid grid-cols-4 gap-3">{[1, 2, 3, 4].map((i) => <Skeleton key={i} className="h-24" />)}</div>
-        <div className="grid grid-cols-2 gap-3"><Skeleton className="h-72" /><Skeleton className="h-72" /></div>
-      </div>
-    );
-  }
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
 
-  const errorData = (Object.keys(ERROR_META) as (keyof typeof ERROR_META)[])
-    .map((e) => ({ name: ERROR_META[e].label, key: e, count: data.errorDist[e] ?? 0 }));
+  const send = useCallback(async (text: string) => {
+    const content = text.trim();
+    if (!content || streaming) return;
+    setInput('');
+    setStreaming(true);
 
-  const trendData = data.weekly.map((w) => ({
-    week: `W${w.week}`,
-    通过率: w.passRate !== null ? +(w.passRate * 100).toFixed(1) : null,
-    准确率: w.precision !== null ? +(w.precision * 100).toFixed(1) : null,
-    召回率: w.recall !== null ? +(w.recall * 100).toFixed(1) : null,
-  }));
+    const history = messages
+      .filter((m) => !m.error && m.content)
+      .map((m) => ({ role: m.role, content: m.content, output: m.output }));
+    const newMessages: ChatMessage[] = [...messages, { role: 'user', content }, { role: 'assistant', content: '', toolSteps: [] }];
+    setMessages(newMessages);
 
-  const compData = data.competitorSlice.map((c) => ({
-    name: c.competitor.split('·')[1] ?? c.competitor,
-    错误率: +(c.errorRate * 100).toFixed(1),
-    E1: c.byType.E1, E2: c.byType.E2, E3: c.byType.E3, E4: c.byType.E4, E5: c.byType.E5,
-  }));
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: [...history, { role: 'user', content }], promptVersionId }),
+      });
+      const reader = res.body!.getReader();
+      const decoder = new TextDecoder();
+      let buf = '';
+      const update = (fn: (m: ChatMessage) => ChatMessage) => {
+        setMessages((prev) => {
+          const copy = [...prev];
+          copy[copy.length - 1] = fn(copy[copy.length - 1]);
+          return copy;
+        });
+      };
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buf += decoder.decode(value, { stream: true });
+        const events = buf.split('\n\n');
+        buf = events.pop() ?? '';
+        for (const evt of events) {
+          if (!evt.startsWith('data: ')) continue;
+          const data = JSON.parse(evt.slice(6));
+          if (data.type === 'token') {
+            update((m) => ({ ...m, content: m.content + data.text }));
+          } else if (data.type === 'tool_start') {
+            update((m) => ({ ...m, toolSteps: [...(m.toolSteps ?? []), { step: (m.toolSteps?.length ?? 0) + 1, tool: data.tool, name: data.name, input: {}, output: {}, durationMs: 0, status: 'ok', pending: true }] }));
+          } else if (data.type === 'tool_end') {
+            update((m) => {
+              const steps = [...(m.toolSteps ?? [])];
+              steps[steps.length - 1] = data.step;
+              return { ...m, toolSteps: steps };
+            });
+          } else if (data.type === 'run_complete') {
+            update((m) => ({ ...m, output: data.output, caseId: data.caseId }));
+          } else if (data.type === 'error') {
+            update((m) => ({ ...m, content: m.content || data.message, error: true }));
+          }
+        }
+      }
+    } catch (e) {
+      setMessages((prev) => {
+        const copy = [...prev];
+        copy[copy.length - 1] = { ...copy[copy.length - 1], content: `连接中断：${e instanceof Error ? e.message : String(e)}`, error: true };
+        return copy;
+      });
+    } finally {
+      setStreaming(false);
+    }
+  }, [messages, streaming, promptVersionId]);
 
-  const m = data.latestRegression?.metrics;
+  const noKey = meta && !meta.mode.hasApiKey;
+  const catName = (id: string) => meta?.categoryMap?.[id] ?? id;
 
   return (
-    <div className="space-y-5 p-6">
-      <div className="flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <h1 className="text-xl font-semibold">仪表盘</h1>
-          <p className="mt-0.5 text-sm text-muted-foreground">
-            Case 池 {data.totals.cases} 条（已评审 {data.totals.reviewed} / 待评审 {data.totals.pending} / live {data.totals.liveCases}）
-          </p>
+    <div className="flex h-screen flex-col">
+      <header className="flex items-center gap-3 border-b border-border px-5 py-3">
+        <h1 className="text-sm font-semibold">选品 Agent</h1>
+        <span className="text-xs text-muted-foreground">口径 × 高销品识别 · 六工具 ReAct · 推荐清单入评审池</span>
+        <div className="ml-auto flex items-center gap-2">
+          {meta && (
+            <Badge variant="outline" className={noKey ? 'border-amber-500/30 bg-amber-500/10 text-amber-400' : 'border-emerald-500/30 bg-emerald-500/10 text-emerald-400'}>
+              {noKey ? '回放模式（未配置 Key）' : `真跑 · ${meta.mode.model}`}
+            </Badge>
+          )}
+          <Select value={promptVersionId} onValueChange={(v) => setPromptVersionId(v ?? 'pv-baseline')} items={meta?.prompts.map((p) => ({ value: p.id, label: p.label }))}>
+            <SelectTrigger className="h-7 w-44 text-xs"><SelectValue /></SelectTrigger>
+            <SelectContent>
+              {meta?.prompts.map((p) => <SelectItem key={p.id} value={p.id}>{p.label}</SelectItem>)}
+            </SelectContent>
+          </Select>
         </div>
-        {data.regressions.length > 0 && (
-          <div className="flex flex-wrap gap-1.5">
-            {data.regressions.slice(0, 3).map((r) => (
-              <Badge key={r.id} variant="outline" className="text-[11px]">
-                {r.promptLabel}：通过率 {fmtPct(r.metrics.passRate)}
-              </Badge>
-            ))}
-          </div>
-        )}
-      </div>
+      </header>
 
-      {m && (
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-          <BigCard label="最新回归通过率（v1.1）" value={fmtPct(m.passRate)} sub="500 条历史 case 回放比对" />
-          <BigCard label="类目对齐准确率（深检）" value={fmtPct(m.alignmentAcc)} sub="首版 85% → 迭代 5 轮" />
-          <BigCard label="理由数值一致率（深检）" value={fmtPct(m.reasonConsistency)} sub="理由模板化：幻觉率 11%→4%" />
-          <BigCard label="策略三准召率" value={`${fmtPct(m.goldPrecision, 1)} / ${fmtPct(m.goldRecall, 1)}`} sub="vs 策略一金标（无数据口径）" />
+      {noKey && (
+        <div className="border-b border-amber-500/20 bg-amber-500/10 px-5 py-2 text-xs text-amber-400">
+          对话模式需要真实调用 LLM：本地在项目目录创建 .env.local 写入 DEEPSEEK_API_KEY=sk-xxx（线上在 Vercel 环境变量配置后 Redeploy）。配置前的演示可用「运行台」回放模式。
         </div>
       )}
 
-      <div className="grid gap-4 lg:grid-cols-2">
-        <div className="rounded-lg border border-border bg-card p-4">
-          <div className="mb-3 text-sm font-medium">错误类型分布（快评口径，已评审 {data.totals.reviewed} 条）</div>
-          <ResponsiveContainer width="100%" height={260}>
-            <BarChart data={errorData}>
-              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" vertical={false} />
-              <XAxis dataKey="name" tick={{ fontSize: 11, fill: 'hsl(var(--muted-foreground))' }} interval={0} angle={-15} dy={8} height={50} />
-              <YAxis tick={{ fontSize: 11, fill: 'hsl(var(--muted-foreground))' }} allowDecimals={false} />
-              <Tooltip contentStyle={tooltipStyle} cursor={{ fill: 'hsl(var(--muted))', opacity: 0.3 }} />
-              <Bar dataKey="count" name="case 数" radius={[4, 4, 0, 0]}>
-                {errorData.map((d) => <Cell key={d.key} fill={ERROR_COLORS[d.key]} />)}
-              </Bar>
-            </BarChart>
-          </ResponsiveContainer>
-          <p className="mt-2 text-[11px] text-muted-foreground">E1 类目错误是迭代主线；E3 占比低但伤害大，优先修——归因决定优先级</p>
-        </div>
-
-        <div className="rounded-lg border border-border bg-card p-4">
-          <div className="mb-3 text-sm font-medium">8 周迭代趋势：通过率（快评）与策略三准召率（深检）</div>
-          <ResponsiveContainer width="100%" height={260}>
-            <LineChart data={trendData}>
-              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" vertical={false} />
-              <XAxis dataKey="week" tick={{ fontSize: 11, fill: 'hsl(var(--muted-foreground))' }} />
-              <YAxis tick={{ fontSize: 11, fill: 'hsl(var(--muted-foreground))' }} domain={[20, 100]} />
-              <Tooltip contentStyle={tooltipStyle} />
-              <Legend wrapperStyle={{ fontSize: 12 }} />
-              <Line type="monotone" dataKey="通过率" stroke="#10b981" strokeWidth={2} dot={{ r: 3 }} connectNulls />
-              <Line type="monotone" dataKey="准确率" stroke="#3b82f6" strokeWidth={2} dot={{ r: 3 }} connectNulls />
-              <Line type="monotone" dataKey="召回率" stroke="#8b5cf6" strokeWidth={2} dot={{ r: 3 }} connectNulls />
-            </LineChart>
-          </ResponsiveContainer>
-          <p className="mt-2 text-[11px] text-muted-foreground">W1-3 v0.9 → W4-5 v1.0（工具描述重写）→ W6-8 v1.1（理由模板化）</p>
+      <div className="flex-1 overflow-y-auto">
+        <div className="mx-auto max-w-3xl px-4 py-6">
+          {messages.length === 0 ? (
+            <div className="flex flex-col items-center gap-5 py-16 text-center">
+              <div className="flex size-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground text-xl font-semibold">选</div>
+              <div>
+                <h2 className="text-lg font-semibold">你好，我是选品 Agent</h2>
+                <p className="mt-1 max-w-md text-sm text-muted-foreground">
+                  给我一个口径（竞对 × 城市 × 品类），我会探测数据覆盖、路由识别策略、对齐类目、生成推荐理由——每次推荐都会进入 Case 池供评审。
+                </p>
+              </div>
+              <div className="grid w-full max-w-xl gap-2">
+                {EXAMPLES.map((e) => (
+                  <button
+                    key={e}
+                    type="button"
+                    className="rounded-lg border border-border bg-card px-4 py-2.5 text-left text-sm text-muted-foreground transition-colors hover:border-primary/40 hover:text-foreground"
+                    onClick={() => send(e)}
+                  >
+                    {e}
+                  </button>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="space-y-5">
+              {messages.map((m, i) => (
+                <div key={i} className={cn('flex', m.role === 'user' ? 'justify-end' : 'justify-start')}>
+                  <div className={cn('max-w-[85%] space-y-2', m.role === 'user' && 'rounded-xl bg-primary px-4 py-2.5 text-sm text-primary-foreground')}>
+                    {m.role === 'user' ? (
+                      m.content
+                    ) : (
+                      <>
+                        {m.toolSteps && m.toolSteps.length > 0 && (
+                          <div className="space-y-1.5">
+                            {m.toolSteps.map((s, j) => <ToolStep key={j} step={s} />)}
+                          </div>
+                        )}
+                        {m.content && (
+                          <p className={cn('whitespace-pre-wrap text-sm leading-relaxed', m.error ? 'text-red-400' : 'text-foreground')}>
+                            {m.content}
+                          </p>
+                        )}
+                        {m.output && m.output.length > 0 && (
+                          <div className="space-y-2">
+                            <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
+                              <span>推荐清单（{m.output.length} 条）</span>
+                              {m.caseId && (
+                                <Link href={`/review/${m.caseId}`} className="text-sky-400 hover:underline">已入 Case 池，去评审 →</Link>
+                              )}
+                            </div>
+                            {m.output.map((item) => (
+                              <OutputCard key={item.productId} item={item} categoryName={catName(item.categoryId)} />
+                            ))}
+                          </div>
+                        )}
+                      </>
+                    )}
+                  </div>
+                </div>
+              ))}
+              {streaming && messages[messages.length - 1]?.content === '' && (messages[messages.length - 1]?.toolSteps?.length ?? 0) === 0 && (
+                <div className="flex items-center gap-2 text-xs text-muted-foreground"><Loader2 className="size-3 animate-spin" />思考中…</div>
+              )}
+            </div>
+          )}
+          <div ref={bottomRef} />
         </div>
       </div>
 
-      <div className="rounded-lg border border-border bg-card p-4">
-        <div className="mb-3 text-sm font-medium">按竞对切片：错误类型分布</div>
-        <ResponsiveContainer width="100%" height={240}>
-          <BarChart data={compData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" vertical={false} />
-            <XAxis dataKey="name" tick={{ fontSize: 11, fill: 'hsl(var(--muted-foreground))' }} />
-            <YAxis tick={{ fontSize: 11, fill: 'hsl(var(--muted-foreground))' }} allowDecimals={false} />
-            <Tooltip contentStyle={tooltipStyle} cursor={{ fill: 'hsl(var(--muted))', opacity: 0.3 }} />
-            <Legend wrapperStyle={{ fontSize: 12 }} />
-            {(['E1', 'E2', 'E3', 'E4', 'E5'] as const).map((e) => (
-              <Bar key={e} dataKey={e} stackId="a" name={ERROR_META[e].label} fill={ERROR_COLORS[e]} radius={e === 'E5' ? [4, 4, 0, 0] : undefined} />
-            ))}
-          </BarChart>
-        </ResponsiveContainer>
-        <div className="mt-2 flex flex-wrap gap-3 text-[11px] text-muted-foreground">
-          {data.competitorSlice.map((c) => (
-            <span key={c.competitor} className={cn('rounded border border-border px-2 py-0.5')}>
-              {c.competitor}：错误率 {fmtPct(c.errorRate)}（n={c.caseCount}）
-            </span>
-          ))}
+      <footer className="border-t border-border px-4 py-3">
+        <div className="mx-auto flex max-w-3xl items-end gap-2">
+          <textarea
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(input); }
+            }}
+            rows={1}
+            disabled={streaming}
+            placeholder={noKey ? '配置 DeepSeek API Key 后即可对话…' : '输入选品需求，如「看看竞对A北京半熟调理的高销品」（Enter 发送，Shift+Enter 换行）'}
+            className="max-h-32 min-h-9 flex-1 resize-none rounded-lg border border-input bg-transparent px-3 py-2 text-sm outline-none placeholder:text-muted-foreground focus-visible:border-ring disabled:opacity-50"
+          />
+          <Button size="icon" onClick={() => send(input)} disabled={streaming || !input.trim()}>
+            {streaming ? <Loader2 className="size-4 animate-spin" /> : <Send className="size-4" />}
+          </Button>
         </div>
-      </div>
+      </footer>
     </div>
   );
 }

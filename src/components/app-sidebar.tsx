@@ -3,11 +3,12 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Activity, ClipboardCheck, Database, FlaskConical, LayoutDashboard, Layers, Play } from 'lucide-react';
+import { Activity, ClipboardCheck, Database, FlaskConical, LayoutDashboard, Layers, MessageSquare, Play } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const NAV = [
-  { href: '/', label: '仪表盘', icon: LayoutDashboard },
+  { href: '/', label: '对话台', icon: MessageSquare },
+  { href: '/dashboard', label: '仪表盘', icon: LayoutDashboard },
   { href: '/cases', label: 'Case 池', icon: Database },
   { href: '/review', label: '评审工作台', icon: ClipboardCheck },
   { href: '/prompts', label: 'Prompt 实验室', icon: FlaskConical },

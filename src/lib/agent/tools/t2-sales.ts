@@ -3,9 +3,10 @@
  * 类目内销量 top20% 且 ≥200 件（默认参数与金标口径一致）
  * topPct / minSales 由模型传入：参数选择本身是 agent 的决策点（误传低门槛 → E2 风险）
  */
-import { cellProducts, type RunState } from './registry';
+import { cellProducts, resolveSpec, type RunState } from './registry';
 
 export async function executeT2(args: Record<string, unknown>, state: RunState) {
+  resolveSpec(args, state);
   const products = cellProducts(state);
   const withSales = products.filter((p) => p.sales30d !== undefined);
   if (withSales.length === 0) {

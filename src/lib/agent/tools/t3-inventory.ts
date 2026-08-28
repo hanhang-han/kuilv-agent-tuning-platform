@@ -3,7 +3,7 @@
  * 3 天窗口差值算法：周期内两两做差 → 剔除负差值（补货）→ 取最大正差值 → 各周期累加
  * 与种子数据生成器的算法保持一致（9 天快照 → 推算 30 天）
  */
-import { cellProducts, type RunState } from './registry';
+import { cellProducts, resolveSpec, type RunState } from './registry';
 
 export function t3Estimate(series: number[]): number {
   let total = 0;
@@ -16,6 +16,7 @@ export function t3Estimate(series: number[]): number {
 }
 
 export async function executeT3(args: Record<string, unknown>, state: RunState) {
+  resolveSpec(args, state);
   const products = cellProducts(state).filter((p) => p.inventorySeries);
   if (products.length === 0) {
     return { error: '该竞对无库存快照数据（coverage != inventory），请按 T1 探测结果选择策略工具' };

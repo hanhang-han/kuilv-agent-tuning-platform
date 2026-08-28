@@ -4,7 +4,7 @@
  * 权重来自 PromptVersion（可优化资产之一：策略一金标回测校准，v0.9 → v1.0 的迭代点）
  */
 import type { ProductFactors, T4Weights } from '@/lib/types';
-import { cellProducts, type RunState } from './registry';
+import { cellProducts, resolveSpec, type RunState } from './registry';
 
 export function t4Score(f: ProductFactors, w: T4Weights): number {
   return Math.round(
@@ -16,6 +16,7 @@ export function t4Score(f: ProductFactors, w: T4Weights): number {
 }
 
 export async function executeT4(args: Record<string, unknown>, state: RunState) {
+  resolveSpec(args, state);
   const products = cellProducts(state).filter((p) => p.factors);
   if (products.length === 0) {
     return { error: '该竞对有销量或库存数据，请优先使用 T2 / T3（按 T1 探测结果）' };
