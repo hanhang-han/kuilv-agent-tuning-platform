@@ -12,6 +12,12 @@
     "parentId": "root"
   },
   {
+    "id": "cat-sc",
+    "name": "蔬菜蛋品",
+    "path": "蔬菜蛋品",
+    "parentId": "root"
+  },
+  {
     "id": "cat-mm",
     "name": "米面粮油",
     "path": "米面粮油",
@@ -21,6 +27,12 @@
     "id": "cat-tw",
     "name": "调味酱料",
     "path": "调味酱料",
+    "parentId": "root"
+  },
+  {
+    "id": "cat-gf",
+    "name": "农副干货",
+    "path": "农副干货",
     "parentId": "root"
   },
   {
@@ -36,9 +48,21 @@
     "parentId": "root"
   },
   {
+    "id": "cat-cy",
+    "name": "茶饮咖啡",
+    "path": "茶饮咖啡",
+    "parentId": "root"
+  },
+  {
     "id": "cat-xl",
     "name": "休闲零食",
     "path": "休闲零食",
+    "parentId": "root"
+  },
+  {
+    "id": "cat-hb",
+    "name": "烘焙原料",
+    "path": "烘焙原料",
     "parentId": "root"
   },
   {
@@ -94,6 +118,36 @@
     "path": "生鲜肉类/内脏副产品类"
   },
   {
+    "id": "sc-yc",
+    "name": "叶菜类",
+    "parentId": "cat-sc",
+    "path": "蔬菜蛋品/叶菜类"
+  },
+  {
+    "id": "sc-gj",
+    "name": "根茎类",
+    "parentId": "cat-sc",
+    "path": "蔬菜蛋品/根茎类"
+  },
+  {
+    "id": "sc-dan",
+    "name": "蛋类",
+    "parentId": "cat-sc",
+    "path": "蔬菜蛋品/蛋类"
+  },
+  {
+    "id": "sc-dz",
+    "name": "豆制品类",
+    "parentId": "cat-sc",
+    "path": "蔬菜蛋品/豆制品类"
+  },
+  {
+    "id": "sc-sj",
+    "name": "食用菌类",
+    "parentId": "cat-sc",
+    "path": "蔬菜蛋品/食用菌类"
+  },
+  {
     "id": "mm-dm",
     "name": "大米类",
     "parentId": "cat-mm",
@@ -142,6 +196,24 @@
     "path": "调味酱料/火锅底料类"
   },
   {
+    "id": "gf-jg",
+    "name": "菌菇干货类",
+    "parentId": "cat-gf",
+    "path": "农副干货/菌菇干货类"
+  },
+  {
+    "id": "gf-fs",
+    "name": "粉丝粉条类",
+    "parentId": "cat-gf",
+    "path": "农副干货/粉丝粉条类"
+  },
+  {
+    "id": "gf-hc",
+    "name": "海产干货类",
+    "parentId": "cat-gf",
+    "path": "农副干货/海产干货类"
+  },
+  {
     "id": "dp-yl",
     "name": "冷冻鱼类",
     "parentId": "cat-dp",
@@ -184,6 +256,24 @@
     "path": "酒水饮料/乳品类"
   },
   {
+    "id": "cy-cm",
+    "name": "茶叶类",
+    "parentId": "cat-cy",
+    "path": "茶饮咖啡/茶叶类"
+  },
+  {
+    "id": "cy-kf",
+    "name": "咖啡类",
+    "parentId": "cat-cy",
+    "path": "茶饮咖啡/咖啡类"
+  },
+  {
+    "id": "cy-jj",
+    "name": "糖浆小料类",
+    "parentId": "cat-cy",
+    "path": "茶饮咖啡/糖浆小料类"
+  },
+  {
     "id": "xl-ph",
     "name": "膨化食品类",
     "parentId": "cat-xl",
@@ -200,6 +290,24 @@
     "name": "坚果炒货类",
     "parentId": "cat-xl",
     "path": "休闲零食/坚果炒货类"
+  },
+  {
+    "id": "hb-fz",
+    "name": "发酵类",
+    "parentId": "cat-hb",
+    "path": "烘焙原料/发酵类"
+  },
+  {
+    "id": "hb-xl",
+    "name": "馅料类",
+    "parentId": "cat-hb",
+    "path": "烘焙原料/馅料类"
+  },
+  {
+    "id": "hb-qk",
+    "name": "巧克力装饰类",
+    "parentId": "cat-hb",
+    "path": "烘焙原料/巧克力装饰类"
   },
   {
     "id": "bh-cj",

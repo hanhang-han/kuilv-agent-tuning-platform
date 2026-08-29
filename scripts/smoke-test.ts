@@ -57,7 +57,7 @@ async function main() {
     const spec = resolveSpec({ city: '上海' }, state);
     assert(spec.city === '上海' && spec.competitorId === 'comp-a', '追问「那上海呢」→ 只替换城市，延续竞对');
     assert(state.spec.city === '上海', 'resolveSpec 落地更新 state.spec');
-    const invalid = (() => { try { resolveSpec({ city: '深圳' }, state); return null; } catch (e) { return e as Error; } })();
+    const invalid = (() => { try { resolveSpec({ city: '兰州' }, state); return null; } catch (e) { return e as Error; } })();
     assert(!!invalid && invalid.message.includes('无效'), '非法城市 → 报错引导（模型可纠正）');
   }
   {

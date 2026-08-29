@@ -26,15 +26,24 @@ export type ChatEvent =
   | { type: 'done'; content: string }
   | { type: 'error'; message: string };
 
-const CHAT_MODE_INSTRUCTION = `
+function buildChatInstruction(store: ReturnType<typeof getStore>): string {
+  const comps = store.competitors
+    .map((c) => `${c.id} ${c.name}（${c.cities.join('/')}）`)
+    .join('、');
+  const cats = store.categories
+    .filter((c) => c.parentId === 'root')
+    .map((c) => `${c.id} ${c.name}`)
+    .join(' / ');
+  return `
 
 ## 对话模式说明
-- 用户用自然语言提出选品需求，口径 = 竞对 × 城市 × 品类。竞对候选：comp-a 竞对A·惠丰优选（北京/上海/广州/成都）、comp-b 竞对B·餐链直采（北京/上海/成都）、comp-c 竞对C·食达汇（上海/广州/成都）；品类候选：cat-bs 半熟调理 / cat-sx 生鲜肉类 / cat-mm 米面粮油 / cat-tw 调味酱料 / cat-dp 冻品水产 / cat-js 酒水饮料 / cat-xl 休闲零食 / cat-bh 日用百货
+- 用户用自然语言提出选品需求，口径 = 竞对 × 城市 × 品类。竞对候选：${comps}；品类候选：${cats}
 - 口径信息不完整时（缺竞对/城市/品类任一项），先用一句话向用户确认，不要猜
 - 用户追问时（如「那上海呢」「换成调味酱料」）：延续上文口径，只替换用户提到的变化项，直接重新执行，不需要重复确认
 - 每次执行走完整流程：T1 探测 → 按覆盖选策略工具 → T5 对齐 → T6 理由
 - 完成后用自然语言总结：推荐了几个商品、命中什么策略、关键数据（销量/评分）、给卖家的建议；每个商品一句话点评即可，不用罗列 JSON
 - 被问「为什么推荐这个」等解释类问题时，基于已有工具返回数据回答；数据不够就再调工具`;
+}
 
 /** 从工具链结果组装推荐清单（数值全部来自工具，模型不碰数字） */
 function assembleOutput(state: RunState): RecommendationItem[] {
@@ -69,10 +78,11 @@ export async function runChatConversation(
 
   const state: RunState = { spec: { competitorId: 'comp-a', city: '北京', parentId: 'cat-bs' }, promptVersion: pv };
   const tools = buildTools(pv);
+  const chatInstruction = buildChatInstruction(store);
 
   // 重建对话上下文：带推荐清单的轮次附加结构化数据，保证追问有据可答
   const messages: OpenAI.ChatCompletionMessageParam[] = [
-    { role: 'system', content: pv.systemPrompt + CHAT_MODE_INSTRUCTION },
+    { role: 'system', content: pv.systemPrompt + chatInstruction },
     ...history.map((m) => ({
       role: m.role,
       content: m.output?.length
