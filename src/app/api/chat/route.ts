@@ -20,7 +20,7 @@ export async function POST(req: Request) {
   if (messages.length === 0) {
     return Response.json({ error: 'messages 为空' }, { status: 400 });
   }
-  const promptVersionId = body.promptVersionId || 'pv-baseline';
+  const promptVersionId = body.promptVersionId || 'pv-v1.1';
 
   const encoder = new TextEncoder();
   const stream = new ReadableStream({

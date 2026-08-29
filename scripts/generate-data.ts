@@ -2,18 +2,13 @@
  * 种子数据生成脚本
  * 运行：npm run generate
  *
- * 产出 data/ 下全部种子文件，固定随机种子、可重复执行。
- * 数字体系（预置基准）：
- *   - case 池分布：通过 ~81%、E1 ~6%、E2 ~4%、E3 ~3%、E4 ~1%、E5 ~5%
- *   - 版本回归快照：v0.9 81% → v1.0 87% → v1.1 93%
- *   - 深检口径：类目对齐 85%→94%、理由一致 89%→96%、策略三准召 34%/62%→42%/70%
+ * 产出 data/ 下的竞对 / 类目 / 类目知识 / 商品 / Prompt 版本。
+ * 固定随机种子、可重复执行。
  */
 import fs from 'node:fs';
 import path from 'node:path';
 import type {
-  AgentCase, AutoEval, Category, Competitor, ErrorType, KnowledgeVersion,
-  Product, ProductFactors, PromptVersion, RecommendationItem, RegressionResult,
-  ToolCall, T4Weights,
+  Category, Competitor, KnowledgeVersion, Product, ProductFactors, PromptVersion, T4Weights,
 } from '../src/lib/types';
 
 // ─── 可复现随机数 ────────────────────────────────────────────────
@@ -43,25 +38,22 @@ const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v
 
 // ─── 静态配置 ────────────────────────────────────────────────────
 
-const CITIES = ['北京', '上海', '广州', '成都'];
-
 const COMPETITORS: Competitor[] = [
   { id: 'comp-a', name: '竞对A·惠丰优选', coverageMode: 'sales', cities: ['北京', '上海', '广州', '成都'], note: '数据完备：有 30 天销量数据，走策略一（T2 销量榜单）' },
   { id: 'comp-b', name: '竞对B·餐链直采', coverageMode: 'inventory', cities: ['北京', '上海', '成都'], note: '仅有库存快照，走策略二（T3 库存推算）' },
   { id: 'comp-c', name: '竞对C·食达汇', coverageMode: 'none', cities: ['上海', '广州', '成都'], note: '销量库存均无，走策略三（T4 多因子评分）' },
 ];
 
-interface CatDef { id: string; name: string; parentId: string }
-const TOP_CATS: CatDef[] = [
-  { id: 'cat-bs', name: '半熟调理', parentId: 'root' },
-  { id: 'cat-sx', name: '生鲜肉类', parentId: 'root' },
-  { id: 'cat-mm', name: '米面粮油', parentId: 'root' },
-  { id: 'cat-tw', name: '调味酱料', parentId: 'root' },
-  { id: 'cat-dp', name: '冻品水产', parentId: 'root' },
-  { id: 'cat-js', name: '酒水饮料', parentId: 'root' },
-  { id: 'cat-xl', name: '休闲零食', parentId: 'root' },
-  { id: 'cat-bh', name: '日用百货', parentId: 'root' },
-];
+const TOP_CATS = [
+  { id: 'cat-bs', name: '半熟调理' },
+  { id: 'cat-sx', name: '生鲜肉类' },
+  { id: 'cat-mm', name: '米面粮油' },
+  { id: 'cat-tw', name: '调味酱料' },
+  { id: 'cat-dp', name: '冻品水产' },
+  { id: 'cat-js', name: '酒水饮料' },
+  { id: 'cat-xl', name: '休闲零食' },
+  { id: 'cat-bh', name: '日用百货' },
+] as const;
 
 const LEAF_DEFS: { id: string; name: string; parentId: string; cores: string[] }[] = [
   { id: 'bs-yw', name: '腌制烤肉类', parentId: 'cat-bs', cores: ['腌制五花肉片', '奥尔良腌鸡腿', '黑椒腌制牛肉粒', '酱香腌制猪颈肉', '蜜汁叉烧肉', '孜然腌羊肉片', '蒜香腌制排骨', '藤椒腌鸡腿肉'] },
@@ -103,7 +95,7 @@ const CATEGORIES: Category[] = [
   })),
 ];
 
-/** 类目边界难点商品（E1 素材）：标题关键词交叉，需边界规则才能判对 */
+/** 类目边界难点商品：标题关键词交叉（烤肉/烧烤/串/冷冻），需边界规则才能判对 */
 const BOUNDARY_DEFS: { title: string; trueCategoryId: string; compId: string }[] = [
   { title: '【门店专供】秘制腌料腌制五花肉片500g 烧烤专用', trueCategoryId: 'bs-yw', compId: 'comp-a' },
   { title: '现穿羔羊肉串20串装 腌制入味✨', trueCategoryId: 'bs-cc', compId: 'comp-a' },
@@ -143,17 +135,6 @@ const BOUNDARY_DEFS: { title: string; trueCategoryId: string; compId: string }[]
   { title: '四季豆培根卷 穿串半成品', trueCategoryId: 'bs-cc', compId: 'comp-c' },
 ];
 
-/** 边界类目混淆映射（E1 注入用：真值 → 易错目标） */
-const CONFUSION: Record<string, string> = {
-  'bs-yw': 'bs-cc', 'bs-cc': 'bs-yw', 'sx-xr': 'bs-yw', 'sx-lr': 'sx-xr',
-};
-/** 同父类近邻（快评易漏检的 subtle 错位） */
-const SIBLING: Record<string, string> = {};
-for (const leaf of LEAF_DEFS) {
-  const sameParent = LEAF_DEFS.filter((l) => l.parentId === leaf.parentId && l.id !== leaf.id);
-  SIBLING[leaf.id] = sameParent.length ? sameParent[0].id : leaf.id;
-}
-
 // ─── 脏标题生成 ──────────────────────────────────────────────────
 
 const PREFIXES = ['【门店专供】', '【厂家直供】', '【爆款】', '【特惠】', '【餐饮专供】'];
@@ -185,7 +166,7 @@ function genTrueSales(): number {
   const r = rng();
   if (r < 0.35) return Math.round(rand(15, 90));      // 长尾
   if (r < 0.65) return Math.round(rand(90, 220));     // 中部
-  return Math.round(rand(250, 2600));                 // 高销（金标候选）
+  return Math.round(rand(250, 2600));                 // 高销
 }
 
 function genInventorySeries(sales30: number): number[] {
@@ -213,19 +194,17 @@ function genFactors(level: number): ProductFactors {
 
 for (const leaf of LEAF_DEFS) {
   for (const comp of COMPETITORS) {
-    // 每竞对×叶子类目的基础商品数：A 多、B 中、C 少但保证口径密度
     const n = comp.id === 'comp-a' ? 5 : comp.id === 'comp-b' ? 5 : 4;
     for (let i = 0; i < n; i++) {
       const core = leaf.cores[(i + Math.floor(rng() * leaf.cores.length)) % leaf.cores.length];
       const trueSales = genTrueSales();
       const cityCount = comp.id === 'comp-a' ? randInt(2, 4) : comp.id === 'comp-c' ? randInt(2, 3) : randInt(1, 3);
-      const cities = shuffle(comp.cities).slice(0, cityCount);
       addProduct({
         competitorId: comp.id,
         title: dirtyTitle(core),
         trueCategoryId: leaf.id,
         parentId: leaf.parentId,
-        cities,
+        cities: shuffle(comp.cities).slice(0, cityCount),
         price: Math.round(rand(8, 420) * 10) / 10,
         trueSales30d: trueSales,
         sales30d: comp.id === 'comp-a' ? trueSales : undefined,
@@ -237,7 +216,6 @@ for (const leaf of LEAF_DEFS) {
   }
 }
 
-// 边界难点商品
 for (const b of BOUNDARY_DEFS) {
   const comp = COMPETITORS.find((c) => c.id === b.compId)!;
   const trueSales = rng() < 0.6 ? Math.round(rand(260, 2200)) : Math.round(rand(60, 200));
@@ -258,43 +236,22 @@ for (const b of BOUNDARY_DEFS) {
   });
 }
 
-// ─── 金标计算（策略一：真值销量 top20% 且 ≥200，最少 2 个） ─────
-
-interface Cell { compId: string; city: string; parentId: string }
-const cells: Cell[] = [];
-for (const comp of COMPETITORS) for (const city of comp.cities) for (const top of TOP_CATS) {
-  cells.push({ compId: comp.id, city, parentId: top.id });
-}
-
-const cellProducts = (c: Cell) => products.filter((p) => p.competitorId === c.compId && p.parentId === c.parentId && p.cities.includes(c.city));
-const cellGold = (c: Cell) => cellProducts(c).filter((p) => p.goldCities.includes(c.city));
-
-for (const cell of cells) {
-  const list = cellProducts(cell).sort((a, b) => b.trueSales30d - a.trueSales30d);
-  const eligible = list.filter((p) => p.trueSales30d >= 200);
-  const K = Math.max(3, Math.ceil(list.length * 0.2));
-  for (const p of eligible.slice(0, K)) p.goldCities.push(cell.city);
-}
-
-// ─── 策略算法（与运行时工具一致） ────────────────────────────────
-
-function t3Estimate(series: number[]): number {
-  let total = 0;
-  for (let cyc = 0; cyc < 3; cyc++) {
-    const [a, b, d] = [series[cyc * 3], series[cyc * 3 + 1], series[cyc * 3 + 2]];
-    const diffs = [a - b, b - d, a - d].filter((x) => x > 0);
-    if (diffs.length) total += Math.max(...diffs);
+// 金标（策略一）：口径内真值销量 top20% 且 ≥200 件，最少 3 个
+for (const comp of COMPETITORS) {
+  for (const city of comp.cities) {
+    for (const top of TOP_CATS) {
+      const list = products
+        .filter((p) => p.competitorId === comp.id && p.parentId === top.id && p.cities.includes(city))
+        .sort((a, b) => b.trueSales30d - a.trueSales30d);
+      const eligible = list.filter((p) => p.trueSales30d >= 200);
+      const K = Math.max(3, Math.ceil(list.length * 0.2));
+      for (const p of eligible.slice(0, K)) p.goldCities.push(city);
+    }
   }
-  return Math.round(total * (10 / 3));
 }
 
-function t4Score(f: ProductFactors, w: T4Weights): number {
-  return Math.round((w.promo * (f.promo7d ? 1 : 0) + w.onSale30 * (f.onSale30d / 30) + w.onSale180 * (f.onSale180d / 6) + w.channelTag * (Math.min(f.channelTags.length, 2) / 2)) * 1000) / 1000;
-}
+// ─── 类目知识与 Prompt 版本 ──────────────────────────────────────
 
-// ─── Prompt 版本与类目知识（三类可优化资产） ─────────────────────
-
-const W_UNCAL: T4Weights = { promo: 0.4, onSale30: 0.2, onSale180: 0.2, channelTag: 0.2 };
 const W_CAL: T4Weights = { promo: 0.35, onSale30: 0.25, onSale180: 0.25, channelTag: 0.15 };
 
 const SYSTEM_PROMPT_V1 = `你是快驴选品分析师，任务是对给定口径（竞对 × 城市 × 品类）识别竞对平台的高销品，产出结构化选品推荐清单。
@@ -310,9 +267,6 @@ const SYSTEM_PROMPT_V1 = `你是快驴选品分析师，任务是对给定口径
 - 所有数值结论必须来自工具返回，禁止自行推算或编造数值
 - 选品清单是人工审核环节的输入，宁缺毋滥`;
 
-const SYSTEM_PROMPT_BASE = `你是快驴选品分析师，对给定的口径（竞对 × 城市 × 品类）识别竞对平台的高销品，产出选品推荐清单。先探测数据覆盖情况，再获取候选商品，做类目对齐，生成推荐理由。`;
-
-const T5_DESC_VAGUE = '将竞对商品标题映射到快驴标准类目，输出对应类目 ID。';
 const T5_DESC_GOOD = `将竞对商品标题映射到快驴标准类目。关键边界规则：腌制/调味/酱制处理过的肉制品（未穿串）归「腌制烤肉类」；穿串/穿签预处理（无论是否腌制）归「烧烤串类」；仅含烹饪建议词（如"烧烤用""火锅用"）的未加工鲜肉归「鲜分割肉类」；冷冻的未加工肉归「冷冻肉类」。归属不确定时输出「待人工复核」，禁止猜测。`;
 
 const baseToolDescs = {
@@ -322,16 +276,12 @@ const baseToolDescs = {
   T4: '多因子评分。四因子加权：近 7 天促销 / 近 30 天持续在售 / 近 180 天长期有效在售 / 渠道标签。适用于无销量无库存数据的竞对。',
 } as const;
 
-const T6_DESC_FREE = '为每个推荐品生成推荐理由，说明命中策略、关键数据和适合快驴卖家的价值点。';
 const T6_DESC_TEMPLATE = '按三段式模板生成推荐理由：命中策略 + 关键数据 + 卖家价值点。所有数字必须从工具返回值通过占位符填充，禁止模型自行生成数字。';
 
 const KNOWLEDGE_VERSIONS: KnowledgeVersion[] = [
+  { id: 'kv-v0', label: 'kv-v0', note: '仅类目枚举，无边界定义、无样例', entries: [] },
   {
-    id: 'kv-v0', label: 'kv-v0（首版）', note: 'v0.9 时代：仅类目枚举，无边界定义、无样例',
-    entries: [],
-  },
-  {
-    id: 'kv-v1', label: 'kv-v1（边界完备化）', note: 'R2 迭代：补全易混淆类目组的自然语言边界规则',
+    id: 'kv-v1', label: 'kv-v1', note: '含易混淆类目边界规则',
     entries: [
       { categoryId: 'bs-yw', boundaryRules: '腌制、调味、酱制处理过的肉制品（未穿串）归本类。注意：即使标题含「烤肉」「烧烤」字样，只要经过腌制且未穿串，仍归本类。' },
       { categoryId: 'bs-cc', boundaryRules: '穿串、穿签预处理的商品归本类，无论是否腌制（穿串优先于腌制判断）。' },
@@ -340,7 +290,7 @@ const KNOWLEDGE_VERSIONS: KnowledgeVersion[] = [
     ],
   },
   {
-    id: 'kv-v2', label: 'kv-v2（样例扩充）', note: 'R5 迭代：评审 case 回流，few-shot 对比样例库扩充',
+    id: 'kv-v2', label: 'kv-v2', note: '边界规则 + few-shot 样例',
     entries: [
       {
         categoryId: 'bs-yw', boundaryRules: '腌制、调味、酱制处理过的肉制品（未穿串）归本类。注意：即使标题含「烤肉」「烧烤」字样，只要经过腌制且未穿串，仍归本类。',
@@ -376,387 +326,15 @@ const KNOWLEDGE_VERSIONS: KnowledgeVersion[] = [
 
 const PROMPT_VERSIONS: PromptVersion[] = [
   {
-    id: 'pv-baseline', label: 'baseline（调优起点）', createdAt: '2026-06-25T09:00:00+08:00',
-    systemPrompt: SYSTEM_PROMPT_BASE,
-    toolDescriptions: {
-      T1: baseToolDescs.T1, T2: baseToolDescs.T2, T3: baseToolDescs.T3, T4: baseToolDescs.T4,
-      T5: T5_DESC_VAGUE, T6: T6_DESC_FREE,
-    },
-    knowledgeVersionId: 'kv-v0', t6Mode: 'free', t4Weights: W_UNCAL,
-    changeNote: '可调优基线：T5 描述含糊、T6 自由生成、因子权重未校准——已知存在明显优化空间，从这里 fork 开始调优实践',
-    isBaseline: true, builtin: true,
-  },
-  {
-    id: 'pv-v0.9', label: 'v0.9（首版）', createdAt: '2026-06-29T09:00:00+08:00',
-    systemPrompt: SYSTEM_PROMPT_V1,
-    toolDescriptions: {
-      T1: baseToolDescs.T1, T2: baseToolDescs.T2, T3: baseToolDescs.T3, T4: baseToolDescs.T4,
-      T5: T5_DESC_VAGUE, T6: T6_DESC_FREE,
-    },
-    knowledgeVersionId: 'kv-v0', t6Mode: 'free', t4Weights: W_UNCAL,
-    changeNote: '首版上线：六工具 + Validator（无重试）。已知问题：类目对齐 85%、格式合规 92%',
-    builtin: true,
-  },
-  {
-    id: 'pv-v1.0', label: 'v1.0（工具描述重写）', createdAt: '2026-07-20T09:00:00+08:00',
-    systemPrompt: SYSTEM_PROMPT_V1,
-    toolDescriptions: {
-      T1: baseToolDescs.T1, T2: baseToolDescs.T2, T3: baseToolDescs.T3, T4: baseToolDescs.T4,
-      T5: T5_DESC_GOOD, T6: T6_DESC_FREE,
-    },
-    knowledgeVersionId: 'kv-v1', t6Mode: 'free', t4Weights: W_CAL,
-    parentVersionId: 'pv-v0.9',
-    changeNote: 'R2 迭代：重写 T5 工具描述（类目边界说明）；Validator 增加失败重试；四因子权重按策略一金标回测校准',
-    builtin: true,
-  },
-  {
-    id: 'pv-v1.1', label: 'v1.1（理由模板化）', createdAt: '2026-08-03T09:00:00+08:00',
+    id: 'pv-v1.1', label: 'v1.1', createdAt: '2026-08-03T09:00:00+08:00',
     systemPrompt: SYSTEM_PROMPT_V1,
     toolDescriptions: {
       T1: baseToolDescs.T1, T2: baseToolDescs.T2, T3: baseToolDescs.T3, T4: baseToolDescs.T4,
       T5: T5_DESC_GOOD, T6: T6_DESC_TEMPLATE,
     },
     knowledgeVersionId: 'kv-v2', t6Mode: 'template', t4Weights: W_CAL,
-    parentVersionId: 'pv-v1.0',
-    changeNote: 'R5 迭代：T6 理由模板化（数字占位符填充，消灭数值幻觉来源）；类目知识 few-shot 样例扩充',
+    changeNote: '理由模板化（数字占位符填充）+ 类目知识含边界规则与 few-shot 样例',
     builtin: true,
-  },
-];
-
-// ─── Era 配置（错误分布按预设口径精确控制） ─────────────────────
-
-interface EraConfig {
-  versionId: string;
-  weeks: number[];
-  counts: Record<'pass' | ErrorType, number>;
-  subtleAlign: number;  // 通过 case 中单项被 subtle 错位概率（快评漏检、深检可见）
-  subtleE3: number;     // 通过 case 中单项理由数字轻微失真概率
-  goldBC: Record<'comp-b' | 'comp-c', { p: number; r: number }>;
-}
-
-const ERAS: EraConfig[] = [
-  {
-    versionId: 'pv-v0.9', weeks: [1, 2, 3],
-    counts: { pass: 202, E1: 24, E2: 9, E3: 14, E4: 5, E5: 16 },
-    subtleAlign: 0.19, subtleE3: 0.13,
-    goldBC: { 'comp-b': { p: 0.5, r: 0.7 }, 'comp-c': { p: 0.34, r: 0.62 } },
-  },
-  {
-    versionId: 'pv-v1.0', weeks: [4, 5],
-    counts: { pass: 91, E1: 5, E2: 4, E3: 2, E4: 1, E5: 5 },
-    subtleAlign: 0.1, subtleE3: 0.08,
-    goldBC: { 'comp-b': { p: 0.53, r: 0.72 }, 'comp-c': { p: 0.38, r: 0.66 } },
-  },
-  {
-    versionId: 'pv-v1.1', weeks: [6, 7, 8],
-    counts: { pass: 201, E1: 4, E2: 10, E3: 2, E4: 0, E5: 5 },
-    subtleAlign: 0.065, subtleE3: 0.04,
-    goldBC: { 'comp-b': { p: 0.55, r: 0.74 }, 'comp-c': { p: 0.42, r: 0.7 } },
-  },
-];
-
-// ─── Case 合成 ───────────────────────────────────────────────────
-
-const WEEK1_START = Date.UTC(2026, 5, 29); // 2026-06-29，第 8 周止于 2026-08-23
-const weekStart = (w: number) => new Date(WEEK1_START + (w - 1) * 7 * 86400000);
-const randTimeInWeek = (w: number) => {
-  const t = WEEK1_START + (w - 1) * 7 * 86400000 + rand(0, 6.5) * 86400000;
-  return new Date(t).toISOString();
-};
-
-const productById = new Map(products.map((p) => [p.id, p]));
-
-interface ItemDraft {
-  item: RecommendationItem;
-  reasonConsistent: boolean;
-  alignedCorrect: boolean;
-}
-
-function buildReason(item: RecommendationItem, mode: 'template' | 'free', fudge: 'none' | 'subtle' | 'obvious'): string {
-  const n = item.metric ?? Math.round((item.score ?? 0.5) * 1000);
-  const display = fudge === 'obvious' ? Math.round(n * rand(2.5, 4)) : fudge === 'subtle' ? Math.round(n * rand(1.2, 1.5)) : n;
-  if (item.strategy === 'S1-销量榜单') {
-    return mode === 'template'
-      ? `命中策略一（销量榜单）：类目内销量 top20% 高销品，近 30 天销量 ${display} 件。数据完备、置信度高，适合快驴卖家快速起量。`
-      : `该商品在竞对平台表现强劲，近 30 天销量约 ${display} 件，位居类目前列，适合快驴卖家快速起量。`;
-  }
-  if (item.strategy === 'S2-库存推算') {
-    return mode === 'template'
-      ? `命中策略二（库存推算）：近 30 天估算销量约 ${display} 件（保守下限）。无直接销量数据，建议小批量试销验证。`
-      : `根据库存变化推算，该商品近 30 天销量约 ${display} 件，属于稳健动销品，建议引入试销。`;
-  }
-  const s = item.score ?? 0;
-  const scoreDisp = fudge === 'obvious' ? (s * rand(1.5, 2)).toFixed(2) : fudge === 'subtle' ? (s * rand(1.15, 1.3)).toFixed(2) : s.toFixed(2);
-  const salesClaim = fudge !== 'none' ? `近 30 天销量约 ${Math.round(rand(800, 3000))} 件，` : '';
-  return mode === 'template'
-    ? `命中策略三（多因子评分）：综合评分 ${scoreDisp} 分（促销/持续在售/长期在售/渠道标签加权）。数据稀缺口径的代理信号，建议谨慎评估后引入。`
-    : `${salesClaim}该商品在无销量数据口径下综合评分 ${scoreDisp}，多维信号良好，值得关注引入。`;
-}
-
-function keyNumbersFor(item: RecommendationItem): Record<string, number> {
-  if (item.strategy === 'S1-销量榜单') return { '近30天销量(件)': item.metric ?? 0 };
-  if (item.strategy === 'S2-库存推算') return { '近30天估算销量(件)': item.metric ?? 0 };
-  return { '多因子评分': item.score ?? 0 };
-}
-
-function buildCase(idx: number, cell: Cell, errorType: 'pass' | ErrorType, era: EraConfig, week: number): AgentCase {
-  const comp = COMPETITORS.find((c) => c.id === cell.compId)!;
-  const promptVersion = PROMPT_VERSIONS.find((p) => p.id === era.versionId)!;
-  const cellList = cellProducts(cell);
-  const gold = cellGold(cell);
-  const goldIds = new Set(gold.map((p) => p.id));
-  const nonGold = cellList.filter((p) => !goldIds.has(p.id));
-
-  // 排序候选（工具返回顺序）
-  const ranked = [...cellList].sort((a, b) => {
-    if (comp.coverageMode === 'sales') return (b.sales30d ?? 0) - (a.sales30d ?? 0);
-    if (comp.coverageMode === 'inventory') return t3Estimate(b.inventorySeries!) - t3Estimate(a.inventorySeries!);
-    return t4Score(b.factors!, promptVersion.t4Weights) - t4Score(a.factors!, promptVersion.t4Weights);
-  });
-  const metricOf = (p: Product): { metric?: number; score?: number } =>
-    comp.coverageMode === 'sales' ? { metric: p.sales30d }
-      : comp.coverageMode === 'inventory' ? { metric: t3Estimate(p.inventorySeries!) }
-        : { score: t4Score(p.factors!, promptVersion.t4Weights) };
-
-  const strategy = comp.coverageMode === 'sales' ? 'S1-销量榜单' : comp.coverageMode === 'inventory' ? 'S2-库存推算' : 'S3-多因子评分';
-  const t = promptVersion.t6Mode;
-
-  // 选取输出商品
-  let selected: Product[];
-  if (comp.id === 'comp-a') {
-    selected = gold.slice(0, 8);
-    if (errorType === 'E5') selected = selected.slice(0, Math.max(1, Math.floor(selected.length / 2)));
-    if (errorType === 'E2') {
-      const lows = nonGold.filter((p) => (p.sales30d ?? 0) < 120).slice(0, 2);
-      selected = [...selected, ...lows].slice(0, 8);
-    }
-  } else {
-    const target = era.goldBC[comp.id as 'comp-b' | 'comp-c'];
-    const r = errorType === 'E5' ? target.r * 0.55 : target.r;
-    const p = errorType === 'E2' ? target.p * 0.6 : target.p;
-    let selCount = Math.max(1, Math.round(gold.length * r));
-    let nonCount = Math.min(Math.round(selCount * (1 - p) / p), 8 - selCount);
-    if (errorType === 'E2') nonCount = Math.min(nonCount + 2, 8 - selCount);
-    const selGold = ranked.filter((x) => goldIds.has(x.id)).slice(0, selCount);
-    let selNon = ranked.filter((x) => !goldIds.has(x.id)).slice(0, Math.max(0, nonCount));
-    if (errorType === 'E2') {
-      const bottom = ranked.filter((x) => !goldIds.has(x.id)).slice(-2);
-      selNon = [...new Map([...selNon, ...bottom].map((x) => [x.id, x])).values()].slice(0, 8 - selGold.length);
-    }
-    selected = [...selGold, ...selNon];
-  }
-  selected = selected.slice(0, 8);
-
-  // 构造输出条目（含错误注入）
-  const drafts: ItemDraft[] = selected.map((p) => {
-    const { metric, score } = metricOf(p);
-    return {
-      item: {
-        productId: p.id, title: p.title, categoryId: p.trueCategoryId, strategy,
-        metric, score, reason: '', keyNumbers: {},
-      },
-      reasonConsistent: true, alignedCorrect: true,
-    };
-  });
-
-  let validatorPassed = true;
-  const e1Target = drafts.find((d) => productById.get(d.item.productId)?.isBoundaryCase) ?? drafts[0];
-
-  if (errorType === 'E1' && e1Target) {
-    e1Target.item.categoryId = CONFUSION[e1Target.item.categoryId] ?? SIBLING[e1Target.item.categoryId];
-    e1Target.alignedCorrect = false;
-  }
-  if (errorType === 'E4' && drafts[0]) {
-    drafts[0].item.categoryId = 'CAT-INVALID';
-    drafts[0].item.reason = '';
-    drafts[0].alignedCorrect = false;
-    validatorPassed = false;
-  }
-  // subtle 错误（通过 case 也可能携带，快评漏检、深检可见）
-  for (const d of drafts) {
-    if (errorType !== 'pass' || d.item.categoryId === 'CAT-INVALID') continue;
-    if (!d.alignedCorrect) continue;
-    if (rng() < era.subtleAlign) { d.item.categoryId = SIBLING[d.item.categoryId]; d.alignedCorrect = false; }
-  }
-
-  // 理由生成（E3 注入 / subtle 失真）
-  for (const d of drafts) {
-    if (d.item.categoryId === 'CAT-INVALID') continue;
-    let fudge: 'none' | 'subtle' | 'obvious' = 'none';
-    if (errorType === 'E3' && d === drafts.find((x) => x.item.productId === drafts[0].item.productId)) fudge = 'obvious';
-    else if (errorType === 'pass' && rng() < era.subtleE3) fudge = 'subtle';
-    d.item.reason = buildReason(d.item, t, fudge);
-    d.item.keyNumbers = keyNumbersFor(d.item);
-    d.reasonConsistent = fudge === 'none';
-  }
-  if (errorType === 'E3') {
-    const d0 = drafts[0];
-    d0.reasonConsistent = false;
-  }
-
-  // 决策链路
-  const createdAt = randTimeInWeek(week);
-  const chain: ToolCall[] = [];
-  chain.push({
-    step: 1, tool: 'T1', name: '数据覆盖探测',
-    input: { competitorId: cell.compId, city: cell.city, parentId: cell.parentId },
-    output: { coverage: comp.coverageMode, dataVolume: cellList.length, lastUpdate: createdAt.slice(0, 10) },
-    durationMs: randInt(180, 480), status: 'ok',
-  });
-  const strategyTool = comp.coverageMode === 'sales' ? 'T2' : comp.coverageMode === 'inventory' ? 'T3' : 'T4';
-  chain.push({
-    step: 2, tool: strategyTool,
-    name: { T2: '销量榜单查询', T3: '库存推算', T4: '多因子评分' }[strategyTool],
-    input: { competitorId: cell.compId, city: cell.city, parentId: cell.parentId, topPct: 0.2, minSales: 200 },
-    output: {
-      strategy,
-      candidateCount: Math.min(ranked.length, 10),
-      candidates: ranked.slice(0, 10).map((p) => {
-        const { metric, score } = metricOf(p);
-        return { productId: p.id, title: p.title, ...(metric !== undefined ? { sales30d: metric } : { score }) };
-      }),
-    },
-    durationMs: randInt(300, 950), status: 'ok',
-  });
-  const alignments = drafts.map((d) => {
-    const correct = d.item.categoryId === productById.get(d.item.productId)?.trueCategoryId;
-    return {
-      productId: d.item.productId, title: d.item.title, categoryId: d.item.categoryId,
-      confidence: Math.round((correct ? rand(0.82, 0.97) : rand(0.5, 0.8)) * 100) / 100,
-    };
-  });
-  chain.push({
-    step: 3, tool: 'T5', name: '商品语义对齐',
-    input: { productIds: drafts.map((d) => d.item.productId), knowledgeVersion: promptVersion.knowledgeVersionId },
-    output: {
-      alignments,
-      pendingReview: alignments.filter((a) => a.confidence < 0.6).map((a) => a.productId),
-    },
-    durationMs: randInt(800, 2100), status: 'ok',
-    note: `类目知识注入：${promptVersion.knowledgeVersionId}`,
-  });
-  chain.push({
-    step: 4, tool: 'T6', name: '推荐理由生成',
-    input: { items: drafts.map((d) => ({ productId: d.item.productId, categoryId: d.item.categoryId })), mode: t },
-    output: { reasons: drafts.map((d) => ({ productId: d.item.productId, reason: d.item.reason })) },
-    durationMs: randInt(600, 1900), status: 'ok',
-    note: t === 'template' ? '模板化生成（数字占位符填充）' : '自由生成',
-  });
-  chain.push({
-    step: 5, tool: 'validator', name: 'Validator 校验',
-    input: { itemCount: drafts.length },
-    output: {
-      passed: validatorPassed,
-      retries: validatorPassed ? 0 : 3,
-      checks: [
-        { name: 'JSON Schema 校验', passed: validatorPassed, detail: validatorPassed ? '通过' : 'categoryId "CAT-INVALID" 不在类目枚举内' },
-        { name: '数值一致性校验（结构化字段）', passed: true, detail: '通过' },
-        { name: '类目枚举校验', passed: validatorPassed, detail: validatorPassed ? '通过' : '存在枚举外类目' },
-      ],
-    },
-    durationMs: randInt(40, 160),
-    status: validatorPassed ? 'ok' : 'error',
-    note: validatorPassed ? undefined : '重试 3 次仍失败，标记人工处理',
-  });
-
-  // 自动评测
-  const total = drafts.length || 1;
-  const alignedCount = drafts.filter((d) => d.alignedCorrect).length;
-  const consistentCount = drafts.filter((d) => d.reasonConsistent).length;
-  const outGoldCount = drafts.filter((d) => goldIds.has(d.item.productId)).length;
-  const goldPrecision = drafts.length ? outGoldCount / drafts.length : undefined;
-  const goldRecall = gold.length ? outGoldCount / gold.length : undefined;
-  const detected: ErrorType[] = [];
-  if (!validatorPassed) detected.push('E4');
-  else {
-    if (alignedCount < drafts.length) detected.push('E1');
-    if (consistentCount < drafts.length) detected.push('E3');
-    if (comp.id === 'comp-a') {
-      if (goldPrecision !== undefined && goldPrecision < 1) detected.push('E2');
-      if (goldRecall !== undefined && goldRecall < 1) detected.push('E5');
-    } else if (goldRecall !== undefined && goldRecall < 0.5) {
-      detected.push('E5');
-    }
-  }
-  const autoEval: AutoEval = {
-    formatPass: validatorPassed,
-    alignmentAccuracy: alignedCount / total,
-    reasonConsistency: consistentCount / total,
-    goldPrecision, goldRecall,
-    detectedErrors: detected,
-  };
-
-  // 评审标注
-  const unreviewedRate = week === 8 ? 0.4 : week >= 6 ? 0.15 : 0.03;
-  let review: AgentCase['review'];
-  if (rng() > unreviewedRate) {
-    const reviewedAt = new Date(new Date(createdAt).getTime() + rand(0.2, 2.5) * 86400000).toISOString();
-    review = errorType === 'pass'
-      ? { verdict: 'pass', reviewer: '产品PM', reviewedAt, note: '' }
-      : { verdict: 'reject', errorType: errorType as ErrorType, reviewer: '产品PM', reviewedAt, note: '' };
-  }
-
-  const confidences = alignments.map((a) => a.confidence);
-  const confidence = confidences.length ? confidences.reduce((s, x) => s + x, 0) / confidences.length : 0.9;
-
-  return {
-    id: `case-seed-${String(idx).padStart(4, '0')}`,
-    createdAt, source: 'seed',
-    spec: { competitorId: cell.compId, city: cell.city, parentId: cell.parentId },
-    promptVersionId: era.versionId,
-    chain, output: drafts.map((d) => d.item),
-    validatorPassed, autoEval, review, week, confidence: Math.round(confidence * 100) / 100,
-  };
-}
-
-// 生成全部 case
-const cases: AgentCase[] = [];
-{
-  let idx = 0;
-  for (const era of ERAS) {
-    const cellOrder = shuffle(cells);
-    let ci = 0;
-    const tasks: ('pass' | ErrorType)[] = [
-      ...Array(era.counts.pass).fill('pass'),
-      ...(['E1', 'E2', 'E3', 'E4', 'E5'] as ErrorType[]).flatMap((e) => Array(era.counts[e]).fill(e)),
-    ];
-    for (const task of shuffle(tasks)) {
-      idx += 1;
-      const cell = cellOrder[ci % cellOrder.length];
-      ci += 1;
-      const week = era.weeks[(idx + Math.floor(rng() * era.weeks.length)) % era.weeks.length];
-      cases.push(buildCase(idx, cell, task, era, week));
-    }
-  }
-  cases.sort((a, b) => a.createdAt.localeCompare(b.createdAt));
-  cases.forEach((c, i) => { c.id = `case-seed-${String(i + 1).padStart(4, '0')}`; });
-}
-
-// ─── 预置回归结果（基准快照） ───────────────────────────────────
-
-const REGRESSIONS: RegressionResult[] = [
-  {
-    id: 'rg-v0.9', promptVersionId: 'pv-v0.9', caseCount: 500, mode: 'seed', createdAt: '2026-07-06T10:30:00+08:00',
-    metrics: { passRate: 0.81, formatRate: 0.92, alignmentAcc: 0.85, reasonConsistency: 0.89, goldPrecision: 0.34, goldRecall: 0.62 },
-    byErrorType: { E1: 30, E2: 5, E3: 12, E4: 40, E5: 8 },
-    durationMs: 14 * 60 * 1000,
-    narrative: '首版回归：格式违规 8% 是最大问题（Validator 尚无重试机制）；类目对齐 85%，边界类目错位集中',
-  },
-  {
-    id: 'rg-v1.0', promptVersionId: 'pv-v1.0', baselineVersionId: 'pv-v0.9', caseCount: 500, mode: 'seed', createdAt: '2026-07-20T10:30:00+08:00',
-    metrics: { passRate: 0.87, formatRate: 0.96, alignmentAcc: 0.91, reasonConsistency: 0.93, goldPrecision: 0.38, goldRecall: 0.66 },
-    byErrorType: { E1: 17, E2: 8, E3: 10, E4: 20, E5: 10 },
-    deltaVsBaseline: { passRate: 0.06, formatRate: 0.04, alignmentAcc: 0.06, reasonConsistency: 0.04, goldPrecision: 0.04, goldRecall: 0.04 },
-    durationMs: 12 * 60 * 1000,
-    narrative: 'R2 迭代验证：工具描述重写（类目边界说明）+ Validator 重试机制；确认未引入新错误类型',
-  },
-  {
-    id: 'rg-v1.1', promptVersionId: 'pv-v1.1', baselineVersionId: 'pv-v1.0', caseCount: 500, mode: 'seed', createdAt: '2026-08-03T10:30:00+08:00',
-    metrics: { passRate: 0.93, formatRate: 0.99, alignmentAcc: 0.94, reasonConsistency: 0.96, goldPrecision: 0.42, goldRecall: 0.7 },
-    byErrorType: { E1: 12, E2: 8, E3: 6, E4: 5, E5: 4 },
-    deltaVsBaseline: { passRate: 0.06, formatRate: 0.03, alignmentAcc: 0.03, reasonConsistency: 0.03, goldPrecision: 0.04, goldRecall: 0.04 },
-    durationMs: 11 * 60 * 1000,
-    narrative: 'R5 迭代验证：理由模板化（数字占位符）后理由幻觉基本消除；few-shot 扩充补齐长尾类目',
   },
 ];
 
@@ -774,46 +352,17 @@ write('categories.json', CATEGORIES);
 write('category-knowledge.json', KNOWLEDGE_VERSIONS);
 write('products.json', products);
 write('prompts.json', PROMPT_VERSIONS);
-write('cases-seed.json', cases);
-write('regressions-seed.json', REGRESSIONS);
 
-// ── 校验统计 ──
 console.log('\n══════════ 校验统计 ══════════');
 console.log(`商品总数: ${products.length}（边界难点商品 ${products.filter((p) => p.isBoundaryCase).length}）`);
-const reviewed = cases.filter((c) => c.review);
-const dist = { pass: 0, E1: 0, E2: 0, E3: 0, E4: 0, E5: 0 };
-for (const c of reviewed) {
-  if (c.review!.verdict === 'pass') dist.pass += 1; else dist[c.review!.errorType!] += 1;
+let cellCount = 0;
+for (const comp of COMPETITORS) {
+  for (const city of comp.cities) {
+    for (const top of TOP_CATS) {
+      const cell = products.filter((p) => p.competitorId === comp.id && p.parentId === top.id && p.cities.includes(city));
+      if (cell.length > 0) cellCount += 1;
+    }
+  }
 }
-const totalReviewed = reviewed.length;
-console.log(`\ncase 总数: ${cases.length}（已评审 ${totalReviewed}，待评审 ${cases.length - totalReviewed}）`);
-console.log('评审分布（对照目标：pass ~81% / E1 6% / E2 4% / E3 3% / E4 1% / E5 5%）:');
-for (const [k, v] of Object.entries(dist)) {
-  console.log(`  ${k}: ${v} (${((v / totalReviewed) * 100).toFixed(1)}%)`);
-}
-for (const era of ERAS) {
-  const eraCases = cases.filter((c) => c.promptVersionId === era.versionId);
-  const passRate = eraCases.filter((c) => c.review?.verdict === 'pass').length / eraCases.filter((c) => c.review).length;
-  const items = eraCases.flatMap((c) => c.output);
-  const align = items.filter((it) => it.categoryId === productById.get(it.productId)?.trueCategoryId).length / items.length;
-  const totalItems = items.length || 1;
-  const consistentItems = eraCases.reduce((s, c) => s + Math.round((c.autoEval?.reasonConsistency ?? 1) * c.output.length), 0);
-  const consistency = consistentItems / totalItems;
-  const cCases = eraCases.filter((c) => c.spec.competitorId === 'comp-c' && c.autoEval?.goldPrecision !== undefined);
-  const cP = cCases.reduce((s, c) => s + (c.autoEval!.goldPrecision ?? 0), 0) / (cCases.length || 1);
-  const cR = cCases.reduce((s, c) => s + (c.autoEval!.goldRecall ?? 0), 0) / (cCases.length || 1);
-  console.log(`${era.versionId}: 通过率 ${(passRate * 100).toFixed(0)}% | 对齐 ${((align) * 100).toFixed(0)}% | 理由一致 ${(consistency * 100).toFixed(0)}% | 策略三准召 ${(cP * 100).toFixed(0)}%/${(cR * 100).toFixed(0)}% (n=${cCases.length})`);
-}
-console.log('\n周通过率趋势:');
-for (let w = 1; w <= 8; w++) {
-  const wc = cases.filter((c) => c.week === w && c.review);
-  const p = wc.filter((c) => c.review!.verdict === 'pass').length / (wc.length || 1);
-  console.log(`  W${w}: ${(p * 100).toFixed(0)}% (n=${wc.length})`);
-}
-const e3sample = cases.find((c) => c.review?.errorType === 'E3');
-if (e3sample) {
-  console.log(`\nE3 样例（${e3sample.id}）理由数字 vs 工具返回:`);
-  console.log(`  理由: ${e3sample.output[0]?.reason.slice(0, 80)}...`);
-  console.log(`  keyNumbers: ${JSON.stringify(e3sample.output[0]?.keyNumbers)}`);
-}
+console.log(`口径（竞对×城市×品类）: ${cellCount} 个，全部有商品覆盖`);
 console.log('\n✅ 种子数据生成完成');

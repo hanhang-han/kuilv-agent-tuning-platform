@@ -1,21 +1,15 @@
 /**
- * 对话式 Agent 运行时（架构文档 §5.2：支持自然语言任务描述）
+ * 对话式选品 Agent 运行时
  *
- * 与口径模式（runner.ts）共享六工具与组装逻辑，差异：
- * - 口径由模型从自然语言解析（工具参数驱动，resolveSpec 落地）
- * - 多轮对话：口径不完整时模型先澄清，追问只替换变化项
- * - 流式输出：token 逐段推送，工具调用作为事件推送
- * - 完成一次完整选品（策略+对齐+理由）→ 自动记录 case 入 Case 池（评估闭环的入口）
+ * 多轮对话 ReAct：口径从自然语言解析（工具参数驱动，resolveSpec 落地）、
+ * 口径不完整时模型先澄清、追问只替换变化项、流式输出（token + 工具事件）。
  */
 import type OpenAI from 'openai';
-import type { AgentCase, RecommendationItem, ToolCall } from '@/lib/types';
+import type { RecommendationItem, ToolCall } from '@/lib/types';
 import { TOOL_LABELS } from '@/lib/types';
 import { getStore } from '@/lib/storage';
 import { chatCompletionStream } from '@/lib/llm/client';
 import { buildTools, executeTool, fnNameToToolId, type RunState } from './tools/registry';
-import { assembleOutput } from './runner';
-import { validateOutput } from './validator';
-import { autoEvaluate } from '@/lib/eval/auto-eval';
 
 export interface ChatHistoryMessage {
   role: 'user' | 'assistant';
@@ -28,7 +22,7 @@ export type ChatEvent =
   | { type: 'token'; text: string }
   | { type: 'tool_start'; tool: string; name: string }
   | { type: 'tool_end'; step: ToolCall }
-  | { type: 'run_complete'; caseId: string; output: RecommendationItem[]; validatorPassed: boolean }
+  | { type: 'run_complete'; output: RecommendationItem[] }
   | { type: 'done'; content: string }
   | { type: 'error'; message: string };
 
@@ -42,11 +36,33 @@ const CHAT_MODE_INSTRUCTION = `
 - 完成后用自然语言总结：推荐了几个商品、命中什么策略、关键数据（销量/评分）、给卖家的建议；每个商品一句话点评即可，不用罗列 JSON
 - 被问「为什么推荐这个」等解释类问题时，基于已有工具返回数据回答；数据不够就再调工具`;
 
+/** 从工具链结果组装推荐清单（数值全部来自工具，模型不碰数字） */
+function assembleOutput(state: RunState): RecommendationItem[] {
+  const store = getStore();
+  const coverage = store.competitors.find((c) => c.id === state.spec.competitorId)?.coverageMode ?? 'none';
+  const strategy = coverage === 'sales' ? 'S1-销量榜单' : coverage === 'inventory' ? 'S2-库存推算' : 'S3-多因子评分';
+  return (state.reasons ?? []).map((r) => {
+    const alignment = state.alignments?.find((a) => a.productId === r.productId);
+    const cand = state.strategy?.candidates.find((c) => c.productId === r.productId);
+    const product = store.products.find((p) => p.id === r.productId);
+    return {
+      productId: r.productId,
+      title: product?.title ?? cand?.title ?? '',
+      categoryId: alignment?.categoryId ?? 'UNKNOWN',
+      strategy: cand ? strategy : 'none',
+      metric: cand?.metric,
+      score: cand?.score,
+      reason: r.reason,
+      keyNumbers: r.keyNumbers,
+    };
+  });
+}
+
 export async function runChatConversation(
   history: ChatHistoryMessage[],
   promptVersionId: string,
   onEvent: (e: ChatEvent) => void,
-): Promise<{ content: string; caseId?: string; output?: RecommendationItem[] }> {
+): Promise<{ content: string; output?: RecommendationItem[] }> {
   const store = getStore();
   const pv = store.getPrompt(promptVersionId);
   if (!pv) throw new Error(`Prompt 版本不存在: ${promptVersionId}`);
@@ -66,33 +82,7 @@ export async function runChatConversation(
   ];
 
   let finalContent = '';
-  const recorded: { value: AgentCase | null } = { value: null };
-
-  const recordCase = () => {
-    if (!state.strategy || !state.reasons || !state.alignments) return;
-    const output = assembleOutput(state);
-    if (output.length === 0) return;
-    const validation = validateOutput(output, state);
-    const autoEval = autoEvaluate(state.spec, output, validation.passed);
-    const confidences = state.alignments.map((a) => a.confidence);
-    const agentCase: AgentCase = {
-      id: `case-live-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
-      createdAt: new Date().toISOString(),
-      source: 'live',
-      spec: { ...state.spec },
-      promptVersionId,
-      chain: [],
-      output,
-      validatorPassed: validation.passed,
-      autoEval,
-      confidence: confidences.length
-        ? Math.round((confidences.reduce((s, x) => s + x, 0) / confidences.length) * 100) / 100
-        : 0.9,
-    };
-    store.addCase(agentCase);
-    recorded.value = agentCase;
-    onEvent({ type: 'run_complete', caseId: agentCase.id, output, validatorPassed: validation.passed });
-  };
+  let output: RecommendationItem[] | undefined;
 
   for (let turn = 0; turn < 8; turn++) {
     const result = await chatCompletionStream({
@@ -117,12 +107,12 @@ export async function runChatConversation(
         }
         onEvent({ type: 'tool_start', tool: toolId, name: TOOL_LABELS[toolId] });
         const t0 = Date.now();
-        let output: unknown;
+        let toolOutput: unknown;
         let status: ToolCall['status'] = 'ok';
         try {
-          output = await executeTool(toolId, args, state);
+          toolOutput = await executeTool(toolId, args, state);
         } catch (e) {
-          output = { error: e instanceof Error ? e.message : String(e) };
+          toolOutput = { error: e instanceof Error ? e.message : String(e) };
           status = 'error';
         }
         const step: ToolCall = {
@@ -130,30 +120,32 @@ export async function runChatConversation(
           tool: toolId,
           name: TOOL_LABELS[toolId],
           input: args,
-          output,
+          output: toolOutput,
           durationMs: Date.now() - t0,
           status,
         };
         onEvent({ type: 'tool_end', step });
-        messages.push({ role: 'tool', tool_call_id: tc.id, content: JSON.stringify(output) });
+        messages.push({ role: 'tool', tool_call_id: tc.id, content: JSON.stringify(toolOutput) });
       }
-      // 一轮工具执行完毕后若已形成完整选品结果，记录 case（模型还会继续生成总结文本）
-      if (state.strategy && state.reasons && state.alignments && !recorded.value) recordCase();
+      // 完整选品结果就绪 → 推送推荐清单（模型还会继续生成总结文本）
+      if (!output && state.strategy && state.reasons && state.alignments) {
+        output = assembleOutput(state);
+        onEvent({ type: 'run_complete', output });
+      }
       continue;
     }
 
     // 纯文本回复：澄清问题或最终总结
     finalContent = result.content;
-    if (!recorded.value && state.strategy && state.reasons && state.alignments) recordCase();
+    if (!output && state.strategy && state.reasons && state.alignments) {
+      output = assembleOutput(state);
+      onEvent({ type: 'run_complete', output });
+    }
     break;
   }
 
   if (!finalContent) finalContent = '（本轮未生成文本回复）';
 
   onEvent({ type: 'done', content: finalContent });
-  return {
-    content: finalContent,
-    caseId: recorded.value?.id,
-    output: recorded.value?.output,
-  };
+  return { content: finalContent, output };
 }

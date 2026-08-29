@@ -1,11 +1,9 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
-import { ArrowUp, ChevronDown, ChevronRight, Loader2, Send } from 'lucide-react';
+import { ChevronDown, ChevronRight, Loader2, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import type { RecommendationItem, ToolCall } from '@/lib/types';
 import { TOOL_BADGE, splitReasonNumbers } from '@/lib/format';
 import { cn } from '@/lib/utils';
@@ -15,13 +13,11 @@ interface ChatMessage {
   content: string;
   toolSteps?: (ToolCall & { pending?: boolean })[];
   output?: RecommendationItem[];
-  caseId?: string;
   error?: boolean;
 }
 
 interface Meta {
   categoryMap: Record<string, string>;
-  prompts: { id: string; label: string }[];
   mode: { hasApiKey: boolean; mode: string; model: string };
 }
 
@@ -90,7 +86,6 @@ export default function ChatPage() {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState('');
   const [streaming, setStreaming] = useState(false);
-  const [promptVersionId, setPromptVersionId] = useState('pv-baseline');
   const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -110,14 +105,13 @@ export default function ChatPage() {
     const history = messages
       .filter((m) => !m.error && m.content)
       .map((m) => ({ role: m.role, content: m.content, output: m.output }));
-    const newMessages: ChatMessage[] = [...messages, { role: 'user', content }, { role: 'assistant', content: '', toolSteps: [] }];
-    setMessages(newMessages);
+    setMessages([...messages, { role: 'user', content }, { role: 'assistant', content: '', toolSteps: [] }]);
 
     try {
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: [...history, { role: 'user', content }], promptVersionId }),
+        body: JSON.stringify({ messages: [...history, { role: 'user', content }] }),
       });
       const reader = res.body!.getReader();
       const decoder = new TextDecoder();
@@ -149,7 +143,7 @@ export default function ChatPage() {
               return { ...m, toolSteps: steps };
             });
           } else if (data.type === 'run_complete') {
-            update((m) => ({ ...m, output: data.output, caseId: data.caseId }));
+            update((m) => ({ ...m, output: data.output }));
           } else if (data.type === 'error') {
             update((m) => ({ ...m, content: m.content || data.message, error: true }));
           }
@@ -164,7 +158,7 @@ export default function ChatPage() {
     } finally {
       setStreaming(false);
     }
-  }, [messages, streaming, promptVersionId]);
+  }, [messages, streaming]);
 
   const noKey = meta && !meta.mode.hasApiKey;
   const catName = (id: string) => meta?.categoryMap?.[id] ?? id;
@@ -173,25 +167,17 @@ export default function ChatPage() {
     <div className="flex h-screen flex-col">
       <header className="flex items-center gap-3 border-b border-border px-5 py-3">
         <h1 className="text-sm font-semibold">选品 Agent</h1>
-        <span className="text-xs text-muted-foreground">口径 × 高销品识别 · 六工具 ReAct · 推荐清单入评审池</span>
-        <div className="ml-auto flex items-center gap-2">
-          {meta && (
-            <Badge variant="outline" className={noKey ? 'border-amber-500/30 bg-amber-500/10 text-amber-400' : 'border-emerald-500/30 bg-emerald-500/10 text-emerald-400'}>
-              {noKey ? '回放模式（未配置 Key）' : `真跑 · ${meta.mode.model}`}
-            </Badge>
-          )}
-          <Select value={promptVersionId} onValueChange={(v) => setPromptVersionId(v ?? 'pv-baseline')} items={meta?.prompts.map((p) => ({ value: p.id, label: p.label }))}>
-            <SelectTrigger className="h-7 w-44 text-xs"><SelectValue /></SelectTrigger>
-            <SelectContent>
-              {meta?.prompts.map((p) => <SelectItem key={p.id} value={p.id}>{p.label}</SelectItem>)}
-            </SelectContent>
-          </Select>
-        </div>
+        <span className="hidden text-xs text-muted-foreground sm:inline">竞对高销品识别 · 六工具 ReAct · 推荐理由可追溯</span>
+        {meta && (
+          <Badge variant="outline" className={cn('ml-auto', noKey ? 'border-amber-500/30 bg-amber-500/10 text-amber-400' : 'border-emerald-500/30 bg-emerald-500/10 text-emerald-400')}>
+            {noKey ? '未配置 Key' : `真跑 · ${meta.mode.model}`}
+          </Badge>
+        )}
       </header>
 
       {noKey && (
         <div className="border-b border-amber-500/20 bg-amber-500/10 px-5 py-2 text-xs text-amber-400">
-          对话模式需要真实调用 LLM：本地在项目目录创建 .env.local 写入 DEEPSEEK_API_KEY=sk-xxx（线上在 Vercel 环境变量配置后 Redeploy）。配置前的演示可用「运行台」回放模式。
+          对话需要真实调用 LLM：本地在项目目录创建 .env.local 写入 DEEPSEEK_API_KEY=sk-xxx（线上在 Vercel 环境变量配置后 Redeploy）。
         </div>
       )}
 
@@ -203,7 +189,7 @@ export default function ChatPage() {
               <div>
                 <h2 className="text-lg font-semibold">你好，我是选品 Agent</h2>
                 <p className="mt-1 max-w-md text-sm text-muted-foreground">
-                  给我一个口径（竞对 × 城市 × 品类），我会探测数据覆盖、路由识别策略、对齐类目、生成推荐理由——每次推荐都会进入 Case 池供评审。
+                  给我一个口径（竞对 × 城市 × 品类），我会探测数据覆盖、路由识别策略、对齐类目、生成推荐理由。
                 </p>
               </div>
               <div className="grid w-full max-w-xl gap-2">
@@ -240,12 +226,7 @@ export default function ChatPage() {
                         )}
                         {m.output && m.output.length > 0 && (
                           <div className="space-y-2">
-                            <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
-                              <span>推荐清单（{m.output.length} 条）</span>
-                              {m.caseId && (
-                                <Link href={`/review/${m.caseId}`} className="text-sky-400 hover:underline">已入 Case 池，去评审 →</Link>
-                              )}
-                            </div>
+                            <div className="text-[11px] text-muted-foreground">推荐清单（{m.output.length} 条）</div>
                             {m.output.map((item) => (
                               <OutputCard key={item.productId} item={item} categoryName={catName(item.categoryId)} />
                             ))}

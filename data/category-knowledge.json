@@ -1,14 +1,14 @@
 [
   {
     "id": "kv-v0",
-    "label": "kv-v0（首版）",
-    "note": "v0.9 时代：仅类目枚举，无边界定义、无样例",
+    "label": "kv-v0",
+    "note": "仅类目枚举，无边界定义、无样例",
     "entries": []
   },
   {
     "id": "kv-v1",
-    "label": "kv-v1（边界完备化）",
-    "note": "R2 迭代：补全易混淆类目组的自然语言边界规则",
+    "label": "kv-v1",
+    "note": "含易混淆类目边界规则",
     "entries": [
       {
         "categoryId": "bs-yw",
@@ -30,8 +30,8 @@
   },
   {
     "id": "kv-v2",
-    "label": "kv-v2（样例扩充）",
-    "note": "R5 迭代：评审 case 回流，few-shot 对比样例库扩充",
+    "label": "kv-v2",
+    "note": "边界规则 + few-shot 样例",
     "entries": [
       {
         "categoryId": "bs-yw",
